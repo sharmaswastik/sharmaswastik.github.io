@@ -1768,13 +1768,19 @@ input, select, textarea {
 	section.special, article.special {
 		text-align: center;
 	}
+	header.resume_wrapper{
+		width: 100%;
+		display: flex;
+		justify-content: center;
 
+	}
 	header.major {
 		width: -moz-max-content;
 		width: -webkit-max-content;
 		width: -ms-max-content;
 		width: max-content;
 		margin-bottom: 2em;
+
 	}
 
 		header.major > :first-child {
