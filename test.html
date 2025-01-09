@@ -1,0 +1,299 @@
+<!DOCTYPE HTML>
+<!--
+    Forty by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Gallery</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+      <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+
+    <!-- =====================
+         FANCY SLIDESHOW STYLES
+         ===================== -->
+    <style>
+      /**************************************************
+       1) BASIC RESET + PAGE STYLES
+      **************************************************/
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: sans-serif;
+      }
+
+      /**************************************************
+       2) SHARED SLIDESHOW STYLES
+      **************************************************/
+      .fancy-slideshow {
+        position: relative;
+        max-width: 800px; /* Adjust max-width as desired */
+        height: 400px;    /* Adjust height as desired */
+        width: 100%;    /* Adjust height as desired */
+        margin: 2em auto;
+        border: 2px solid #ddd;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        overflow: hidden;
+      }
+
+      .fancy-slideshow figure {
+      position: relative;  /* or none */
+      width: 100%;
+      animation: slideshow 28s infinite;
+      opacity: 0;
+    /* no height: 100%; because we want auto height from image */
+      }
+
+      .fancy-slideshow figure img {
+        display: block;  /* ensures container grows to fit the image */
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      /**************************************************
+       3) ANIMATION KEYFRAMES
+      **************************************************/
+      @keyframes slideshow {
+        0%   { opacity: 0; }
+        5%   { opacity: 1; }
+        25%  { opacity: 1; }
+        30%  { opacity: 0; }
+        100% { opacity: 0; }
+      }
+
+      /**************************************************
+       4) SLIDESHOW #1: STAGGER TIMING
+          Suppose we have 5 slides in slideshow #1
+      **************************************************/
+      #slideshow1 figure:nth-child(1) { animation-delay: 0s; }
+      #slideshow1 figure:nth-child(2) { animation-delay: 4s; }
+      #slideshow1 figure:nth-child(3) { animation-delay: 8s; }
+      #slideshow1 figure:nth-child(4) { animation-delay: 12s; }
+      #slideshow1 figure:nth-child(5) { animation-delay: 16s; }
+      /* Add more nth-child if you have more than 5 images */
+
+      /**************************************************
+       5) SLIDESHOW #2: STAGGER TIMING
+          Suppose we have 5 slides in slideshow #2
+      **************************************************/
+      #slideshow2 figure:nth-child(1) { animation-delay: 0s; }
+      #slideshow2 figure:nth-child(2) { animation-delay: 4s; }
+      #slideshow2 figure:nth-child(3) { animation-delay: 8s; }
+      #slideshow2 figure:nth-child(4) { animation-delay: 12s; }
+      #slideshow2 figure:nth-child(5) { animation-delay: 16s; }
+      /* Add more nth-child if you have more than 5 images */
+
+      /**************************************************
+       (OPTIONAL) Adjust Banner styling
+      **************************************************/
+      #banner.style2 .inner {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Header -->
+      <header id="header">
+        <a href="index.html" class="logo"><strong>Swastik</strong> <span>Sharma</span></a>
+        <nav>
+          <a href="#menu">Menu</a>
+        </nav>
+      </header>
+
+      <!-- Menu -->
+      <nav id="menu">
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="researchwork.html">Research Work</a></li>
+          <li><a href="coursework.html">Coursework</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="teachings.html">Teaching Duties</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+        <ul class="actions stacked">
+          <li><a href="curriculumvitae.html" class="button primary fit">Curriculum Vitae</a></li>
+          <li><a href="mailto:swastiksharma@ieee.org" class="button fit">E-mail ME</a></li>
+        </ul>
+      </nav>
+
+      <!-- Banner -->
+      <section id="banner" class="style2">
+        <div class="inner">
+          <span class="image">
+            <img src="images/banner4.png" alt="" />
+          </span>
+        </div>
+      </section>
+
+      <!-- Main Content -->
+      <div id="main">
+
+        <!-- First Section -->
+        <section id="one">
+          <div class="inner">
+            <header class="major">
+              <h2>
+                My talk at Kendriya Vidyalaya No. 1 Jammu on 13th February 2024 on the topic, 
+                <br><em>"Innovation and Out-of-the-box Thinking"</em>
+              </h2>
+            </header>
+          </div>
+
+          <!-- === Slideshow #1 (No Captions) === -->
+          <div id="slideshow1" class="fancy-slideshow">
+            <!-- Replace these placeholder images with your own -->
+            <figure>
+                <img src="images/img1.JPG" alt="Image 1">
+              </figure>
+              <figure>
+                <img src="images/img2.JPG" alt="Image 2">
+              </figure>
+              <figure>
+                <img src="images/img3.JPG" alt="Image 3">
+              </figure>
+              <figure>
+                <img src="images/img4.JPG" alt="Image 4">
+              </figure>
+              <figure>
+                <img src="images/img5.JPG" alt="Image 5">
+              </figure>
+          </div>
+        </section>
+
+        <!-- Second Section -->
+        <section id="two">
+          <div class="inner">
+            <header class="major">
+              <h2>
+                Some Other Event or Album
+                <br><em>"Add Another Title Here"</em>
+              </h2>
+            </header>
+          </div>
+
+          <!-- === Slideshow #2 (No Captions) === -->
+          <div id="slideshow2" class="fancy-slideshow">
+            <!-- Replace these placeholder images with your own -->
+            <figure>
+              <img src="https://placehold.co/300x300?text=Another+Slide+1" alt="Another Slide 1">
+            </figure>
+            <figure>
+              <img src="https://placehold.co/900x500?text=Another+Slide+2" alt="Another Slide 2">
+            </figure>
+            <figure>
+              <img src="https://placehold.co/400x1000?text=Another+Slide+3" alt="Another Slide 3">
+            </figure>
+            <figure>
+              <img src="https://placehold.co/1000x400?text=Another+Slide+4" alt="Another Slide 4">
+            </figure>
+            <figure>
+              <img src="https://placehold.co/600x700?text=Another+Slide+5" alt="Another Slide 5">
+            </figure>
+          </div>
+        </section>
+
+      </div><!-- /#main -->
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="inner">
+          <section>
+            <form method="post" action="#">
+              <div class="fields">
+                <div class="field half">
+                  <label for="name">Name</label>
+                  <input type="text" name="name" id="name" />
+                </div>
+                <div class="field half">
+                  <label for="email">Email</label>
+                  <input type="text" name="email" id="email" />
+                </div>
+                <div class="field">
+                  <label for="message">Message</label>
+                  <textarea name="message" id="message" rows="6"></textarea>
+                </div>
+              </div>
+              <ul class="actions">
+                <li><input type="submit" value="Send Message" class="primary" /></li>
+                <li><input type="reset" value="Clear" /></li>
+              </ul>
+            </form>
+          </section>
+          <section class="split">
+            <section>
+              <div class="contact-method">
+                <span class="icon solid alt fa-envelope"></span>
+                <h3>Email</h3>
+                <a href="#">swastiks21@iitk.ac.in</a><br>
+                <a href="#">swastiksharma@ieee.org</a><br>
+                <a href="#">swastiksharma33@gmail.com</a>
+              </div>
+            </section>
+            <section>
+              <div class="contact-method">
+                <span class="icon solid alt fa-home"></span>
+                <h3>Address</h3>
+                <span>ACES 315, ACES Building<br />
+                IIT Kanpur, Kalyanpur, Kanpur Nagar<br />PIN: 208016<br/>
+                Uttar Pradesh, India</span>
+              </div>
+            </section>
+          </section>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="inner">
+          <ul class="icons">
+            <li>
+              <a href="https://twitter.com/swastiksharmaaa" class="icon brands alt fa-twitter">
+                <span class="label">Twitter</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/sharmaswastik" class="icon brands alt fa-github">
+                <span class="label">GitHub</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/in/sharmaswastik" class="icon brands alt fa-linkedin-in">
+                <span class="label">LinkedIn</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="copyright">
+            <li>&copy; SwastikSharma</li>
+            <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+          </ul>
+        </div>
+      </footer>
+
+    </div><!-- /#wrapper -->
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+  </body>
+</html>
