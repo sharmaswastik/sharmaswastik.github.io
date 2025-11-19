@@ -1,330 +1,376 @@
 <!DOCTYPE HTML>
 <!--
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+    Fancy Slideshow Example
 -->
 <html>
-	<head>
-		<title>Gallery</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+  <head>
+    <title>Gallery</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!-- Original Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <!-- Fancy Slideshow Inline Styles -->
+    <style>
+      /****************************************************
+       RESET & BASIC STYLES
+      *****************************************************/
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo"><strong>Swastik</strong> <span>Sharma</span></a>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+      body {
+        font-family: "Source Sans Pro", Helvetica, sans-serif;
+      }
 
-				<!-- Menu -->
-				<nav id="menu">
-					<ul class="links">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="researchwork.html">Research Work</a></li>
-						<li><a href="coursework.html">Coursework</a></li>
-						<li><a href="publications.html">Publications</a></li>
-						<li><a href="teachings.html">Teaching Duties</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-					</ul>
-					<ul class="actions stacked">
-						<li><a href="curriculumvitae.html" class="button primary fit">Curriculum Vitae</a></li>
-						<li><a href="mailto:swastiksharma@ieee.org" class="button fit">E-mail ME</a></li>
-					</ul>
-				</nav>
+      /****************************************************
+       FIRST SLIDESHOW
+      *****************************************************/
+	  #banner.style2 {
+		padding: 2em 0; /* Instead of 6em, for example */
+		}
 
-				<!-- Main -->
-                <section id="banner" class="style2">
-                    <div class="inner">
-                        <span class="image">
-                            <img src="images/banner4.png" alt="" />
-                        </span>
-                    </div>
-                </section>
-				
-                <div id="main">
-							<section id="one">
-								<div class="inner">
-									<header class="major">
-										<h2>My talk at Kendriya Vidyalaya No. 1 Jammu on 13th February 2024 on the topic, 
-											<br><em>"Innovation and Out-of-the-box Thinking"</em></h2>
-									</header>
-							
-								</div>
-							</section>
-							<section>
-								<div>
-									<div class="carousel">
-									  <ul class="slides">
-										<input type="radio" name="radio-buttons" id="img-1" checked />
-										<li class="slide-container">
-										  <div class="slide-image">
-											<img src="images/img1.JPG">
-										  </div>
-										  <div class="carousel-controls">
-											<label for="img-7" class="prev-slide">
-											  <span>&lsaquo;</span>
-											</label>
-											<label for="img-2" class="next-slide">
-											  <span>&rsaquo;</span>
-											</label>
-										  </div>
-										</li>
-										<input type="radio" name="radio-buttons" id="img-2" />
-										<li class="slide-container">
-										  <div class="slide-image">
-											<img src="images/img2.JPG">
-										  </div>
-										  <div class="carousel-controls">
-											<label for="img-1" class="prev-slide">
-											  <span>&lsaquo;</span>
-											</label>
-											<label for="img-3" class="next-slide">
-											  <span>&rsaquo;</span>
-											</label>
-										  </div>
-										</li>
-										<input type="radio" name="radio-buttons" id="img-3" />
-										<li class="slide-container">
-										  <div class="slide-image">
-											<img src="images/img3.JPG">
-										  </div>
-										  <div class="carousel-controls">
-											<label for="img-2" class="prev-slide">
-											  <span>&lsaquo;</span>
-											</label>
-											<label for="img-4" class="next-slide">
-											  <span>&rsaquo;</span>
-											</label>
-										  </div>
-										</li>
-										<input type="radio" name="radio-buttons" id="img-4" />
-										<li class="slide-container">
-										  <div class="slide-image">
-											<img src="images/img4.JPG">
-										  </div>
-										  <div class="carousel-controls">
-											<label for="img-3" class="prev-slide">
-											  <span>&lsaquo;</span>
-											</label>
-											<label for="img-5" class="next-slide">
-											  <span>&rsaquo;</span>
-											</label>
-										  </div>
-										</li>
-										<input type="radio" name="radio-buttons" id="img-5" />
-										<li class="slide-container">
-										  <div class="slide-image">
-											<img src="images/img5.JPG">
-										  </div>
-										  <div class="carousel-controls">
-											<label for="img-4" class="prev-slide">
-											  <span>&lsaquo;</span>
-											</label>
-											<label for="img-6" class="next-slide">
-											  <span>&rsaquo;</span>
-											</label>
-										  </div>
-										</li>
-										<input type="radio" name="radio-buttons" id="img-6" />
-										<li class="slide-container">
-										  <div class="slide-image">
-											<img src="images/img6.JPG">
-										  </div>
-										  <div class="carousel-controls">
-											<label for="img-5" class="prev-slide">
-											  <span>&lsaquo;</span>
-											</label>
-											<label for="img-7" class="next-slide">
-											  <span>&rsaquo;</span>
-											</label>
-										  </div>
-										</li>
-										<input type="radio" name="radio-buttons" id="img-7" />
-										<li class="slide-container">
-										  <div class="slide-image">
-											<img src="images/img7.JPG">
-										  </div>
-										  <div class="carousel-controls">
-											<label for="img-6" class="prev-slide">
-											  <span>&lsaquo;</span>
-											</label>
-											<label for="img-1" class="next-slide">
-											  <span>&rsaquo;</span>
-											</label>
-										  </div>
-										</li>
-										
-										<div class="carousel-dots">
-										  <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
-										  <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
-										  <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
-										  <label for="img-4" class="carousel-dot" id="img-dot-4"></label>
-										  <label for="img-5" class="carousel-dot" id="img-dot-5"></label>
-										  <label for="img-6" class="carousel-dot" id="img-dot-6"></label>
-										  <label for="img-7" class="carousel-dot" id="img-dot-7"></label>
+		/* Example: Reduce ALL sections' top/bottom spacing */
+		section {
+		padding: 2em 0; /* or even 1em 0 if you want less space */
+		}
+		
+      #slideshow {
+        position: relative;
+        margin: 2em auto;
+        overflow: hidden;
+        min-height: 400px; /* ensures parent is not 0px tall */
+        max-width: 80%;
+      }
 
-										</div>
-									  </ul>
-									</div>
-								  </div>
-							</section>
-						
-						<!-- Two -->
-							<!-- <section id="two" class="spotlights">
-								<section>
-									<a href="generic.html" class="image">
-										<img src="images/pic08.jpg" alt="" data-position="center center" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Orci maecenas</h3>
-											</header>
-											<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-											<ul class="actions">
-												<li><a href="generic.html" class="button">Learn more</a></li>
-											</ul>
-										</div>
-									</div>
-								</section>
-								<section>
-									<a href="generic.html" class="image">
-										<img src="images/pic09.jpg" alt="" data-position="top center" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Rhoncus magna</h3>
-											</header>
-											<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-											<ul class="actions">
-												<li><a href="generic.html" class="button">Learn more</a></li>
-											</ul>
-										</div>
-									</div>
-								</section>
-								<section>
-									<a href="generic.html" class="image">
-										<img src="images/pic10.jpg" alt="" data-position="25% 25%" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Sed nunc ligula</h3>
-											</header>
-											<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-											<ul class="actions">
-												<li><a href="generic.html" class="button">Learn more</a></li>
-											</ul>
-										</div>
-									</div>
-								</section>
-							</section> -->
+      #slideshow figure {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        opacity: 0;
+        animation: slideshow 32s infinite;
+      }
 
-						<!-- Three -->
-							<!-- <section id="three">
-								<div class="inner">
-									<header class="major">
-										<h2>Massa libero</h2>
-									</header>
-									<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button next">Get Started</a></li>
-									</ul>
-								</div>
-							</section>
+      #slideshow figure img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        /* Key property: no cropping if you use 'contain' */
+        object-fit: contain;
+      }
 
-					</div> -->
+      /* Hide figcaption completely (optional) */
+      #slideshow figure figcaption {
+        display: none;
+      }
+
+      /* Stagger the animation for each figure */
+      #slideshow figure:nth-child(1) { animation-delay: 0s;  }
+      #slideshow figure:nth-child(2) { animation-delay: 4s;  }
+      #slideshow figure:nth-child(3) { animation-delay: 8s;  }
+      #slideshow figure:nth-child(4) { animation-delay: 12s; }
+      #slideshow figure:nth-child(5) { animation-delay: 16s; }
+      #slideshow figure:nth-child(6) { animation-delay: 20s; }
+      #slideshow figure:nth-child(7) { animation-delay: 24s; }
+      #slideshow figure:nth-child(8) { animation-delay: 28s; }
 
 
-				<!-- Contact -->
-					<section id="contact">
-						<div class="inner">
-							<section>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="6"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="reset" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Clear" /></li>
-									</ul>
-								</form>
-							</section>
-							<section class="split">
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-envelope"></span>
-										<h3>Email</h3>
-										<a href="#">swastiks21@iitk.ac.in</a>
-										<a href="#">swastiksharma@ieee.org</a>
-										<a href="#">swastiksharma33@gmail.com</a>
-									</div>
-								</section>
-								<!-- <section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-phone"></span>
-										<h3>Phone</h3>
-										<span>(000) 000-0000 x12387</span>
-									</div>
-								</section> -->
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-home"></span>
-										<h3>Address</h3>
-										<span>ACES 315, ACES Building<br />
-										IIT Kanpur, Kalyanpur, Kanpur Nagar<br />PIN: 208016<br/>
-										Uttar Pradesh, India</span>
-									</div>
-								</section>
-							</section>
-						</div>
-					</section>
+      /*
+        Keyframes Explanation (for the first slideshow):
+          0%   -> hidden, scale(1)
+          5%   -> fade in + zoom in
+          25%  -> remain visible + zoomed
+          30%  -> fade out + scale back
+          100% -> remain hidden until next cycle
+      */
+	  @keyframes slideshow {
+		0%   { opacity: 0; }
+		10%  { opacity: 1; } /* fade in by 10% of time */
+		60%  { opacity: 1; } /* stay visible till 80% */
+		100% { opacity: 0; } /* fade out by 100% */
+		}
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<ul class="icons">
-								<li><a href="https://twitter.com/swastiksharmaaa" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-                                <li><a href="https://github.com/sharmaswastik" class="icon brands alt fa-github"><span class="label">GitHub</span> </a></li>
-                                <li><a href="https://linkedin.com/in/sharmaswastik" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span> </a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; SwastikSharma</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
 
-			</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+      /****************************************************
+       SECOND SLIDESHOW
+      *****************************************************/
+      #slideshow2 {
+        position: relative;
+        margin: 2em auto;
+        overflow: hidden;
+        min-height: 400px; /* ensures parent is not 0px tall */
+        max-width: 80%;
+      }
 
-	</body>
+      #slideshow2 figure {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        opacity: 0;
+        /* 
+          Uses a separate animation name: 'slideshow2' 
+          and a 12-second cycle (example). Adjust as needed.
+        */
+        animation: slideshow2 32s infinite;
+      }
+
+      #slideshow2 figure img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: contain;
+      }
+
+      #slideshow2 figure figcaption {
+        display: none;
+      }
+	  #one .inner header.major {
+		text-align: center;
+		}
+	 #two .inner header.major{
+		text-align: center;
+		}
+      /* If second slideshow has 3 images, stagger each one’s delay by 4 seconds */
+      #slideshow2 figure:nth-child(1) { animation-delay: 0s;  }
+      #slideshow2 figure:nth-child(2) { animation-delay: 4s;  }
+      #slideshow2 figure:nth-child(3) { animation-delay: 8s;  }
+      #slideshow2 figure:nth-child(4) { animation-delay: 12s; }
+      #slideshow2 figure:nth-child(5) { animation-delay: 16s; }
+      #slideshow2 figure:nth-child(6) { animation-delay: 20s; }
+      #slideshow2 figure:nth-child(7) { animation-delay: 24s; }
+      #slideshow2 figure:nth-child(8) { animation-delay: 28s; }
+
+      /* Keyframes for second slideshow */
+	  @keyframes slideshow2 {
+		0%   { opacity: 0; }
+		10%  { opacity: 1; } /* fade in by 10% of time */
+		60%  { opacity: 1; } /* stay visible till 80% */
+		100% { opacity: 0; } /* fade out by 100% */
+		}
+
+
+      /****************************************************
+       OPTIONAL: Adjust the banner section
+      *****************************************************/
+      #banner.style2 .inner {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Header -->
+      <header id="header">
+        <a href="index.html" class="logo"><strong>Swastik</strong> <span>Sharma</span></a>
+        <nav>
+          <a href="#menu">Menu</a>
+        </nav>
+      </header>
+
+      <!-- Menu -->
+      <nav id="menu">
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="researchwork.html">Research Work</a></li>
+          <li><a href="coursework.html">Coursework</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="teachings.html">Teaching Duties</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+        <ul class="actions stacked">
+          <li><a href="curriculumvitae.html" class="button primary fit">Curriculum Vitae</a></li>
+          <li><a href="mailto:swastiksharma@ieee.org" class="button fit">E-mail ME</a></li>
+        </ul>
+      </nav>
+
+      <!-- Banner -->
+      <section id="banner" class="style2">
+        <div class="inner">
+          <span class="image">
+            <img src="images/banner4.png" alt="" />
+          </span>
+        </div>
+      </section>
+
+      <!-- Main Content -->
+      <div id="main">
+
+        <!-- Section One (First Slideshow) -->
+        <section id="one">
+          <div class="inner">
+            <header class="major">
+              <h2>
+                My talk at Kendriya Vidyalaya No. 1 Jammu on 13th February 2024 on the topic, 
+                <br><em>"Innovation and Out-of-the-box Thinking"</em>
+              </h2>
+            </header>
+          </div>
+
+          <!-- BEGIN: First Slideshow -->
+          <div id="slideshow">
+            <figure>
+              <img src="images/img1.JPG" alt="Image 1">
+            </figure>
+            <figure>
+              <img src="images/img2.JPG" alt="Image 2">
+            </figure>
+            <figure>
+              <img src="images/img3.JPG" alt="Image 3">
+            </figure>
+            <figure>
+              <img src="images/img4.JPG" alt="Image 4">
+            </figure>
+            <figure>
+              <img src="images/img5.JPG" alt="Image 5">
+            </figure>
+            <figure>
+              <img src="images/img6.JPG" alt="Image 6">
+            </figure>
+            <figure>
+              <img src="images/img7.JPG" alt="Image 7">
+            </figure>
+			<figure>
+				<img src="images/img8.jpg" alt="Image 8">
+			  </figure>
+          </div>
+          <!-- END: First Slideshow -->
+        </section>
+
+        <!-- Section Two (Second Slideshow) -->
+        <section id="two">
+          <div class="inner">
+            <header class="major">
+				<h2>
+					Presented my research paper at IEEE PESGM 2024, Seattle, WA, USA (21st - 25th July 2024). 
+				  </h2>
+            </header>
+          </div>
+          <!-- BEGIN: Second Slideshow -->
+          <div id="slideshow2">
+            <figure>
+              <img src="images/1.JPEG" alt="Another Image 1">
+            </figure>
+            <figure>
+              <img src="images/2.JPEG" alt="Another Image 2">
+            </figure>
+            <figure>
+              <img src="images/3.JPEG" alt="Another Image 3">
+            </figure>
+			<figure>
+				<img src="images/4.JPEG" alt="Another Image 4">
+			  </figure>
+			  <figure>
+				<img src="images/5.JPEG" alt="Another Image 5">
+			  </figure>
+			  <figure>
+				<img src="images/6.JPEG" alt="Another Image 6">
+			  </figure>
+			  <figure>
+				<img src="images/7.JPEG" alt="Another Image 7">
+			  </figure>
+			  <figure>
+				<img src="images/8.JPEG" alt="Another Image 8">
+			  </figure>
+          </div>
+          <!-- END: Second Slideshow -->
+        </section>
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="inner">
+          <section>
+            <form method="post" action="#">
+              <div class="fields">
+                <div class="field half">
+                  <label for="name">Name</label>
+                  <input type="text" name="name" id="name" />
+                </div>
+                <div class="field half">
+                  <label for="email">Email</label>
+                  <input type="text" name="email" id="email" />
+                </div>
+                <div class="field">
+                  <label for="message">Message</label>
+                  <textarea name="message" id="message" rows="6"></textarea>
+                </div>
+              </div>
+              <ul class="actions">
+                <li><input type="submit" value="Send Message" class="primary" /></li>
+                <li><input type="reset" value="Clear" /></li>
+              </ul>
+            </form>
+          </section>
+          <section class="split">
+            <section>
+              <div class="contact-method">
+                <span class="icon solid alt fa-envelope"></span>
+                <h3>Email</h3>
+                <a href="#">swastiks21@iitk.ac.in</a><br>
+                <a href="#">swastiksharma@ieee.org</a><br>
+                <a href="#">swastiksharma33@gmail.com</a>
+              </div>
+            </section>
+            <section>
+              <div class="contact-method">
+                <span class="icon solid alt fa-home"></span>
+                <h3>Address</h3>
+                <span>ACES 315, ACES Building<br />
+                IIT Kanpur, Kalyanpur, Kanpur Nagar<br />PIN: 208016<br/>
+                Uttar Pradesh, India</span>
+              </div>
+            </section>
+          </section>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="inner">
+          <ul class="icons">
+            <li><a href="https://twitter.com/swastiksharmaaa" class="icon brands alt fa-twitter">
+              <span class="label">Twitter</span></a>
+            </li>
+            <li><a href="https://github.com/sharmaswastik" class="icon brands alt fa-github">
+              <span class="label">GitHub</span></a>
+            </li>
+            <li><a href="https://linkedin.com/in/sharmaswastik" class="icon brands alt fa-linkedin-in">
+              <span class="label">LinkedIn</span></a>
+            </li>
+          </ul>
+          <ul class="copyright">
+            <li>&copy; SwastikSharma</li>
+            <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+          </ul>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+  </body>
 </html>
