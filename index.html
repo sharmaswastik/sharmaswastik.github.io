@@ -348,50 +348,73 @@
                 
                 <div class="grid grid-cols-1 gap-6">
                     <!-- Project Card 1 -->
+                    
+                    <div class="glass-panel p-6 rounded-xl border-l-4 border-l-emerald-500 group hover:translate-x-2 transition-transform duration-300">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold group-hover:text-emerald-500 transition-colors">IDSO's DER Aggregation Tool</h4>
+                            <span class="px-2 py-1 bg-emerald-500/10 text-emerald-500 text-xs rounded font-mono">Python | Answer Set Programming</span>
+                        </div>
+                        <p id="desc-IDSO" class="text-[var(--text-muted)] text-sm mb-4">
+                            An open source tool to model Independent Distribution System Operator (IDSO) for aggregating distributed energy resources (DERs) and participating in wholesale electricity markets while ensuring grid safety and reliability. The tool uses optimization techniques to maximize DER revenue while adhering to grid constraints. The complete mathematical formulation can be founder <a href="https://arxiv.org/abs/2508.08187" class="text-emerald-400 underline">here</a>.
+                        </p>
+
+                        <!-- AI Feature: Explain -->
+                        <div id="ai-result-IDSO" class="hidden bg-emerald-500/10 border border-emerald-500/30 p-3 rounded mb-4 text-xs text-[var(--text-main)]"></div>
+
+                        <div class="flex gap-3 items-center">
+                            <a href="https://github.com/sharmaswastik/IDSOAggregationProblem" class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i data-lucide="github" class="w-3 h-3 mr-1"></i> Repository</a>
+                            <a href="https://arxiv.org/abs/2508.08187" class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i data-lucide="file-text" class="w-3 h-3 mr-1"></i> Documentation</a>
+                            <div class="flex-grow"></div>
+                            <button onclick="explainProject('desc-IDSO', 'ai-result-IDSO')" class="text-xs flex items-center bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-3 py-1 rounded shadow-lg transition-all">
+                                <i data-lucide="sparkles" class="w-3 h-3 mr-2"></i> Explain Simply
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Card 2 -->
                     <div class="glass-panel p-6 rounded-xl border-l-4 border-l-[var(--primary)] group hover:translate-x-2 transition-transform duration-300 relative">
                         <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-xl font-bold group-hover:text-[var(--primary)] transition-colors">Project Alpha: Neural Decay</h4>
-                            <span class="px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] text-xs rounded font-mono">Python / TensorFlow</span>
+                            <h4 class="text-xl font-bold group-hover:text-[var(--primary)] transition-colors">Three Phase Unbalanced LinDistFlow</h4>
+                            <span class="px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] text-xs rounded font-mono">Python | Pyomo</span>
                         </div>
                         <p id="desc-project-alpha" class="text-[var(--text-muted)] text-sm mb-4">
-                            Investigating the rate of signal decay in artificial recurrent neural networks when subjected to noise, simulating biological synaptic fatigue to create more resilient AI architectures.
+                           This project focuses on developing a three-phase unbalanced LinDistFlow model using Python. The model aims to accurately represent power flow in distribution networks, accounting for unbalanced loads and phases.
                         </p>
                         
                         <!-- AI Feature: Explain -->
                         <div id="ai-result-project-alpha" class="hidden bg-[var(--primary)]/10 border border-[var(--primary)]/30 p-3 rounded mb-4 text-xs text-[var(--text-main)]"></div>
 
                         <div class="flex gap-3 items-center">
-                            <a href="#" class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i data-lucide="github" class="w-3 h-3 mr-1"></i> Code</a>
-                            <a href="#" class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i data-lucide="external-link" class="w-3 h-3 mr-1"></i> Demo</a>
+                            <a href="https://github.com/sharmaswastik/Three-Phase-Distribution-Network-OPF" class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i data-lucide="github" class="w-3 h-3 mr-1"></i> Repository</a>
                             <div class="flex-grow"></div>
                             <button onclick="explainProject('desc-project-alpha', 'ai-result-project-alpha')" class="text-xs flex items-center bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white px-3 py-1 rounded shadow-lg transition-all">
                                 <i data-lucide="sparkles" class="w-3 h-3 mr-2"></i> Explain Simply
                             </button>
                         </div>
                     </div>
-
-                    <!-- Project Card 2 -->
-                    <div class="glass-panel p-6 rounded-xl border-l-4 border-l-emerald-500 group hover:translate-x-2 transition-transform duration-300">
+                    
+                    <!-- Project Card 3 -->
+                    <div class="glass-panel p-6 rounded-xl border-l-4 border-l-amber-300 group hover:translate-x-2 transition-transform duration-300 relative">
                         <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-xl font-bold group-hover:text-emerald-500 transition-colors">BioVis 3.0</h4>
-                            <span class="px-2 py-1 bg-emerald-500/10 text-emerald-500 text-xs rounded font-mono">React / D3.js</span>
+                            <h4 class="text-xl font-bold group-hover:text-amber-300 transition-colors">Meta-Reinforcement Learning</h4>
+                            <span class="px-2 py-1 bg-amber-300/10 text-amber-300 text-xs rounded font-mono">Python | Pytorch</span>
                         </div>
-                        <p id="desc-biovis" class="text-[var(--text-muted)] text-sm mb-4">
-                            An open-source visualization tool for complex protein folding structures utilizing WebGL for real-time rendering of macromolecular data. Currently used by 30+ labs worldwide.
+                        <p id="desc-project-RL2" class="text-[var(--text-muted)] text-sm mb-4">
+                           An implementation of the paper RL2: Fast Reinforcement Learning via Slow Reinforcement Learning is available <a href="https://arxiv.org/pdf/1611.02779.pdf" class="text-amber-400 underline">here</a>. We used GRUs to train our model, and the policy is optimized using a simple actor-critic algorithm, with the actor being the RNN agent and the baseline/critic network being a simple MLP. 
                         </p>
-
+                        
                         <!-- AI Feature: Explain -->
-                        <div id="ai-result-biovis" class="hidden bg-emerald-500/10 border border-emerald-500/30 p-3 rounded mb-4 text-xs text-[var(--text-main)]"></div>
+                        <div id="ai-result-project-RL2" class="hidden bg-amber-300/10 border border-amber-300/30 p-3 rounded mb-4 text-xs text-[var(--text-main)]"></div>
 
                         <div class="flex gap-3 items-center">
-                            <a href="#" class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i data-lucide="github" class="w-3 h-3 mr-1"></i> Repository</a>
-                            <a href="#" class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i data-lucide="file-text" class="w-3 h-3 mr-1"></i> Documentation</a>
+                            <a href="https://github.com/sharmaswastik/EE-675A-Course-Project" class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i data-lucide="github" class="w-3 h-3 mr-1"></i> Repository</a>
                             <div class="flex-grow"></div>
-                            <button onclick="explainProject('desc-biovis', 'ai-result-biovis')" class="text-xs flex items-center bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-3 py-1 rounded shadow-lg transition-all">
+                            <button onclick="explainProject('desc-project-RL2', 'ai-result-project-RL2')" class="text-xs flex items-center bg-gradient-to-r from-amber-300 to-amber-200 hover:from-amber-600 hover:to-amber-200 text-white px-3 py-1 rounded shadow-lg transition-all">
                                 <i data-lucide="sparkles" class="w-3 h-3 mr-2"></i> Explain Simply
                             </button>
                         </div>
                     </div>
+
                 </div>
             </section>
 
@@ -807,7 +830,7 @@
 
     <script>
         // --- GEMINI API CONFIGURATION ---
-        const apiKey = ""; // TODO: INSERT YOUR API KEY HERE
+        const apiKey = "REMOVED_API_KEY"; // TODO: INSERT YOUR API KEY HERE
 
         async function callGeminiAPI(prompt) {
             if (!apiKey) {
@@ -815,7 +838,7 @@
                 return "Please add your Gemini API Key in the code to use this feature.";
             }
 
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${REMOVED_API_KEY}`;
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
             
             const payload = {
                 contents: [{
