@@ -807,15 +807,15 @@
                         <input type="hidden" value="https://your-website-url.com/thanks.html"> 
                         <div>
                             <label class="block text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider mb-1">Name</label>
-                            <input type="text" class="w-full bg-[var(--bg-body)]/50 border border-[var(--glass-border)] rounded p-3 text-[var(--text-main)] focus:border-[var(--primary)] focus:outline-none transition-colors" placeholder="John Doe">
+                            <input type="text" name="name"class="w-full bg-[var(--bg-body)]/50 border border-[var(--glass-border)] rounded p-3 text-[var(--text-main)] focus:border-[var(--primary)] focus:outline-none transition-colors" placeholder="John Doe">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider mb-1">Your Email</label>
-                            <input type="email" class="w-full bg-[var(--bg-body)]/50 border border-[var(--glass-border)] rounded p-3 text-[var(--text-main)] focus:border-[var(--primary)] focus:outline-none transition-colors" placeholder="colleague@institute.edu">
+                            <input type="email" name="email" class="w-full bg-[var(--bg-body)]/50 border border-[var(--glass-border)] rounded p-3 text-[var(--text-main)] focus:border-[var(--primary)] focus:outline-none transition-colors" placeholder="colleague@institute.edu">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider mb-1">Message</label>
-                            <textarea id="message-box" rows="6" class="w-full bg-[var(--bg-body)]/50 border border-[var(--glass-border)] rounded p-3 text-[var(--text-main)] focus:border-[var(--primary)] focus:outline-none transition-colors" placeholder="Let's collaborate on..."></textarea>
+                            <textarea id="message-box" name="message" rows="6" class="w-full bg-[var(--bg-body)]/50 border border-[var(--glass-border)] rounded p-3 text-[var(--text-main)] focus:border-[var(--primary)] focus:outline-none transition-colors" placeholder="Let's collaborate on..."></textarea>
                         </div>
                         <button type="submit" class="bg-[var(--primary)] hover:opacity-90 text-white px-6 py-2 rounded font-medium transition-colors w-full">
                             Send Message
