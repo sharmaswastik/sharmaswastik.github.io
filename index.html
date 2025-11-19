@@ -1,42 +1,52 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light"> <!-- Default to light mode -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swastik Sharma - Portfolio</title>
-    <link rel = "icon" href = "V1.0/images/Logo.png" type = "image/x-icon">
+    <link rel="icon" href="V1.0/images/Logo.png" type="image/x-icon">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
 
     <style>
         :root {
-            /* Default (Dark) Variables */
-            --bg-body: #0f172a;      /* Slate 900 */
-            --primary: #38bdf8;      /* Sky 400 */
+            /* Default (Dark) Variables - Obsidian & Gold */
+            --bg-body: #18181B;
+            /* Zinc 950 */
+            --primary: #FBBF24;
+            /* Amber 400 */
             --text-main: #ffffff;
-            --text-muted: #94a3b8;   /* Slate 400 */
-            --glass-bg: rgba(15, 23, 42, 0.65);
+            --text-muted: #A1A1AA;
+            /* Zinc 400 */
+            --glass-bg: rgba(24, 24, 27, 0.65);
             --glass-border: rgba(255, 255, 255, 0.08);
-            --particle-color: #38bdf8;
-            --card-hover: rgba(255, 255, 255, 0.05);
+            --particle-color: #FBBF24;
+            --card-hover: rgba(251, 191, 36, 0.05);
         }
 
         /* Light Mode Overrides */
         html[data-theme="light"] {
-            --bg-body: #f0f9ff;      /* Sky 50 */
-            --primary: #0284c7;      /* Sky 600 */
-            --text-main: #0f172a;    /* Slate 900 */
-            --text-muted: #475569;   /* Slate 600 */
-            --glass-bg: rgba(255, 255, 255, 0.75);
-            --glass-border: rgba(2, 132, 199, 0.15); /* Slight blue tint border */
-            --particle-color: #0ea5e9; /* Sky 500 */
-            --card-hover: rgba(2, 132, 199, 0.05);
+            --bg-body: #FFFBEB;
+            /* Amber 50 */
+            --primary: #D97706;
+            /* Amber 600 */
+            --text-main: #27272A;
+            /* Zinc 800 */
+            --text-muted: #52525B;
+            /* Zinc 600 */
+            --glass-bg: rgba(255, 255, 255, 0.6);
+            --glass-border: rgba(217, 119, 6, 0.15);
+            --particle-color: #D97706;
+            --card-hover: rgba(217, 119, 6, 0.05);
         }
 
         body {
@@ -52,9 +62,11 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: transparent;
         }
+
         ::-webkit-scrollbar-thumb {
             background: var(--text-muted);
             opacity: 0.2;
@@ -70,9 +82,10 @@
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s, border-color 0.3s;
         }
-        
+
         .glass-panel:hover {
-            background-color: var(--card-hover); /* Subtle highlight on hover */
+            background-color: var(--card-hover);
+            /* Subtle highlight on hover */
         }
 
         /* Typography */
@@ -100,7 +113,7 @@
             position: relative;
             color: var(--text-muted);
         }
-        
+
         .nav-item:hover {
             color: var(--text-main);
         }
@@ -116,7 +129,8 @@
             transition: width 0.3s ease;
         }
 
-        .nav-item:hover::after, .nav-item.active::after {
+        .nav-item:hover::after,
+        .nav-item.active::after {
             width: 100%;
         }
 
@@ -134,20 +148,20 @@
             height: 100%;
             z-index: -1;
         }
-        
+
         /* Toast Notification */
         #toast {
-            visibility: hidden; 
-            min-width: 250px; 
-            background-color: var(--bg-body); 
-            color: var(--text-main); 
-            text-align: center; 
-            border-radius: 8px; 
-            padding: 16px; 
-            position: fixed; 
-            z-index: 50; 
-            left: 50%; 
-            bottom: 30px; 
+            visibility: hidden;
+            min-width: 250px;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            text-align: center;
+            border-radius: 8px;
+            padding: 16px;
+            position: fixed;
+            z-index: 50;
+            left: 50%;
+            bottom: 30px;
             transform: translateX(-50%);
             font-size: 14px;
             opacity: 0;
@@ -161,13 +175,14 @@
             opacity: 1;
             bottom: 50px;
         }
-        
+
         /* Gallery Grid */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 1rem;
         }
+
         .gallery-item {
             position: relative;
             overflow: hidden;
@@ -175,25 +190,29 @@
             aspect-ratio: 1;
             cursor: pointer;
         }
+
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
+
         .gallery-item:hover img {
             transform: scale(1.1);
         }
+
         .gallery-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(0,0,0,0.6);
+            background: rgba(0, 0, 0, 0.6);
             display: flex;
             align-items: center;
             justify-content: center;
             opacity: 0;
             transition: opacity 0.3s ease;
         }
+
         .gallery-item:hover .gallery-overlay {
             opacity: 1;
         }
@@ -202,29 +221,84 @@
         .animate-pulse-fast {
             animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
+
+        /* Lightbox */
+        #lightbox {
+            position: fixed;
+            z-index: 100;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        #lightbox.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        #lightbox.active img {
+            transform: scale(1);
+        }
+
+        /* Accessibility & Focus */
+        button:focus-visible,
+        a:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        /* Mobile Touch Targets */
+        @media (max-width: 768px) {
+            .nav-item {
+                padding: 12px 16px;
+                /* Larger touch target */
+            }
+        }
     </style>
 </head>
+
 <body class="min-h-screen md:h-screen flex flex-col md:flex-row overflow-x-hidden transition-colors duration-500">
 
     <!-- Background Animation Layer -->
     <canvas id="bg-canvas"></canvas>
 
     <!-- LEFT PANEL: Profile & Static Info -->
-    <aside class="w-full md:w-1/3 lg:w-1/4 h-auto md:h-full p-6 md:p-8 flex flex-col justify-between relative z-10 border-r border-gray-500/10 bg-[var(--bg-body)]/80 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none transition-colors duration-500">
+    <aside
+        class="w-full md:w-1/3 lg:w-1/4 h-auto md:h-full p-6 md:p-8 flex flex-col justify-between relative z-10 border-r border-gray-500/10 bg-[var(--bg-body)]/80 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none transition-colors duration-500">
         <div>
             <!-- Theme Toggle -->
             <div class="absolute top-6 right-6 md:left-6 md:right-auto">
-                <button onclick="toggleTheme()" class="p-2 rounded-full glass-panel hover:scale-110 transition-transform text-[var(--primary)]" title="Toggle Dark/Light Mode">
+                <button onclick="toggleTheme()"
+                    class="p-2 rounded-full glass-panel hover:scale-110 transition-transform text-[var(--primary)]"
+                    title="Toggle Dark/Light Mode">
                     <i data-lucide="sun" id="theme-icon-sun" class="w-5 h-5"></i>
                     <i data-lucide="moon" id="theme-icon-moon" class="hidden w-5 h-5"></i>
                 </button>
             </div>
-            
+
             <div class="mt-12 mb-6 relative group">
                 <!-- EDIT: Profile Image Placeholder -->
-                <div class="w-24 h-24 md:w-48 md:h-48 rounded-full bg-slate-700 overflow-hidden border-2 border-[var(--primary)] shadow-[0_0_15px_rgba(56,189,248,0.3)]">
-                   <!-- Use a real image URL below, e.g., src="photo.jpg" -->
-                   <img src="V1.0/images/pic15.png" alt="Profile" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                <div
+                    class="w-24 h-24 md:w-48 md:h-48 rounded-full bg-slate-700 overflow-hidden border-2 border-[var(--primary)] shadow-[0_0_15px_rgba(56,189,248,0.3)]">
+                    <!-- Use a real image URL below, e.g., src="photo.jpg" -->
+                    <img src="V1.0/images/pic15.png" alt="Profile"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500">
                 </div>
             </div>
 
@@ -233,15 +307,24 @@
             <h2 class="text-[var(--primary)] font-mono text-sm mb-6">Ph.D. Candidate at IIT Kanpur</h2>
 
             <p class="text-[var(--text-muted)] text-sm leading-relaxed mb-8 max-w-xs">
-                Exploring the intersection of transmission and distribution system operations, paving a way for improving flexibility.
+                Exploring the intersection of transmission and distribution system operations, paving a way for
+                improving flexibility.
             </p>
 
             <!-- Social Links -->
             <div class="flex space-x-4">
-                <a href="https://github.com/sharmaswastik" class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors"><i data-lucide="github"></i></a>
-                <a href="https://www.linkedin.com/in/sharmaswastik/" class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors"><i data-lucide="linkedin"></i></a>
-                <a href="mailto:swastiksharma@ieee.org" class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors"><i data-lucide="mail"></i></a>
-                <a href="https://scholar.google.com/citations?user=2Ofr4VEAAAAJ&hl=en" class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors"><i data-lucide="graduation-cap"></i></a>
+                <a href="https://github.com/sharmaswastik"
+                    class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors"><i
+                        data-lucide="github"></i></a>
+                <a href="https://www.linkedin.com/in/sharmaswastik/"
+                    class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors"><i
+                        data-lucide="linkedin"></i></a>
+                <a href="mailto:swastiksharma@ieee.org"
+                    class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors"><i
+                        data-lucide="mail"></i></a>
+                <a href="https://scholar.google.com/citations?user=2Ofr4VEAAAAJ&hl=en"
+                    class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors"><i
+                        data-lucide="graduation-cap"></i></a>
             </div>
         </div>
 
@@ -261,20 +344,29 @@
 
     <!-- RIGHT PANEL: Dynamic Content Area -->
     <main class="flex-1 h-full relative z-10 flex flex-col">
-        
+
         <!-- Navigation (Tabs) -->
-        <nav id="main-nav" class="sticky top-0 z-40 w-full p-6 md:p-8 flex flex-wrap justify-center md:justify-start gap-8 border-b border-gray-500/10 bg-[var(--bg-body)]/50 backdrop-blur-sm transition-colors duration-500">
-            <button onclick="showSection('about')" class="nav-item active text-sm font-medium uppercase tracking-wider py-2 pb-1">About</button>
-            <button onclick="showSection('research')" class="nav-item text-sm font-medium uppercase tracking-wider py-2 pb-1">Research</button>
-            <button onclick="showSection('teaching')" class="nav-item text-sm font-medium uppercase tracking-wider py-2 pb-1">Teaching</button>
-            <button onclick="showSection('gallery')" class="nav-item text-sm font-medium uppercase tracking-wider py-2 pb-1">Gallery</button>
-            <button onclick="showSection('publications')" class="nav-item text-sm font-medium uppercase tracking-wider py-2 pb-1">Publications</button>
-            <button onclick="showSection('contact')" class="nav-item text-sm font-medium uppercase tracking-wider py-2 pb-1">Contact</button>
+        <nav id="main-nav"
+            class="sticky top-0 z-40 w-full p-6 md:p-8 flex flex-wrap justify-center md:justify-start gap-8 border-b border-gray-500/10 bg-[var(--bg-body)]/50 backdrop-blur-sm transition-colors duration-500">
+            <button onclick="showSection('about')"
+                class="nav-item active text-sm font-medium uppercase tracking-wider py-2 pb-1">About</button>
+            <button onclick="showSection('research')"
+                class="nav-item text-sm font-medium uppercase tracking-wider py-2 pb-1">Research</button>
+            <button onclick="showSection('teaching')"
+                class="nav-item text-sm font-medium uppercase tracking-wider py-2 pb-1">Teaching</button>
+            <button onclick="showSection('gallery')"
+                class="nav-item text-sm font-medium uppercase tracking-wider py-2 pb-1">Gallery</button>
+            <button onclick="showSection('publications')"
+                class="nav-item text-sm font-medium uppercase tracking-wider py-2 pb-1">Publications</button>
+            <button onclick="showSection('reads')"
+                class="nav-item text-sm font-medium uppercase tracking-wider py-2 pb-1">Interesting Reads</button>
+            <button onclick="showSection('contact')"
+                class="nav-item text-sm font-medium uppercase tracking-wider py-2 pb-1">Contact</button>
         </nav>
 
         <!-- Scrollable Content Container -->
         <div class="flex-1 overflow-y-auto p-6 md:p-12 scroll-smooth relative">
-            
+
             <!-- SECTION: ABOUT -->
             <section id="about" class="max-w-3xl fade-in text-[var(--text-main)]">
                 <h3 class="text-2xl font-bold mb-6 flex items-center">
@@ -283,7 +375,23 @@
                 <div class="glass-panel p-8 rounded-xl mb-8">
                     <p class="text-[var(--text-muted)] leading-loose mb-4 transition-colors">
                         <!-- EDIT: Your Bio -->
-                        Technological advancements are driving the rapid integration of renewables into the grid. However, they face challenges of intermittency and variability (quite sad, isn't it?), which pose difficulties for system operators in maintaining a consistent supply-demand balance. As a <strong class="text-[var(--text-main)]">Prime Minister's Research Fellow (PMRF)</strong> at the <strong class="text-[var(--text-main)]">Indian Institute of Technology Kanpur</strong>, my research focuses on <strong class="text-[var(--text-main)]">Transactive Energy System Design, Independent Distribution System Operator, Flexibility services, and Electricity Markets</strong>. My goal is to enhance grid reliability and leverage renewable power sources. With a Bachelor's degree from the <strong class="text-[var(--text-main)]">National Institute of Technology Srinagar</strong>, I possess a comprehensive understanding of theory and practice (or at least I believe so). I am enthusiastic about applying my skills and knowledge to bring about positive changes in the energy sector by enhancing grid reliability through distribution-side flexibility and innovating electricity market operations (that lengthy sentence reflects my excitement!). The potential for innovation in the energy sector is limitless, and I firmly believe (emphasis on "I believe") that this research has the power to strengthen the grid, increase renewable deployment, positively impact the climate (Go Greta!), and enhance grid resiliency – truly a win-win situation.
+                        Technological advancements are driving the rapid integration of renewables into the grid.
+                        However, they face challenges of intermittency and variability (quite sad, isn't it?), which
+                        pose difficulties for system operators in maintaining a consistent supply-demand balance. As a
+                        <strong class="text-[var(--text-main)]">Prime Minister's Research Fellow (PMRF)</strong> at the
+                        <strong class="text-[var(--text-main)]">Indian Institute of Technology Kanpur</strong>, my
+                        research focuses on <strong class="text-[var(--text-main)]">Transactive Energy System Design,
+                            Independent Distribution System Operator, Flexibility services, and Electricity
+                            Markets</strong>. My goal is to enhance grid reliability and leverage renewable power
+                        sources. With a Bachelor's degree from the <strong class="text-[var(--text-main)]">National
+                            Institute of Technology Srinagar</strong>, I possess a comprehensive understanding of theory
+                        and practice (or at least I believe so). I am enthusiastic about applying my skills and
+                        knowledge to bring about positive changes in the energy sector by enhancing grid reliability
+                        through distribution-side flexibility and innovating electricity market operations (that lengthy
+                        sentence reflects my excitement!). The potential for innovation in the energy sector is
+                        limitless, and I firmly believe (emphasis on "I believe") that this research has the power to
+                        strengthen the grid, increase renewable deployment, positively impact the climate (Go Greta!),
+                        and enhance grid resiliency – truly a win-win situation.
                     </p>
                 </div>
 
@@ -294,16 +402,16 @@
                             <i data-lucide="file-text" class="mr-2 text-purple-400"></i> Curriculum Vitae
                         </h4>
                     </div> -->
-                    
-                    <!-- PDF Viewer Container -->
-                    <!-- <div class="w-full h-screen bg-[var(--bg-body)]/50 rounded-lg border border-[var(--glass-border)] flex items-center justify-center relative overflow-hidden group"> -->
-                        <!-- Placeholder Background Text -->
-                        <!-- <div class="absolute inset-0 flex flex-col items-center justify-center text-[var(--text-muted)] p-4 text-center z-0 pointer-events-none">
+
+                <!-- PDF Viewer Container -->
+                <!-- <div class="w-full h-screen bg-[var(--bg-body)]/50 rounded-lg border border-[var(--glass-border)] flex items-center justify-center relative overflow-hidden group"> -->
+                <!-- Placeholder Background Text -->
+                <!-- <div class="absolute inset-0 flex flex-col items-center justify-center text-[var(--text-muted)] p-4 text-center z-0 pointer-events-none">
                             <i data-lucide="file" class="w-12 h-12 mb-3 opacity-20"></i>
                         </div> -->
-                        <!-- Actual Iframe -->
-                        <!-- Note: If the file doesn't exist, this might show 404. Put your file in the root folder. -->
-                        <!-- <iframe src="V1.0/PDF/CV.SwastikSharma.pdf#toolbar=0&navpanes=0&scrollbar=0" class="w-full h-full relative z-10 opacity-80 hover:opacity-100 transition-opacity" title="Resume PDF"></iframe>
+                <!-- Actual Iframe -->
+                <!-- Note: If the file doesn't exist, this might show 404. Put your file in the root folder. -->
+                <!-- <iframe src="V1.0/PDF/CV.SwastikSharma.pdf#toolbar=0&navpanes=0&scrollbar=0" class="w-full h-full relative z-10 opacity-80 hover:opacity-100 transition-opacity" title="Resume PDF"></iframe>
                     </div>
                 </div> -->
 
@@ -313,21 +421,24 @@
                         <i data-lucide="network" class="text-[var(--primary)] mt-1 mr-3"></i>
                         <div>
                             <h5 class="font-bold text-sm">DER Aggregation</h5>
-                            <p class="text-xs text-[var(--text-muted)] mt-1">Designing optimization tools to aggregate DERs for Wholesale Market participation. </p>
+                            <p class="text-xs text-[var(--text-muted)] mt-1">Designing optimization tools to aggregate
+                                DERs for Wholesale Market participation. </p>
                         </div>
                     </div>
                     <div class="glass-panel p-4 rounded-lg flex items-start">
                         <i data-lucide="user" class="text-[var(--primary)] mt-1 mr-3"></i>
                         <div>
                             <h5 class="font-bold text-sm">Independent Distribution System Operator (IDSO)</h5>
-                            <p class="text-xs text-[var(--text-muted)] mt-1">Modelling the role of IDSO to perform grid-safe aggregation and participate in wholesale markets.</p>
+                            <p class="text-xs text-[var(--text-muted)] mt-1">Modelling the role of IDSO to perform
+                                grid-safe aggregation and participate in wholesale markets.</p>
                         </div>
                     </div>
                     <div class="glass-panel p-4 rounded-lg flex items-start">
                         <i data-lucide="ev-charger" class="text-[var(--primary)] mt-1 mr-3"></i>
                         <div>
                             <h5 class="font-bold text-sm">DRL Agents for DERs</h5>
-                            <p class="text-xs text-[var(--text-muted)] mt-1">Deep reinforcement learning (DRL) based transactive agents for DERs</p>
+                            <p class="text-xs text-[var(--text-muted)] mt-1">Deep reinforcement learning (DRL) based
+                                transactive agents for DERs</p>
                         </div>
                     </div>
                     <div class="glass-panel p-4 rounded-lg flex items-start">
@@ -345,71 +456,109 @@
                 <h3 class="text-2xl font-bold mb-6 flex items-center">
                     <i data-lucide="microscope" class="mr-3 text-[var(--primary)]"></i> Projects
                 </h3>
-                
+
                 <div class="grid grid-cols-1 gap-6">
                     <!-- Project Card 1 -->
-                    
-                    <div class="glass-panel p-6 rounded-xl border-l-4 border-l-emerald-500 group hover:translate-x-2 transition-transform duration-300">
+
+                    <div
+                        class="glass-panel p-6 rounded-xl border-l-4 border-l-emerald-500 group hover:translate-x-2 transition-transform duration-300">
                         <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-xl font-bold group-hover:text-emerald-500 transition-colors">IDSO's DER Aggregation Tool</h4>
-                            <span class="px-2 py-1 bg-emerald-500/10 text-emerald-500 text-xs rounded font-mono">Python | Answer Set Programming</span>
+                            <h4 class="text-xl font-bold group-hover:text-emerald-500 transition-colors">IDSO's DER
+                                Aggregation Tool</h4>
+                            <span class="px-2 py-1 bg-emerald-500/10 text-emerald-500 text-xs rounded font-mono">Python
+                                | Answer Set Programming</span>
                         </div>
                         <p id="desc-IDSO" class="text-[var(--text-muted)] text-sm mb-4">
-                            An open source tool to model Independent Distribution System Operator (IDSO) for aggregating distributed energy resources (DERs) and participating in wholesale electricity markets while ensuring grid safety and reliability. The tool uses optimization techniques to maximize DER revenue while adhering to grid constraints. The complete mathematical formulation can be founder <a href="https://arxiv.org/abs/2508.08187" class="text-emerald-400 underline">here</a>.
+                            An open source tool to model Independent Distribution System Operator (IDSO) for aggregating
+                            distributed energy resources (DERs) and participating in wholesale electricity markets while
+                            ensuring grid safety and reliability. The tool uses optimization techniques to maximize DER
+                            revenue while adhering to grid constraints. The complete mathematical formulation can be
+                            founder <a href="https://arxiv.org/abs/2508.08187"
+                                class="text-emerald-400 underline">here</a>.
                         </p>
 
                         <!-- AI Feature: Explain -->
-                        <div id="ai-result-IDSO" class="hidden bg-emerald-500/10 border border-emerald-500/30 p-3 rounded mb-4 text-xs text-[var(--text-main)]"></div>
+                        <div id="ai-result-IDSO"
+                            class="hidden bg-emerald-500/10 border border-emerald-500/30 p-3 rounded mb-4 text-xs text-[var(--text-main)]">
+                        </div>
 
                         <div class="flex gap-3 items-center">
-                            <a href="https://github.com/sharmaswastik/IDSOAggregationProblem" class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i data-lucide="github" class="w-3 h-3 mr-1"></i> Repository</a>
-                            <a href="https://arxiv.org/abs/2508.08187" class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i data-lucide="file-text" class="w-3 h-3 mr-1"></i> Documentation</a>
+                            <a href="https://github.com/sharmaswastik/IDSOAggregationProblem"
+                                class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i
+                                    data-lucide="github" class="w-3 h-3 mr-1"></i> Repository</a>
+                            <a href="https://arxiv.org/abs/2508.08187"
+                                class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i
+                                    data-lucide="file-text" class="w-3 h-3 mr-1"></i> Documentation</a>
                             <div class="flex-grow"></div>
-                            <button onclick="explainProject('desc-IDSO', 'ai-result-IDSO')" class="text-xs flex items-center bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-3 py-1 rounded shadow-lg transition-all">
+                            <button onclick="explainProject('desc-IDSO', 'ai-result-IDSO')"
+                                class="text-xs flex items-center bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-3 py-1 rounded shadow-lg transition-all">
                                 <i data-lucide="sparkles" class="w-3 h-3 mr-2"></i> Explain Simply
                             </button>
                         </div>
                     </div>
-                    
+
                     <!-- Project Card 2 -->
-                    <div class="glass-panel p-6 rounded-xl border-l-4 border-l-[var(--primary)] group hover:translate-x-2 transition-transform duration-300 relative">
+                    <div
+                        class="glass-panel p-6 rounded-xl border-l-4 border-l-[var(--primary)] group hover:translate-x-2 transition-transform duration-300 relative">
                         <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-xl font-bold group-hover:text-[var(--primary)] transition-colors">Three Phase Unbalanced LinDistFlow</h4>
-                            <span class="px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] text-xs rounded font-mono">Python | Pyomo</span>
+                            <h4 class="text-xl font-bold group-hover:text-[var(--primary)] transition-colors">Three
+                                Phase Unbalanced LinDistFlow</h4>
+                            <span
+                                class="px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] text-xs rounded font-mono">Python
+                                | Pyomo</span>
                         </div>
                         <p id="desc-project-alpha" class="text-[var(--text-muted)] text-sm mb-4">
-                           This project focuses on developing a three-phase unbalanced LinDistFlow model using Python. The model aims to accurately represent power flow in distribution networks, accounting for unbalanced loads and phases.
+                            This project focuses on developing a three-phase unbalanced LinDistFlow model using Python.
+                            The model aims to accurately represent power flow in distribution networks, accounting for
+                            unbalanced loads and phases.
                         </p>
-                        
+
                         <!-- AI Feature: Explain -->
-                        <div id="ai-result-project-alpha" class="hidden bg-[var(--primary)]/10 border border-[var(--primary)]/30 p-3 rounded mb-4 text-xs text-[var(--text-main)]"></div>
+                        <div id="ai-result-project-alpha"
+                            class="hidden bg-[var(--primary)]/10 border border-[var(--primary)]/30 p-3 rounded mb-4 text-xs text-[var(--text-main)]">
+                        </div>
 
                         <div class="flex gap-3 items-center">
-                            <a href="https://github.com/sharmaswastik/Three-Phase-Distribution-Network-OPF" class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i data-lucide="github" class="w-3 h-3 mr-1"></i> Repository</a>
+                            <a href="https://github.com/sharmaswastik/Three-Phase-Distribution-Network-OPF"
+                                class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i
+                                    data-lucide="github" class="w-3 h-3 mr-1"></i> Repository</a>
                             <div class="flex-grow"></div>
-                            <button onclick="explainProject('desc-project-alpha', 'ai-result-project-alpha')" class="text-xs flex items-center bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white px-3 py-1 rounded shadow-lg transition-all">
+                            <button onclick="explainProject('desc-project-alpha', 'ai-result-project-alpha')"
+                                class="text-xs flex items-center bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white px-3 py-1 rounded shadow-lg transition-all">
                                 <i data-lucide="sparkles" class="w-3 h-3 mr-2"></i> Explain Simply
                             </button>
                         </div>
                     </div>
-                    
+
                     <!-- Project Card 3 -->
-                    <div class="glass-panel p-6 rounded-xl border-l-4 border-l-amber-300 group hover:translate-x-2 transition-transform duration-300 relative">
+                    <div
+                        class="glass-panel p-6 rounded-xl border-l-4 border-l-amber-300 group hover:translate-x-2 transition-transform duration-300 relative">
                         <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-xl font-bold group-hover:text-amber-300 transition-colors">Meta-Reinforcement Learning</h4>
-                            <span class="px-2 py-1 bg-amber-300/10 text-amber-300 text-xs rounded font-mono">Python | Pytorch</span>
+                            <h4 class="text-xl font-bold group-hover:text-amber-300 transition-colors">
+                                Meta-Reinforcement Learning</h4>
+                            <span class="px-2 py-1 bg-amber-300/10 text-amber-300 text-xs rounded font-mono">Python |
+                                Pytorch</span>
                         </div>
                         <p id="desc-project-RL2" class="text-[var(--text-muted)] text-sm mb-4">
-                           An implementation of the paper RL2: Fast Reinforcement Learning via Slow Reinforcement Learning is available <a href="https://arxiv.org/pdf/1611.02779.pdf" class="text-amber-400 underline">here</a>. We used GRUs to train our model, and the policy is optimized using a simple actor-critic algorithm, with the actor being the RNN agent and the baseline/critic network being a simple MLP. 
+                            An implementation of the paper RL2: Fast Reinforcement Learning via Slow Reinforcement
+                            Learning is available <a href="https://arxiv.org/pdf/1611.02779.pdf"
+                                class="text-amber-400 underline">here</a>. We used GRUs to train our model, and the
+                            policy is optimized using a simple actor-critic algorithm, with the actor being the RNN
+                            agent and the baseline/critic network being a simple MLP.
                         </p>
-                        
+
                         <!-- AI Feature: Explain -->
-                        <div id="ai-result-project-RL2" class="hidden bg-amber-300/10 border border-amber-300/30 p-3 rounded mb-4 text-xs text-[var(--text-main)]"></div>
+                        <div id="ai-result-project-RL2"
+                            class="hidden bg-amber-300/10 border border-amber-300/30 p-3 rounded mb-4 text-xs text-[var(--text-main)]">
+                        </div>
 
                         <div class="flex gap-3 items-center">
-                            <a href="https://github.com/sharmaswastik/EE-675A-Course-Project" class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i data-lucide="github" class="w-3 h-3 mr-1"></i> Repository</a>
+                            <a href="https://github.com/sharmaswastik/EE-675A-Course-Project"
+                                class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i
+                                    data-lucide="github" class="w-3 h-3 mr-1"></i> Repository</a>
                             <div class="flex-grow"></div>
-                            <button onclick="explainProject('desc-project-RL2', 'ai-result-project-RL2')" class="text-xs flex items-center bg-gradient-to-r from-amber-300 to-amber-200 hover:from-amber-600 hover:to-amber-200 text-white px-3 py-1 rounded shadow-lg transition-all">
+                            <button onclick="explainProject('desc-project-RL2', 'ai-result-project-RL2')"
+                                class="text-xs flex items-center bg-gradient-to-r from-amber-300 to-amber-200 hover:from-amber-600 hover:to-amber-200 text-white px-3 py-1 rounded shadow-lg transition-all">
                                 <i data-lucide="sparkles" class="w-3 h-3 mr-2"></i> Explain Simply
                             </button>
                         </div>
@@ -423,20 +572,22 @@
                 <h3 class="text-2xl font-bold mb-6 flex items-center">
                     <i data-lucide="presentation" class="mr-3 text-[var(--primary)]"></i> PMRF Teaching Duties
                 </h3>
-                
+
                 <div class="space-y-6">
 
                     <!-- Teaching Role 6 -->
                     <div class="glass-panel p-6 rounded-xl">
                         <div class="flex justify-between items-start mb-2">
                             <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">Chhatrapati Shahu Ji Maharaj University (CSJMU), Kanpur: Workshop on "LaTeX for Document Editing"</h4>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">Chhatrapati Shahu Ji Maharaj
+                                    University (CSJMU), Kanpur: Workshop on "LaTeX for Document Editing"</h4>
                                 <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
                             </div>
                             <span class="text-xs font-mono text-[var(--text-muted)]">Jan 2025 - April 2025</span>
                         </div>
                         <p class="text-sm text-[var(--text-muted)] mt-2">
-                            A workshop focused on teaching LaTeX for professional document preparation, covering basics to advanced formatting techniques.
+                            A workshop focused on teaching LaTeX for professional document preparation, covering basics
+                            to advanced formatting techniques.
                         </p>
                     </div>
 
@@ -444,7 +595,8 @@
                     <div class="glass-panel p-6 rounded-xl">
                         <div class="flex justify-between items-start mb-2">
                             <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">NPTEL Course: EE79 Smart Grids: Basics to Advanced Technologies </h4>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">NPTEL Course: EE79 Smart Grids:
+                                    Basics to Advanced Technologies </h4>
                                 <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
                             </div>
                             <span class="text-xs font-mono text-[var(--text-muted)]">Jan 2025 - April 2025</span>
@@ -453,7 +605,10 @@
                             Doubt clearing and problem solving sessions for students enrolled in the course.
                         </p>
                         <div class="mt-4 flex gap-2">
-                            <span class="px-2 py-1 bg-[var(--bg-body)] border border-[var(--glass-border)] rounded text-xs text-[var(--text-muted)]"><a href="https://www.youtube.com/playlist?list=PLqTDTw8KvSg5i9fhQVENGgpfDnFlX6Mzm">YouTube Lectures</a></span>
+                            <span
+                                class="px-2 py-1 bg-[var(--bg-body)] border border-[var(--glass-border)] rounded text-xs text-[var(--text-muted)]"><a
+                                    href="https://www.youtube.com/playlist?list=PLqTDTw8KvSg5i9fhQVENGgpfDnFlX6Mzm">YouTube
+                                    Lectures</a></span>
                         </div>
                     </div>
 
@@ -461,7 +616,8 @@
                     <div class="glass-panel p-6 rounded-xl">
                         <div class="flex justify-between items-start mb-2">
                             <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">Chhatrapati Shahu Ji Maharaj University (CSJMU), Kanpur: Workshop on "Machine Learning with Python"</h4>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">Chhatrapati Shahu Ji Maharaj
+                                    University (CSJMU), Kanpur: Workshop on "Machine Learning with Python"</h4>
                                 <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
                             </div>
                             <span class="text-xs font-mono text-[var(--text-muted)]">April 2024</span>
@@ -475,7 +631,8 @@
                     <div class="glass-panel p-6 rounded-xl">
                         <div class="flex justify-between items-start mb-2">
                             <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">NPTEL Course: EE37 Smart Grids: Basics to Advanced Technologies </h4>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">NPTEL Course: EE37 Smart Grids:
+                                    Basics to Advanced Technologies </h4>
                                 <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
                             </div>
                             <span class="text-xs font-mono text-[var(--text-muted)]">Jan 2024 - April 2024</span>
@@ -484,7 +641,10 @@
                             Doubt clearing and problem solving sessions for students enrolled in the course.
                         </p>
                         <div class="mt-4 flex gap-2">
-                            <span class="px-2 py-1 bg-[var(--bg-body)] border border-[var(--glass-border)] rounded text-xs text-[var(--text-muted)]"><a href="https://www.youtube.com/playlist?list=PLqTDTw8KvSg6MIw_CUPUsWb9gUXGZ1C4a">YouTube Lectures</a></span>
+                            <span
+                                class="px-2 py-1 bg-[var(--bg-body)] border border-[var(--glass-border)] rounded text-xs text-[var(--text-muted)]"><a
+                                    href="https://www.youtube.com/playlist?list=PLqTDTw8KvSg6MIw_CUPUsWb9gUXGZ1C4a">YouTube
+                                    Lectures</a></span>
                         </div>
                     </div>
 
@@ -492,7 +652,9 @@
                     <div class="glass-panel p-6 rounded-xl">
                         <div class="flex justify-between items-start mb-2">
                             <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">Atal Bihari Vajpayee Indian Institute of Information Technology Gwalior: EE101 Fundamentals of Electrical and Electronics</h4>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">Atal Bihari Vajpayee Indian
+                                    Institute of Information Technology Gwalior: EE101 Fundamentals of Electrical and
+                                    Electronics</h4>
                                 <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
                             </div>
                             <span class="text-xs font-mono text-[var(--text-muted)]">Oct 2023</span>
@@ -506,7 +668,8 @@
                     <div class="glass-panel p-6 rounded-xl">
                         <div class="flex justify-between items-start mb-2">
                             <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">NPTEL Course: EE116 Fundamentals of Electrical Engineering </h4>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">NPTEL Course: EE116 Fundamentals
+                                    of Electrical Engineering </h4>
                                 <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
                             </div>
                             <span class="text-xs font-mono text-[var(--text-muted)]">July 2023 - Oct 2023</span>
@@ -515,23 +678,27 @@
                             Doubt clearing and problem solving sessions for students enrolled in the course.
                         </p>
                         <div class="mt-4 flex gap-2">
-                            <span class="px-2 py-1 bg-[var(--bg-body)] border border-[var(--glass-border)] rounded text-xs text-[var(--text-muted)]"><a href="https://www.youtube.com/playlist?list=PLqTDTw8KvSg6NKI3vbjbNdLEzqgcS19Jj">YouTube Lectures</a></span>
+                            <span
+                                class="px-2 py-1 bg-[var(--bg-body)] border border-[var(--glass-border)] rounded text-xs text-[var(--text-muted)]"><a
+                                    href="https://www.youtube.com/playlist?list=PLqTDTw8KvSg6NKI3vbjbNdLEzqgcS19Jj">YouTube
+                                    Lectures</a></span>
                         </div>
                     </div>
                 </div>
-            
+
                 <h3 class="text-2xl font-bold mt-6 mb-6 flex items-center">
                     <i data-lucide="presentation" class="mr-3 text-[var(--primary)]"></i> Institute Teaching Duties
                 </h3>
 
                 <div class="space-y-6">
 
-                     <!-- Teaching Role 5 -->
-                    
+                    <!-- Teaching Role 5 -->
+
                     <div class="glass-panel p-6 rounded-xl">
                         <div class="flex justify-between items-start mb-2">
                             <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">EE 630(P): Simulation of Modern Power Systems</h4>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">EE 630(P): Simulation of Modern
+                                    Power Systems</h4>
                                 <p class="text-sm text-[var(--primary)]">Teaching Assistant (Lab Tutor)</p>
                             </div>
                             <span class="text-xs font-mono text-[var(--text-muted)]">2025-26 Sem I</span>
@@ -540,17 +707,20 @@
                             Conducted lab sessions on power system simulation using Python.
                         </p>
                         <div class="mt-4 flex gap-2">
-                            <span class="px-2 py-1 bg-[var(--bg-body)] border border-[var(--glass-border)] rounded text-xs text-[var(--text-muted)]">Python</span>
-                            <span class="px-2 py-1 bg-[var(--bg-body)] border border-[var(--glass-border)] rounded text-xs text-[var(--text-muted)]">Algorithms</span>
+                            <span
+                                class="px-2 py-1 bg-[var(--bg-body)] border border-[var(--glass-border)] rounded text-xs text-[var(--text-muted)]">Python</span>
+                            <span
+                                class="px-2 py-1 bg-[var(--bg-body)] border border-[var(--glass-border)] rounded text-xs text-[var(--text-muted)]">Algorithms</span>
                         </div>
                     </div>
 
-                     <!-- Teaching Role 4 -->
-                    
+                    <!-- Teaching Role 4 -->
+
                     <div class="glass-panel p-6 rounded-xl">
                         <div class="flex justify-between items-start mb-2">
                             <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">EE 675: Introduction to Reinforcement Learning</h4>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">EE 675: Introduction to
+                                    Reinforcement Learning</h4>
                                 <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
                             </div>
                             <span class="text-xs font-mono text-[var(--text-muted)]">2024-25 Sem II</span>
@@ -561,11 +731,12 @@
                     </div>
 
                     <!-- Teaching Role 3 -->
-                    
+
                     <div class="glass-panel p-6 rounded-xl">
                         <div class="flex justify-between items-start mb-2">
                             <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">EE 633A: Electric Power System Operation and Management Under Restructured Environment</h4>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">EE 633A: Electric Power System
+                                    Operation and Management Under Restructured Environment</h4>
                                 <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
                             </div>
                             <span class="text-xs font-mono text-[var(--text-muted)]">2022-23 Sem II</span>
@@ -579,7 +750,8 @@
                     <div class="glass-panel p-6 rounded-xl">
                         <div class="flex justify-between items-start mb-2">
                             <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">EE 632A: Economic Operation and Control of Power Systems</h4>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">EE 632A: Economic Operation and
+                                    Control of Power Systems</h4>
                                 <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
                             </div>
                             <span class="text-xs font-mono text-[var(--text-muted)]">2022-23 Sem I</span>
@@ -593,7 +765,8 @@
                     <div class="glass-panel p-6 rounded-xl">
                         <div class="flex justify-between items-start mb-2">
                             <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">ESO 203A: Introduction to Electrical Engineering</h4>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">ESO 203A: Introduction to
+                                    Electrical Engineering</h4>
                                 <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
                             </div>
                             <span class="text-xs font-mono text-[var(--text-muted)]">2021-22 Sem II</span>
@@ -603,7 +776,7 @@
                         </p>
                     </div>
 
-                     <!-- Mentorship
+                    <!-- Mentorship
                      <div class="glass-panel p-6 rounded-xl border-l-4 border-l-orange-400">
                         <div class="flex items-center mb-4">
                             <i data-lucide="users" class="text-orange-400 mr-2 w-5 h-5"></i>
@@ -620,78 +793,96 @@
             <!-- SECTION: GALLERY (NEW) -->
             <section id="gallery" class="max-w-4xl hidden text-[var(--text-main)]">
                 <h3 class="text-2xl font-bold mb-6 flex items-center">
-                    <i data-lucide="image" class="mr-3 text-[var(--primary)]"></i> Presented my research paper at IEEE PESGM 2024, Seattle, WA, USA
+                    <i data-lucide="image" class="mr-3 text-[var(--primary)]"></i> Presented my research paper at IEEE
+                    PESGM 2024, Seattle, WA, USA
                 </h3>
                 <div class="gallery-grid">
                     <!-- Gallery Item 1 -->
-                    <div class="gallery-item glass-panel group">
+                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/1.JPEG')">
                         <img src="V1.0/images/1.JPEG">
+                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
                     </div>
                     <!-- Gallery Item 2 -->
-                     <div class="gallery-item glass-panel group">
+                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/2.JPEG')">
                         <img src="V1.0/images/2.JPEG">
+                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
                     </div>
                     <!-- Gallery Item 3 -->
-                     <div class="gallery-item glass-panel group">
+                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/3.JPEG')">
                         <img src="V1.0/images/3.JPEG">
+                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
                     </div>
-                     <!-- Gallery Item 4 -->
-                      <div class="gallery-item glass-panel group">
+                    <!-- Gallery Item 4 -->
+                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/4.JPEG')">
                         <img src="V1.0/images/4.JPEG">
+                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
                     </div>
                     <!-- Gallery Item 5 -->
-                      <div class="gallery-item glass-panel group">
+                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/PESGMPoster.jpeg')">
                         <img src="V1.0/images/PESGMPoster.jpeg">
+                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
                     </div>
                     <!-- Gallery Item 6 -->
-                      <div class="gallery-item glass-panel group">
+                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/6 Small.jpeg')">
                         <img src="V1.0/images/6 Small.jpeg">
+                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
                     </div>
                     <!-- Gallery Item 7 -->
-                      <div class="gallery-item glass-panel group">
+                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/7.JPEG')">
                         <img src="V1.0/images/7.JPEG">
+                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
                     </div>
                     <!-- Gallery Item 8 -->
-                      <div class="gallery-item glass-panel group">
+                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/8.JPEG')">
                         <img src="V1.0/images/8.JPEG">
+                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
                     </div>
                 </div>
                 <h3 class="text-2xl font-bold mb-6 mt-6 flex items-center">
-                    <i data-lucide="image" class="mr-3 text-[var(--primary)]"></i> My talk at Kendriya Vidyalaya No. 1 Jammu
+                    <i data-lucide="image" class="mr-3 text-[var(--primary)]"></i> My talk at Kendriya Vidyalaya No. 1
+                    Jammu
                 </h3>
 
                 <div class="gallery-grid">
                     <!-- Gallery Item 1 -->
-                    <div class="gallery-item glass-panel group">
+                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/img1.JPG')">
                         <img src="V1.0/images/img1.JPG">
+                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
                     </div>
                     <!-- Gallery Item 2 -->
-                     <div class="gallery-item glass-panel group">
+                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/img2.JPG')">
                         <img src="V1.0/images/img2.JPG">
+                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
                     </div>
                     <!-- Gallery Item 3 -->
-                     <div class="gallery-item glass-panel group">
+                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/img3.JPG')">
                         <img src="V1.0/images/img3.JPG">
+                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
                     </div>
-                     <!-- Gallery Item 4 -->
-                      <div class="gallery-item glass-panel group">
+                    <!-- Gallery Item 4 -->
+                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/img4.JPG')">
                         <img src="V1.0/images/img4.JPG">
+                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
                     </div>
                     <!-- Gallery Item 5 -->
-                      <div class="gallery-item glass-panel group">
+                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/img5.JPG')">
                         <img src="V1.0/images/img5.JPG">
+                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
                     </div>
                     <!-- Gallery Item 6 -->
-                      <div class="gallery-item glass-panel group">
+                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/img6.JPG')">
                         <img src="V1.0/images/img6.JPG">
+                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
                     </div>
                     <!-- Gallery Item 7 -->
-                      <div class="gallery-item glass-panel group">
+                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/img7.JPG')">
                         <img src="V1.0/images/img7.JPG">
+                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
                     </div>
                     <!-- Gallery Item 8 -->
-                      <div class="gallery-item glass-panel group">
+                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/img2.JPG')">
                         <img src="V1.0/images/img2.JPG">
+                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
                     </div>
                 </div>
             </section>
@@ -701,17 +892,21 @@
                 <h3 class="text-2xl font-bold mb-6 flex items-center">
                     <i data-lucide="book-open" class="mr-3 text-[var(--primary)]"></i> Selected Publications
                 </h3>
-                
+
                 <!-- Group: Preprints -->
-                <h4 class="text-lg font-bold mb-4 mt-2 text-[var(--text-main)] border-b border-[var(--glass-border)] pb-2">Preprints</h4>
+                <h4
+                    class="text-lg font-bold mb-4 mt-2 text-[var(--text-main)] border-b border-[var(--glass-border)] pb-2">
+                    Preprints</h4>
                 <div class="space-y-4 mb-8">
-                     <div class="glass-panel p-6 rounded-xl relative">
+                    <div class="glass-panel p-6 rounded-xl relative">
                         <span class="absolute top-6 right-6 text-xs font-mono text-[var(--text-muted)]">2025</span>
-                        <h4 class="text-lg font-bold pr-12">IDSO-Managed Bid-Based Transactive Distribution Systems Design for DER Participation in Wholesale Markets While Preserving T-D Interactions</h4>
+                        <h4 class="text-lg font-bold pr-12">IDSO-Managed Bid-Based Transactive Distribution Systems
+                            Design for DER Participation in Wholesale Markets While Preserving T-D Interactions</h4>
                         <p class="text-[var(--primary)] text-sm mb-2">S. Sharma, S. Battula, and S.N. Singh</p>
                         <p class="text-[var(--text-muted)] text-sm italic mb-4">arXiv:2508.08187</p>
                         <div class="flex gap-3">
-                            <a href="https://arxiv.org/abs/2508.08187" class="px-3 py-1 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 text-[var(--primary)] rounded text-xs flex items-center transition-colors">
+                            <a href="https://arxiv.org/abs/2508.08187"
+                                class="px-3 py-1 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 text-[var(--primary)] rounded text-xs flex items-center transition-colors">
                                 Link
                             </a>
                         </div>
@@ -721,8 +916,8 @@
                 <!-- Group: Journals
                 <h4 class="text-lg font-bold mb-4 text-[var(--text-main)] border-b border-[var(--glass-border)] pb-2">Journal Articles</h4>
                 <div class="space-y-4 mb-8"> -->
-                    <!-- Publication Item -->
-                    <!-- <div class="glass-panel p-6 rounded-xl relative">
+                <!-- Publication Item -->
+                <!-- <div class="glass-panel p-6 rounded-xl relative">
                         <span class="absolute top-6 right-6 text-xs font-mono text-[var(--text-muted)]">2024</span>
                         <h4 class="text-lg font-bold pr-12">Algorithmic Bias in genomic datasets: A comprehensive review</h4>
                         <p class="text-[var(--primary)] text-sm mb-2">A. Chen, J. Doe, S. Smith</p>
@@ -739,14 +934,19 @@
                 </div> -->
 
                 <!-- Group: Conferences -->
-                <h4 class="text-lg font-bold mb-4 text-[var(--text-main)] border-b border-[var(--glass-border)] pb-2">Conference Proceedings</h4>
+                <h4 class="text-lg font-bold mb-4 text-[var(--text-main)] border-b border-[var(--glass-border)] pb-2">
+                    Conference Proceedings</h4>
                 <div class="space-y-4">
                     <!-- Publication Item -->
                     <div class="glass-panel p-6 rounded-xl relative">
                         <span class="absolute top-6 right-6 text-xs font-mono text-[var(--text-muted)]">2026</span>
-                        <h4 class="text-lg font-bold pr-12">Towards Improved System Flexibility: Enabling IDSO's Swing Contract Market Participation</h4>
+                        <h4 class="text-lg font-bold pr-12">Towards Improved System Flexibility: Enabling IDSO's Swing
+                            Contract Market Participation</h4>
                         <p class="text-[var(--primary)] text-sm mb-2">S. Sharma, S. Battula, and S.N. Singh</p>
-                        <p class="text-[var(--text-muted)] text-sm italic mb-4">2026 IEEE Power & Energy Society Transmission & Distribution Conference & Exposition, Chicago, Illinois, 2026 <b>[Accepted]</b></p>
+                        <p class="text-[var(--text-muted)] text-sm italic mb-4">2026 IEEE Power & Energy Society
+                            Transmission & Distribution Conference & Exposition, Chicago, Illinois, 2026
+                            <b>[Accepted]</b>
+                        </p>
                         <!-- <div class="flex gap-3">
                             <button onclick="copyToClipboard('Chen & Rossi 2023, Optimizing Graph Theory...')" class="px-3 py-1 bg-[var(--primary)]/10 hover:bg-[var(--primary)]/20 rounded text-xs text-[var(--text-main)] flex items-center transition-colors">
                                 <i data-lucide="quote" class="w-3 h-3 mr-2"></i> Cite
@@ -758,17 +958,154 @@
                     </div>
                     <div class="glass-panel p-6 rounded-xl relative">
                         <span class="absolute top-6 right-6 text-xs font-mono text-[var(--text-muted)]">2024</span>
-                        <h4 class="text-lg font-bold pr-12">Transactive Electric Vehicle Agent: A Deep Reinforcement Learning Approach</h4>
+                        <h4 class="text-lg font-bold pr-12">Transactive Electric Vehicle Agent: A Deep Reinforcement
+                            Learning Approach</h4>
                         <p class="text-[var(--primary)] text-sm mb-2">S. Sharma, S. Battula, and S.N. Singh</p>
-                        <p class="text-[var(--text-muted)] text-sm italic mb-4">2024 IEEE Power & Energy Society General Meeting, Seattle, Washington, 2024</p>
-                        <p class="text-[var(--text-muted)] text-sm italic mb-4">doi: 10.1109/PESGM51994.2024.10688919.</p>
+                        <p class="text-[var(--text-muted)] text-sm italic mb-4">2024 IEEE Power & Energy Society General
+                            Meeting, Seattle, Washington, 2024</p>
+                        <p class="text-[var(--text-muted)] text-sm italic mb-4">doi: 10.1109/PESGM51994.2024.10688919.
+                        </p>
                         <div class="flex gap-3">
-                            <button onclick="copyToClipboard('S. Sharma, S. Battula and S. N. Singh, Transactive Electric Vehicle Agent: A Deep Reinforcement Learning Approach, 2024 IEEE Power & Energy Society General Meeting (PESGM), Seattle, WA, USA, 2024, pp. 1-5, doi: 10.1109/PESGM51994.2024.10688919.')" class="px-3 py-1 bg-[var(--primary)]/10 hover:bg-[var(--primary)]/20 rounded text-xs text-[var(--text-main)] flex items-center transition-colors">
+                            <button
+                                onclick="copyToClipboard('S. Sharma, S. Battula and S. N. Singh, Transactive Electric Vehicle Agent: A Deep Reinforcement Learning Approach, 2024 IEEE Power & Energy Society General Meeting (PESGM), Seattle, WA, USA, 2024, pp. 1-5, doi: 10.1109/PESGM51994.2024.10688919.')"
+                                class="px-3 py-1 bg-[var(--primary)]/10 hover:bg-[var(--primary)]/20 rounded text-xs text-[var(--text-main)] flex items-center transition-colors">
                                 <i data-lucide="quote" class="w-3 h-3 mr-2"></i> Cite
                             </button>
-                            <a href="https://ieeexplore.ieee.org/document/10688919" class="px-3 py-1 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 text-[var(--primary)] rounded text-xs flex items-center transition-colors">
+                            <a href="https://ieeexplore.ieee.org/document/10688919"
+                                class="px-3 py-1 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 text-[var(--primary)] rounded text-xs flex items-center transition-colors">
                                 Link
                             </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: INTERESTING READS -->
+            <section id="reads" class="max-w-4xl hidden text-[var(--text-main)]">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <i data-lucide="library" class="mr-3 text-[var(--primary)]"></i> Interesting Reads
+                </h3>
+
+                <div class="space-y-8">
+                    <!-- Fictional Books -->
+                    <div>
+                        <h4
+                            class="text-lg font-bold mb-4 text-[var(--text-main)] border-b border-[var(--glass-border)] pb-2">
+                            Fictional & General Reads</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="glass-panel p-4 rounded-lg flex items-start">
+                                <i data-lucide="book" class="text-[var(--primary)] mt-1 mr-3 flex-shrink-0"></i>
+                                <div>
+                                    <h5 class="font-bold text-sm">Yellowface</h5>
+                                    <p class="text-xs text-[var(--text-muted)] mt-1">by R.F. Kuang</p>
+                                    <p class="text-xs text-[var(--text-muted)] mt-2">A satirical thriller about
+                                        diversity, cultural appropriation, and the publishing industry.</p>
+                                    <a href="https://www.google.com/search?q=Yellowface+R.F.+Kuang" target="_blank"
+                                        class="inline-flex items-center mt-2 text-xs text-[var(--primary)] hover:underline">
+                                        <i data-lucide="search" class="w-3 h-3 mr-1"></i> Search
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="glass-panel p-4 rounded-lg flex items-start">
+                                <i data-lucide="book-open" class="text-[var(--primary)] mt-1 mr-3 flex-shrink-0"></i>
+                                <div>
+                                    <h5 class="font-bold text-sm">Psycho-Cybernetics</h5>
+                                    <p class="text-xs text-[var(--text-muted)] mt-1">by Maxwell Maltz</p>
+                                    <p class="text-xs text-[var(--text-muted)] mt-2">A self-help classic exploring the
+                                        mind-body connection and self-image psychology.</p>
+                                    <a href="https://www.google.com/search?q=Psycho-Cybernetics+Maxwell+Maltz"
+                                        target="_blank"
+                                        class="inline-flex items-center mt-2 text-xs text-[var(--primary)] hover:underline">
+                                        <i data-lucide="search" class="w-3 h-3 mr-1"></i> Search
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical Books -->
+                    <div>
+                        <h4
+                            class="text-lg font-bold mb-4 text-[var(--text-main)] border-b border-[var(--glass-border)] pb-2">
+                            Technical Books</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="glass-panel p-4 rounded-lg flex items-start">
+                                <i data-lucide="zap" class="text-[var(--primary)] mt-1 mr-3 flex-shrink-0"></i>
+                                <div>
+                                    <h5 class="font-bold text-sm">Power System Analysis</h5>
+                                    <p class="text-xs text-[var(--text-muted)] mt-1">by Grainger and Stevenson</p>
+                                    <p class="text-xs text-[var(--text-muted)] mt-2">The classic comprehensive guide to
+                                        power systems engineering.</p>
+                                    <a href="https://www.google.com/search?q=Power+System+Analysis+Grainger+Stevenson"
+                                        target="_blank"
+                                        class="inline-flex items-center mt-2 text-xs text-[var(--primary)] hover:underline">
+                                        <i data-lucide="search" class="w-3 h-3 mr-1"></i> Search
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="glass-panel p-4 rounded-lg flex items-start">
+                                <i data-lucide="trending-up" class="text-[var(--primary)] mt-1 mr-3 flex-shrink-0"></i>
+                                <div>
+                                    <h5 class="font-bold text-sm">A New Swing-Contract Design for Wholesale Power
+                                        Markets</h5>
+                                    <p class="text-xs text-[var(--text-muted)] mt-1">by Leigh Tesfatsion</p>
+                                    <p class="text-xs text-[var(--text-muted)] mt-2">Proposes a linked swing-contract
+                                        market design for centrally-managed wholesale power markets.</p>
+                                    <a href="https://www.google.com/search?q=A+New+Swing-Contract+Design+for+Wholesale+Power+Markets+Leigh+Tesfatsion"
+                                        target="_blank"
+                                        class="inline-flex items-center mt-2 text-xs text-[var(--primary)] hover:underline">
+                                        <i data-lucide="search" class="w-3 h-3 mr-1"></i> Search
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="glass-panel p-4 rounded-lg flex items-start">
+                                <i data-lucide="activity" class="text-[var(--primary)] mt-1 mr-3 flex-shrink-0"></i>
+                                <div>
+                                    <h5 class="font-bold text-sm">Optimization Models in Electricity Markets</h5>
+                                    <p class="text-xs text-[var(--text-muted)] mt-1">by Anthony Papavasiliou</p>
+                                    <p class="text-xs text-[var(--text-muted)] mt-2">A comprehensive introduction to the
+                                        structure and operation of electricity markets.</p>
+                                    <a href="https://www.google.com/search?q=Optimization+Models+in+Electricity+Markets+Anthony+Papavasiliou"
+                                        target="_blank"
+                                        class="inline-flex items-center mt-2 text-xs text-[var(--primary)] hover:underline">
+                                        <i data-lucide="search" class="w-3 h-3 mr-1"></i> Search
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="glass-panel p-4 rounded-lg flex items-start">
+                                <i data-lucide="brain-circuit"
+                                    class="text-[var(--primary)] mt-1 mr-3 flex-shrink-0"></i>
+                                <div>
+                                    <h5 class="font-bold text-sm">Grokking Deep Reinforcement Learning</h5>
+                                    <p class="text-xs text-[var(--text-muted)] mt-1">by Miguel Morales</p>
+                                    <p class="text-xs text-[var(--text-muted)] mt-2">An intuitive guide to deep
+                                        reinforcement learning concepts and algorithms.</p>
+                                    <a href="https://www.google.com/search?q=Grokking+Deep+Reinforcement+Learning+Miguel+Morales"
+                                        target="_blank"
+                                        class="inline-flex items-center mt-2 text-xs text-[var(--primary)] hover:underline">
+                                        <i data-lucide="search" class="w-3 h-3 mr-1"></i> Search
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Research Papers -->
+                    <div>
+                        <h4
+                            class="text-lg font-bold mb-4 text-[var(--text-main)] border-b border-[var(--glass-border)] pb-2">
+                            Research Papers</h4>
+                        <div class="space-y-4">
+                            <div class="glass-panel p-4 rounded-lg">
+                                <h5 class="font-bold text-sm">Attention Is All You Need</h5>
+                                <p class="text-xs text-[var(--primary)] mt-1">Vaswani et al., 2017</p>
+                                <p class="text-xs text-[var(--text-muted)] mt-2">The paper that introduced the
+                                    Transformer architecture.</p>
+                                <a href="https://arxiv.org/abs/1706.03762"
+                                    class="inline-flex items-center mt-2 text-xs text-[var(--primary)] hover:underline">
+                                    <i data-lucide="external-link" class="w-3 h-3 mr-1"></i> Read Paper
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -780,9 +1117,10 @@
                     <i data-lucide="mail" class="mr-3 text-[var(--primary)]"></i> Get in Touch
                 </h3>
                 <div class="glass-panel p-8 rounded-xl relative overflow-hidden">
-                    
+
                     <!-- AI Assistant Badge -->
-                    <div class="absolute top-0 right-0 p-2 bg-purple-500/10 rounded-bl-xl border-b border-l border-purple-500/30">
+                    <div
+                        class="absolute top-0 right-0 p-2 bg-purple-500/10 rounded-bl-xl border-b border-l border-purple-500/30">
                         <div class="flex items-center gap-2 text-purple-400 text-xs font-mono">
                             <i data-lucide="sparkles" class="w-3 h-3"></i> Gemini Powered
                         </div>
@@ -791,12 +1129,16 @@
                     <p class="text-[var(--text-muted)] mb-6">
                         I am always open to collaboration on open-source projects or speaking opportunities.
                     </p>
-                    
+
                     <div class="mb-6 p-4 bg-slate-800/50 rounded-lg border border-slate-700/50">
-                        <label class="block text-xs font-bold text-purple-400 uppercase tracking-wider mb-2">AI Drafting Assistant</label>
+                        <label class="block text-xs font-bold text-purple-400 uppercase tracking-wider mb-2">AI Drafting
+                            Assistant</label>
                         <div class="flex gap-2">
-                            <input id="draft-topic" type="text" class="flex-1 bg-slate-900 border border-slate-700 rounded px-3 py-2 text-sm text-white focus:border-purple-400 focus:outline-none" placeholder="E.g., Invitation to speak at BioTech Summit...">
-                            <button onclick="draftEmail()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors flex items-center whitespace-nowrap">
+                            <input id="draft-topic" type="text"
+                                class="flex-1 bg-slate-900 border border-slate-700 rounded px-3 py-2 text-sm text-white focus:border-purple-400 focus:outline-none"
+                                placeholder="E.g., Invitation to speak at BioTech Summit...">
+                            <button onclick="draftEmail()"
+                                class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors flex items-center whitespace-nowrap">
                                 <i data-lucide="sparkles" class="w-3 h-3 mr-2"></i> Smart Draft
                             </button>
                         </div>
@@ -804,20 +1146,31 @@
 
                     <form action="https://formsubmit.co/swastiksharma33@gmail.com" method="POST" class="space-y-4">
                         <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" value="https://your-website-url.com/thanks.html"> 
+                        <input type="hidden" value="https://your-website-url.com/thanks.html">
                         <div>
-                            <label class="block text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider mb-1">Name</label>
-                            <input type="text" name="name"class="w-full bg-[var(--bg-body)]/50 border border-[var(--glass-border)] rounded p-3 text-[var(--text-main)] focus:border-[var(--primary)] focus:outline-none transition-colors" placeholder="John Doe">
+                            <label
+                                class="block text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider mb-1">Name</label>
+                            <input type="text" name="name"
+                                class="w-full bg-[var(--bg-body)]/50 border border-[var(--glass-border)] rounded p-3 text-[var(--text-main)] focus:border-[var(--primary)] focus:outline-none transition-colors"
+                                placeholder="John Doe">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider mb-1">Your Email</label>
-                            <input type="email" name="email" class="w-full bg-[var(--bg-body)]/50 border border-[var(--glass-border)] rounded p-3 text-[var(--text-main)] focus:border-[var(--primary)] focus:outline-none transition-colors" placeholder="colleague@institute.edu">
+                            <label
+                                class="block text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider mb-1">Your
+                                Email</label>
+                            <input type="email" name="email"
+                                class="w-full bg-[var(--bg-body)]/50 border border-[var(--glass-border)] rounded p-3 text-[var(--text-main)] focus:border-[var(--primary)] focus:outline-none transition-colors"
+                                placeholder="colleague@institute.edu">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider mb-1">Message</label>
-                            <textarea id="message-box" name="message" rows="6" class="w-full bg-[var(--bg-body)]/50 border border-[var(--glass-border)] rounded p-3 text-[var(--text-main)] focus:border-[var(--primary)] focus:outline-none transition-colors" placeholder="Let's collaborate on..."></textarea>
+                            <label
+                                class="block text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider mb-1">Message</label>
+                            <textarea id="message-box" name="message" rows="6"
+                                class="w-full bg-[var(--bg-body)]/50 border border-[var(--glass-border)] rounded p-3 text-[var(--text-main)] focus:border-[var(--primary)] focus:outline-none transition-colors"
+                                placeholder="Let's collaborate on..."></textarea>
                         </div>
-                        <button type="submit" class="bg-[var(--primary)] hover:opacity-90 text-white px-6 py-2 rounded font-medium transition-colors w-full">
+                        <button type="submit"
+                            class="bg-[var(--primary)] hover:opacity-90 text-white px-6 py-2 rounded font-medium transition-colors w-full">
                             Send Message
                         </button>
                     </form>
@@ -832,6 +1185,14 @@
     <!-- Toast Notification Element -->
     <div id="toast">Citation copied to clipboard!</div>
 
+    <!-- Lightbox Element -->
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Full screen view">
+        <button class="absolute top-4 right-4 text-white hover:text-[var(--primary)] transition-colors">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+    </div>
+
     <script>
         // --- GEMINI API CONFIGURATION ---
         const apiKey = "AIzaSyBgBpBSw4vZM8qGuZY9Y3W2zqrPf9RkuOM"; // TODO: INSERT YOUR API KEY HERE
@@ -843,7 +1204,7 @@
             }
 
             const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-            
+
             const payload = {
                 contents: [{
                     parts: [{ text: prompt }]
@@ -872,7 +1233,7 @@
         async function explainProject(sourceId, targetId) {
             const descText = document.getElementById(sourceId).innerText;
             const targetEl = document.getElementById(targetId);
-            
+
             // Loading State
             targetEl.classList.remove('hidden');
             targetEl.innerHTML = `<div class="flex items-center gap-2"><i data-lucide="loader-2" class="animate-spin w-4 h-4"></i> Simplifying complex concepts...</div>`;
@@ -881,7 +1242,7 @@
             const prompt = `You are a helpful science communicator. Rewrite the following research project description so it is easy for a high school student to understand. Keep it under 2 sentences. Description: "${descText}"`;
 
             const result = await callGeminiAPI(prompt);
-            
+
             targetEl.innerHTML = `<strong class="block mb-1 text-[var(--text-main)] opacity-80">Simpler Explanation:</strong> ${result}`;
         }
 
@@ -894,7 +1255,7 @@
             }
 
             const msgBox = document.getElementById('message-box');
-            
+
             // Loading indication in the textarea
             const originalPlaceholder = msgBox.placeholder;
             msgBox.placeholder = "✨ AI is drafting your email...";
@@ -904,7 +1265,7 @@
             const prompt = `Draft a professional, concise email to Swastik Sharma (a PhD Candidate at IIT Kanpur) regarding the following topic: "${topic}". The sender is a fellow researcher. Keep it under 100 words. Only output the body of the email.`;
 
             const result = await callGeminiAPI(prompt);
-            
+
             msgBox.classList.remove("animate-pulse");
             msgBox.value = result;
             msgBox.placeholder = originalPlaceholder;
@@ -916,13 +1277,16 @@
         // --- DYNAMIC YEAR ---
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // --- TAB NAVIGATION ---
+        // --- TAB NAVIGATION & DEEP LINKING ---
         function showSection(sectionId) {
+            // Update Hash without scrolling
+            history.replaceState(null, null, '#' + sectionId);
+
             // Hide all sections
-            const sections = ['about', 'research', 'teaching', 'gallery', 'publications', 'contact'];
+            const sections = ['about', 'research', 'teaching', 'gallery', 'publications', 'reads', 'contact'];
             sections.forEach(id => {
                 const el = document.getElementById(id);
-                if(el) {
+                if (el) {
                     el.classList.add('hidden');
                     el.classList.remove('fade-in');
                 }
@@ -930,21 +1294,45 @@
 
             // Show target section
             const target = document.getElementById(sectionId);
-            if(target) {
+            if (target) {
                 target.classList.remove('hidden');
                 // Trigger Reflow to restart animation
-                void target.offsetWidth; 
+                void target.offsetWidth;
                 target.classList.add('fade-in');
+
+                // Scroll to top of content container
+                const container = document.querySelector('.overflow-y-auto');
+                if (container) container.scrollTop = 0;
             }
 
             // Update Nav Styling
             const navItems = document.querySelectorAll('.nav-item');
             navItems.forEach(btn => {
                 btn.classList.remove('active');
-                if(btn.innerText.toLowerCase().includes(sectionId)) {
+                if (btn.innerText.toLowerCase().includes(sectionId)) {
                     btn.classList.add('active');
                 }
             });
+        }
+
+        // Handle Initial Hash
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.substring(1);
+            if (hash && ['about', 'research', 'teaching', 'gallery', 'publications', 'reads', 'contact'].includes(hash)) {
+                showSection(hash);
+            }
+        });
+
+        // --- LIGHTBOX LOGIC ---
+        function openLightbox(imgSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imgSrc;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
         }
 
         // --- THEME TOGGLE ---
@@ -959,13 +1347,13 @@
                 sun.classList.add('hidden');
                 moon.classList.remove('hidden');
                 // Reset particles for dark theme
-                updateParticles('#38bdf8'); 
+                updateParticles('#FBBF24'); // Amber 400
             } else {
                 html.setAttribute('data-theme', 'light');
                 moon.classList.add('hidden');
                 sun.classList.remove('hidden');
                 // Reset particles for light theme
-                updateParticles('#0ea5e9');
+                updateParticles('#D97706'); // Amber 600
             }
         }
 
@@ -996,14 +1384,14 @@
             const toast = document.getElementById("toast");
             toast.textContent = message;
             toast.className = "show";
-            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+            setTimeout(function () { toast.className = toast.className.replace("show", ""); }, 3000);
         }
 
         // --- INTERACTIVE BACKGROUND (PARTICLE NETWORK) ---
         const canvas = document.getElementById('bg-canvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
-        let particleColor = '#0ea5e9'; // Default dark mode blue
+        let particleColor = '#FBBF24'; // Default dark mode Amber
 
         function updateParticles(newColor) {
             particleColor = newColor;
@@ -1018,7 +1406,7 @@
         window.addEventListener('resize', resizeCanvas);
 
         let mouse = { x: null, y: null, radius: 150 };
-        window.addEventListener('mousemove', function(event) {
+        window.addEventListener('mousemove', function (event) {
             mouse.x = event.x;
             mouse.y = event.y;
         });
@@ -1045,7 +1433,7 @@
                 let dx = mouse.x - this.x;
                 let dy = mouse.y - this.y;
                 let distance = Math.sqrt(dx * dx + dy * dy);
-                
+
                 if (distance < mouse.radius + this.size) {
                     if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 2;
                     if (mouse.x > this.x && this.x > this.size * 10) this.x -= 2;
@@ -1063,13 +1451,13 @@
             particles = [];
             // Detect mobile by screen width
             const isMobile = canvas.width < 768;
-            
+
             // drastically reduce divider for mobile (fewer particles)
             // Desktop: divide by 15000, Mobile: divide by 25000
             const divider = isMobile ? 25000 : 15000;
-            
-            let numberOfParticles = (canvas.height * canvas.width) / divider; 
-            
+
+            let numberOfParticles = (canvas.height * canvas.width) / divider;
+
             for (let i = 0; i < numberOfParticles; i++) {
                 // ... existing loop code ...
                 let size = (Math.random() * 2) + 1;
@@ -1082,24 +1470,30 @@
         }
 
         function animate() {
-            requestAnimationFrame(animate);
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
+            // Performance: Pause animation if tab is hidden
+            if (!document.hidden) {
+                requestAnimationFrame(animate);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                }
+                connect();
+            } else {
+                // Check again in 500ms if tab is active
+                setTimeout(animate, 500);
             }
-            connect();
         }
 
         function connect() {
             // Convert hex color to rgb for opacity handling
             let rgb = hexToRgb(particleColor);
-            
+
             for (let a = 0; a < particles.length; a++) {
                 for (let b = a; b < particles.length; b++) {
                     let distance = ((particles[a].x - particles[b].x) * (particles[a].x - particles[b].x))
                         + ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y));
-                    if (distance < (canvas.width/7) * (canvas.height/7)) {
-                        let opacity = 1 - (distance/20000);
+                    if (distance < (canvas.width / 7) * (canvas.height / 7)) {
+                        let opacity = 1 - (distance / 20000);
                         ctx.strokeStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${opacity * 0.15})`;
                         ctx.lineWidth = 1;
                         ctx.beginPath();
@@ -1118,7 +1512,7 @@
                 r: parseInt(result[1], 16),
                 g: parseInt(result[2], 16),
                 b: parseInt(result[3], 16)
-            } : {r: 56, g: 189, b: 248}; // Default Sky 400
+            } : { r: 251, g: 191, b: 36 }; // Default Amber 400
         }
 
         resizeCanvas();
@@ -1126,8 +1520,9 @@
 
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mainNav = document.getElementById('main-nav');
-        menuBtn.addEventListener('click', () => mainNav.scrollIntoView({behavior: "smooth"}));
+        menuBtn.addEventListener('click', () => mainNav.scrollIntoView({ behavior: "smooth" }));
 
     </script>
 </body>
+
 </html>
