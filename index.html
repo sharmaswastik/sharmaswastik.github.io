@@ -19,34 +19,238 @@
 
     <style>
         :root {
-            /* Default (Dark) Variables - Obsidian & Gold */
+            /* Base Variables (Default to Obsidian if no scheme set) */
             --bg-body: #18181B;
-            /* Zinc 950 */
             --primary: #FBBF24;
-            /* Amber 400 */
             --text-main: #ffffff;
             --text-muted: #A1A1AA;
-            /* Zinc 400 */
             --glass-bg: rgba(24, 24, 27, 0.65);
             --glass-border: rgba(255, 255, 255, 0.08);
             --particle-color: #FBBF24;
             --card-hover: rgba(251, 191, 36, 0.05);
         }
 
-        /* Light Mode Overrides */
-        html[data-theme="light"] {
+        /* =========================================
+           COLOR SCHEMES
+           ========================================= */
+
+        /* 1. Obsidian & Gold (Default) */
+        [data-scheme="obsidian"] {
+            --bg-body: #18181B;
+            --primary: #FBBF24;
+            --text-main: #ffffff;
+            --text-muted: #A1A1AA;
+            --glass-bg: rgba(24, 24, 27, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --particle-color: #FBBF24;
+            --card-hover: rgba(251, 191, 36, 0.05);
+        }
+
+        [data-scheme="obsidian"][data-theme="light"] {
             --bg-body: #FFFBEB;
             /* Amber 50 */
             --primary: #D97706;
             /* Amber 600 */
             --text-main: #27272A;
-            /* Zinc 800 */
             --text-muted: #52525B;
-            /* Zinc 600 */
             --glass-bg: rgba(255, 255, 255, 0.6);
             --glass-border: rgba(217, 119, 6, 0.15);
             --particle-color: #D97706;
             --card-hover: rgba(217, 119, 6, 0.05);
+        }
+
+        /* 2. Crimson & Slate (Ivy League) */
+        [data-scheme="crimson"] {
+            --bg-body: #020617;
+            /* Slate 950 */
+            --primary: #FB7185;
+            /* Rose 400 */
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --glass-bg: rgba(2, 6, 23, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --particle-color: #FB7185;
+            --card-hover: rgba(251, 113, 133, 0.05);
+        }
+
+        [data-scheme="crimson"][data-theme="light"] {
+            --bg-body: #FFF1F2;
+            /* Rose 50 */
+            --primary: #BE123C;
+            /* Rose 700 */
+            --text-main: #0F172A;
+            /* Slate 900 */
+            --text-muted: #475569;
+            --glass-bg: rgba(255, 255, 255, 0.6);
+            --glass-border: rgba(190, 18, 60, 0.15);
+            --particle-color: #BE123C;
+            --card-hover: rgba(190, 18, 60, 0.05);
+        }
+
+        /* 3. Oxford Blue (Navy & Blue) */
+        [data-scheme="oxford"] {
+            --bg-body: #0B1120;
+            /* Deep Navy */
+            --primary: #60A5FA;
+            /* Blue 400 */
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --glass-bg: rgba(11, 17, 32, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --particle-color: #60A5FA;
+            --card-hover: rgba(96, 165, 250, 0.05);
+        }
+
+        [data-scheme="oxford"][data-theme="light"] {
+            --bg-body: #F0F9FF;
+            /* Sky 50 */
+            --primary: #0369A1;
+            /* Sky 700 */
+            --text-main: #0F172A;
+            --text-muted: #475569;
+            --glass-bg: rgba(255, 255, 255, 0.6);
+            --glass-border: rgba(3, 105, 161, 0.15);
+            --particle-color: #0369A1;
+            --card-hover: rgba(3, 105, 161, 0.05);
+        }
+
+        /* 4. Sage & Stone (Scientific/Natural) */
+        [data-scheme="sage"] {
+            --bg-body: #0C0A09;
+            /* Stone 950 */
+            --primary: #86EFAC;
+            /* Green 300 */
+            --text-main: #ffffff;
+            --text-muted: #A8A29E;
+            --glass-bg: rgba(12, 10, 9, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --particle-color: #86EFAC;
+            --card-hover: rgba(134, 239, 172, 0.05);
+        }
+
+        [data-scheme="sage"][data-theme="light"] {
+            --bg-body: #FAFAF9;
+            /* Stone 50 */
+            --primary: #15803D;
+            /* Green 700 */
+            --text-main: #1C1917;
+            --text-muted: #57534E;
+            --glass-bg: rgba(255, 255, 255, 0.6);
+            --glass-border: rgba(21, 128, 61, 0.15);
+            --particle-color: #15803D;
+            --card-hover: rgba(21, 128, 61, 0.05);
+        }
+
+        /* 5. Royal & Silver (Humanities) */
+        [data-scheme="royal"] {
+            --bg-body: #0A0A0A;
+            /* Neutral 950 */
+            --primary: #C084FC;
+            /* Purple 400 */
+            --text-main: #ffffff;
+            --text-muted: #A3A3A3;
+            --glass-bg: rgba(10, 10, 10, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --particle-color: #C084FC;
+            --card-hover: rgba(192, 132, 252, 0.05);
+        }
+
+        [data-scheme="royal"][data-theme="light"] {
+            --bg-body: #FAF5FF;
+            /* Purple 50 */
+            --primary: #7E22CE;
+            /* Purple 700 */
+            --text-main: #171717;
+            --text-muted: #525252;
+            --glass-bg: rgba(255, 255, 255, 0.6);
+            --glass-border: rgba(126, 34, 206, 0.15);
+            --particle-color: #7E22CE;
+            --card-hover: rgba(126, 34, 206, 0.05);
+        }
+
+        /* Theme Selector Styles */
+        .theme-selector-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            z-index: 50;
+            /* Removed absolute positioning to fit in flow */
+        }
+
+        @media (min-width: 768px) {
+            .theme-selector-container {
+                left: 1.5rem;
+                right: auto;
+            }
+        }
+
+        .scheme-btn {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid var(--glass-border);
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s;
+            position: relative;
+        }
+
+        .scheme-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .scheme-btn.active {
+            border-color: var(--primary);
+            transform: scale(1.1);
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        .scheme-dropdown {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+            /* Invisible bridge for hover */
+            margin-bottom: -10px;
+        }
+
+        .scheme-dropdown-content {
+            display: none;
+            position: absolute;
+            bottom: 100%;
+            /* Open upwards */
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            /* Space from button */
+            flex-direction: column;
+            gap: 0.5rem;
+            min-width: 40px;
+            align-items: center;
+
+            /* Animation */
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        .scheme-dropdown:hover .scheme-dropdown-content {
+            display: flex;
+            opacity: 1;
+        }
+
+        /* Add a pseudo-element to bridge the gap */
+        .scheme-dropdown-content::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 20px;
+            /* Bridge gap */
         }
 
         body {
@@ -270,6 +474,192 @@
                 /* Larger touch target */
             }
         }
+
+        /* Theme Toggle Switch - Day/Night Effect */
+        .theme-switch {
+            position: relative;
+            display: inline-block;
+            width: 70px;
+            height: 34px;
+        }
+
+        .theme-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #1e293b;
+            /* Dark Night Sky */
+            transition: .4s;
+            border-radius: 34px;
+            overflow: hidden;
+            border: 2px solid var(--glass-border);
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* The Knob (Moon/Sun) */
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 2px;
+            bottom: 2px;
+            background-color: #fbbf24;
+            /* Moon Color */
+            transition: .4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            /* Bouncy effect */
+            border-radius: 50%;
+            z-index: 10;
+            box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+        }
+
+        /* Light Mode (Checked) State */
+        input:checked+.slider {
+            background-color: #60a5fa;
+            /* Day Sky Blue */
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(36px);
+            background-color: #fcd34d;
+            /* Sun Color */
+            box-shadow: 0 0 15px rgba(252, 211, 77, 0.8);
+        }
+
+        /* Stars (Visible in Dark Mode) */
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .star-1 {
+            top: 7px;
+            left: 42px;
+            width: 2px;
+            height: 2px;
+        }
+
+        .star-2 {
+            top: 16px;
+            left: 52px;
+            width: 1px;
+            height: 1px;
+        }
+
+        .star-3 {
+            top: 8px;
+            left: 58px;
+            width: 2px;
+            height: 2px;
+        }
+
+        .star-4 {
+            top: 22px;
+            left: 38px;
+            width: 1px;
+            height: 1px;
+        }
+
+        .star-5 {
+            top: 15px;
+            left: 32px;
+            width: 2px;
+            height: 2px;
+            opacity: 0.7;
+        }
+
+        input:checked+.slider .star {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        /* Clouds (Visible in Light Mode) */
+        .cloud {
+            position: absolute;
+            background-color: #ffffff;
+            border-radius: 10px;
+            transition: all 0.4s ease;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .cloud-1 {
+            top: 10px;
+            left: 12px;
+            width: 18px;
+            height: 8px;
+        }
+
+        .cloud-2 {
+            top: 20px;
+            left: 22px;
+            width: 12px;
+            height: 6px;
+        }
+
+        /* Cloud Shapes */
+        .cloud:before,
+        .cloud:after {
+            content: '';
+            position: absolute;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .cloud-1:before {
+            width: 10px;
+            height: 10px;
+            top: -5px;
+            left: 2px;
+        }
+
+        .cloud-1:after {
+            width: 8px;
+            height: 8px;
+            top: -3px;
+            left: 8px;
+        }
+
+        .cloud-2:before {
+            width: 6px;
+            height: 6px;
+            top: -3px;
+            left: 2px;
+        }
+
+        .cloud-2:after {
+            width: 5px;
+            height: 5px;
+            top: -2px;
+            left: 6px;
+        }
+
+        input:checked+.slider .cloud {
+            opacity: 0.9;
+        }
+
+        input:checked+.slider .cloud-1 {
+            transform: translateX(0);
+            transition-delay: 0.1s;
+        }
+
+        input:checked+.slider .cloud-2 {
+            transform: translateX(0);
+            transition-delay: 0.2s;
+        }
     </style>
 </head>
 
@@ -283,14 +673,7 @@
         class="w-full md:w-1/3 lg:w-1/4 h-auto md:h-full p-6 md:p-8 flex flex-col justify-between relative z-10 border-r border-gray-500/10 bg-[var(--bg-body)]/80 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none transition-colors duration-500">
         <div>
             <!-- Theme Toggle -->
-            <div class="absolute top-6 right-6 md:left-6 md:right-auto">
-                <button onclick="toggleTheme()"
-                    class="p-2 rounded-full glass-panel hover:scale-110 transition-transform text-[var(--primary)]"
-                    title="Toggle Dark/Light Mode">
-                    <i data-lucide="sun" id="theme-icon-sun" class="w-5 h-5"></i>
-                    <i data-lucide="moon" id="theme-icon-moon" class="hidden w-5 h-5"></i>
-                </button>
-            </div>
+
 
             <div class="mt-12 mb-6 relative group">
                 <!-- EDIT: Profile Image Placeholder -->
@@ -334,6 +717,44 @@
             <button id="mobile-menu-btn" class="text-[var(--text-main)] focus:outline-none">
                 <i data-lucide="menu"></i>
             </button>
+        </div>
+
+        <!-- Theme & Scheme Controls -->
+        <div class="theme-selector-container mb-4">
+            <!-- Scheme Dropdown -->
+            <div class="scheme-dropdown">
+                <button class="scheme-btn" id="current-scheme-btn" style="background: var(--primary);"
+                    title="Select Color Scheme"></button>
+                <div class="scheme-dropdown-content">
+                    <div class="scheme-btn" style="background: #FBBF24;" onclick="setScheme('obsidian')"
+                        title="Obsidian & Gold"></div>
+                    <div class="scheme-btn" style="background: #FB7185;" onclick="setScheme('crimson')"
+                        title="Crimson & Slate"></div>
+                    <div class="scheme-btn" style="background: #60A5FA;" onclick="setScheme('oxford')"
+                        title="Oxford Blue"></div>
+                    <div class="scheme-btn" style="background: #86EFAC;" onclick="setScheme('sage')"
+                        title="Sage & Stone"></div>
+                    <div class="scheme-btn" style="background: #C084FC;" onclick="setScheme('royal')"
+                        title="Royal & Silver"></div>
+                </div>
+            </div>
+
+            <!-- Theme Toggle -->
+            <label class="theme-switch" title="Toggle Dark/Light Mode">
+                <input type="checkbox" id="theme-checkbox" onchange="toggleTheme()" checked>
+                <span class="slider">
+                    <!-- Stars (Dark Mode) -->
+                    <div class="star star-1"></div>
+                    <div class="star star-2"></div>
+                    <div class="star star-3"></div>
+                    <div class="star star-4"></div>
+                    <div class="star star-5"></div>
+
+                    <!-- Clouds (Light Mode) -->
+                    <div class="cloud cloud-1"></div>
+                    <div class="cloud cloud-2"></div>
+                </span>
+            </label>
         </div>
 
         <!-- Copyright -->
@@ -399,7 +820,7 @@
                 <!-- <div class="glass-panel p-6 rounded-xl mb-8 border-l-4 border-l-purple-500">
                     <div class="mb-4">
                         <h4 class="text-lg font-bold flex items-center">
-                            <i data-lucide="file-text" class="mr-2 text-purple-400"></i> Curriculum Vitae
+                            <i data-lucide="file-text" class="mr-2 text-[var(--primary)]"></i> Curriculum Vitae
                         </h4>
                     </div> -->
 
@@ -461,11 +882,12 @@
                     <!-- Project Card 1 -->
 
                     <div
-                        class="glass-panel p-6 rounded-xl border-l-4 border-l-emerald-500 group hover:translate-x-2 transition-transform duration-300">
+                        class="glass-panel p-6 rounded-xl border-l-4 border-l-[var(--primary)] group hover:translate-x-2 transition-transform duration-300">
                         <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-xl font-bold group-hover:text-emerald-500 transition-colors">IDSO's DER
+                            <h4 class="text-xl font-bold group-hover:text-[var(--primary)] transition-colors">IDSO's DER
                                 Aggregation Tool</h4>
-                            <span class="px-2 py-1 bg-emerald-500/10 text-emerald-500 text-xs rounded font-mono">Python
+                            <span
+                                class="px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] text-xs rounded font-mono">Python
                                 | Answer Set Programming</span>
                         </div>
                         <p id="desc-IDSO" class="text-[var(--text-muted)] text-sm mb-4">
@@ -474,12 +896,12 @@
                             ensuring grid safety and reliability. The tool uses optimization techniques to maximize DER
                             revenue while adhering to grid constraints. The complete mathematical formulation can be
                             founder <a href="https://arxiv.org/abs/2508.08187"
-                                class="text-emerald-400 underline">here</a>.
+                                class="text-[var(--primary)] underline">here</a>.
                         </p>
 
                         <!-- AI Feature: Explain -->
                         <div id="ai-result-IDSO"
-                            class="hidden bg-emerald-500/10 border border-emerald-500/30 p-3 rounded mb-4 text-xs text-[var(--text-main)]">
+                            class="hidden bg-[var(--primary)]/10 border border-[var(--primary)]/30 p-3 rounded mb-4 text-xs text-[var(--text-main)]">
                         </div>
 
                         <div class="flex gap-3 items-center">
@@ -491,7 +913,7 @@
                                     data-lucide="file-text" class="w-3 h-3 mr-1"></i> Documentation</a>
                             <div class="flex-grow"></div>
                             <button onclick="explainProject('desc-IDSO', 'ai-result-IDSO')"
-                                class="text-xs flex items-center bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-3 py-1 rounded shadow-lg transition-all">
+                                class="text-xs flex items-center bg-gradient-to-r from-[var(--primary)] to-[var(--primary)] hover:from-[var(--primary)] hover:to-[var(--primary)] text-white px-3 py-1 rounded shadow-lg transition-all">
                                 <i data-lucide="sparkles" class="w-3 h-3 mr-2"></i> Explain Simply
                             </button>
                         </div>
@@ -524,7 +946,7 @@
                                     data-lucide="github" class="w-3 h-3 mr-1"></i> Repository</a>
                             <div class="flex-grow"></div>
                             <button onclick="explainProject('desc-project-alpha', 'ai-result-project-alpha')"
-                                class="text-xs flex items-center bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white px-3 py-1 rounded shadow-lg transition-all">
+                                class="text-xs flex items-center bg-gradient-to-r from-[var(--primary)] to-[var(--primary)] hover:from-[var(--primary)] hover:to-[var(--primary)] text-white px-3 py-1 rounded shadow-lg transition-all">
                                 <i data-lucide="sparkles" class="w-3 h-3 mr-2"></i> Explain Simply
                             </button>
                         </div>
@@ -532,24 +954,27 @@
 
                     <!-- Project Card 3 -->
                     <div
-                        class="glass-panel p-6 rounded-xl border-l-4 border-l-amber-300 group hover:translate-x-2 transition-transform duration-300 relative">
+                        class="glass-panel p-6 rounded-xl border-l-4 border-l-[var(--primary)] group hover:translate-x-2 transition-transform duration-300 relative">
                         <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-xl font-bold group-hover:text-amber-300 transition-colors">
+                            <h4 class="text-xl font-bold group-hover:text-[var(--primary)] transition-colors">
                                 Meta-Reinforcement Learning</h4>
-                            <span class="px-2 py-1 bg-amber-300/10 text-amber-300 text-xs rounded font-mono">Python |
+                            <span
+                                class="px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] text-xs rounded font-mono">Python
+                                |
                                 Pytorch</span>
                         </div>
                         <p id="desc-project-RL2" class="text-[var(--text-muted)] text-sm mb-4">
                             An implementation of the paper RL2: Fast Reinforcement Learning via Slow Reinforcement
                             Learning is available <a href="https://arxiv.org/pdf/1611.02779.pdf"
-                                class="text-amber-400 underline">here</a>. We used GRUs to train our model, and the
+                                class="text-[var(--primary)] underline">here</a>. We used GRUs to train our model, and
+                            the
                             policy is optimized using a simple actor-critic algorithm, with the actor being the RNN
                             agent and the baseline/critic network being a simple MLP.
                         </p>
 
                         <!-- AI Feature: Explain -->
                         <div id="ai-result-project-RL2"
-                            class="hidden bg-amber-300/10 border border-amber-300/30 p-3 rounded mb-4 text-xs text-[var(--text-main)]">
+                            class="hidden bg-[var(--primary)]/10 border border-[var(--primary)]/30 p-3 rounded mb-4 text-xs text-[var(--text-main)]">
                         </div>
 
                         <div class="flex gap-3 items-center">
@@ -558,7 +983,7 @@
                                     data-lucide="github" class="w-3 h-3 mr-1"></i> Repository</a>
                             <div class="flex-grow"></div>
                             <button onclick="explainProject('desc-project-RL2', 'ai-result-project-RL2')"
-                                class="text-xs flex items-center bg-gradient-to-r from-amber-300 to-amber-200 hover:from-amber-600 hover:to-amber-200 text-white px-3 py-1 rounded shadow-lg transition-all">
+                                class="text-xs flex items-center bg-gradient-to-r from-[var(--primary)] to-[var(--primary)] hover:from-[var(--primary)] hover:to-[var(--primary)] text-white px-3 py-1 rounded shadow-lg transition-all">
                                 <i data-lucide="sparkles" class="w-3 h-3 mr-2"></i> Explain Simply
                             </button>
                         </div>
@@ -1376,26 +1801,68 @@
         }
 
         // --- THEME TOGGLE ---
+        // --- THEME & SCHEME LOGIC ---
+        const schemes = {
+            obsidian: { dark: '#FBBF24', light: '#D97706' },
+            crimson: { dark: '#FB7185', light: '#BE123C' },
+            oxford: { dark: '#60A5FA', light: '#0369A1' },
+            sage: { dark: '#86EFAC', light: '#15803D' },
+            royal: { dark: '#C084FC', light: '#7E22CE' }
+        };
+
+        function setScheme(scheme) {
+            const html = document.documentElement;
+            html.setAttribute('data-scheme', scheme);
+            localStorage.setItem('scheme', scheme);
+            updateThemeColors();
+        }
+
         function toggleTheme() {
             const html = document.documentElement;
-            const current = html.getAttribute('data-theme');
-            const sun = document.getElementById('theme-icon-sun');
-            const moon = document.getElementById('theme-icon-moon');
+            const checkbox = document.getElementById('theme-checkbox');
 
-            if (current === 'light') {
-                html.removeAttribute('data-theme');
-                sun.classList.add('hidden');
-                moon.classList.remove('hidden');
-                // Reset particles for dark theme
-                updateParticles('#FBBF24'); // Amber 400
-            } else {
+            if (checkbox.checked) {
                 html.setAttribute('data-theme', 'light');
-                moon.classList.add('hidden');
-                sun.classList.remove('hidden');
-                // Reset particles for light theme
-                updateParticles('#D97706'); // Amber 600
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
             }
+            updateThemeColors();
         }
+
+        function updateThemeColors() {
+            const html = document.documentElement;
+            const scheme = html.getAttribute('data-scheme') || 'obsidian';
+            const isLight = html.getAttribute('data-theme') === 'light';
+
+            const color = isLight ? schemes[scheme].light : schemes[scheme].dark;
+            updateParticles(color);
+        }
+
+        // Initialize Theme State
+        window.addEventListener('DOMContentLoaded', () => {
+            const html = document.documentElement;
+            const checkbox = document.getElementById('theme-checkbox');
+
+            // Load saved settings
+            const savedTheme = localStorage.getItem('theme');
+            const savedScheme = localStorage.getItem('scheme') || 'obsidian';
+
+            // Apply Scheme
+            setScheme(savedScheme);
+
+            // Apply Theme
+            if (savedTheme === 'light') {
+                html.setAttribute('data-theme', 'light');
+                checkbox.checked = true;
+            } else {
+                html.removeAttribute('data-theme');
+                checkbox.checked = false;
+            }
+
+            updateThemeColors();
+        });
 
         // --- CLIPBOARD UTILITY ---
         function copyToClipboard(text) {
