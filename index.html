@@ -1,218 +1,1097 @@
-<!DOCTYPE HTML>
-<!--
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Swastik @ IITK</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel = "icon" href = images/Logo.png type = "image/x-icon">
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en" data-theme="light"> <!-- Default to light mode -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swastik Sharma - Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <style>
+        :root {
+            /* Default (Dark) Variables */
+            --bg-body: #0f172a;      /* Slate 900 */
+            --primary: #38bdf8;      /* Sky 400 */
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;   /* Slate 400 */
+            --glass-bg: rgba(15, 23, 42, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --particle-color: #38bdf8;
+            --card-hover: rgba(255, 255, 255, 0.05);
+        }
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<a href="index.html" class="logo"><strong>Swastik Sharma</strong> </a>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+        /* Light Mode Overrides */
+        html[data-theme="light"] {
+            --bg-body: #f0f9ff;      /* Sky 50 */
+            --primary: #0284c7;      /* Sky 600 */
+            --text-main: #0f172a;    /* Slate 900 */
+            --text-muted: #475569;   /* Slate 600 */
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(2, 132, 199, 0.15); /* Slight blue tint border */
+            --particle-color: #0ea5e9; /* Sky 500 */
+            --card-hover: rgba(2, 132, 199, 0.05);
+        }
 
-				<!-- Menu -->
-					<nav id="menu">
-						<ul class="links">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="researchwork.html">Research Work</a></li>
-							<li><a href="coursework.html">Coursework</a></li>
-							<li><a href="publications.html">Publications</a></li>
-							<li><a href="teachings.html">Teaching Duties</a></li>
-						</ul>
-						<ul class="actions stacked">
-							<li><a href="curriculumvitae.html" class="button primary fit">Profile</a></li>
-							<li><a href="mailto:swastiksharma@ieee.org" class="button fit">E-mail ME</a></li>
-						</ul>
-					</nav>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            overflow-x: hidden;
+            margin: 0;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
 
-				<!-- - Banner -->
-					<section id="banner" class="major">
-						<div class="inner">
-							<header class="major">
-								<h1>Hi! I'm Swastik</h1>
-							</header>
-							<div class="content">
-								<p>A PMRF Scholar at the Indian Institute of Technology Kanpur<br/>
-								I work with Dr. Swathi Battula and Prof. S.N. Singh.</p>
-								<ul class="actions">
-									<li><a href="#one" class="button next scrolly">Take a look at my profile---</a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--text-muted);
+            opacity: 0.2;
+            border-radius: 4px;
+        }
 
-				<!-- Main -->
-					<div id="main">
+        /* Glassmorphism Card Effect */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        
+        .glass-panel:hover {
+            background-color: var(--card-hover); /* Subtle highlight on hover */
+        }
 
-						<!-- One -->
-							<section id="one" class="tiles">
-								<article>
-									<span class="image">
-										<img src="images/pic02.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="curriculumvitae.html" class="link">Profile</a></h3>
-										<p></p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic01.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="researchwork.html" class="link">Research Work</a></h3>
-										<p>Transactive Energy Management of end-to-end Power Systems</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic12.png" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="coursework.html" class="link">Coursework</a></h3>
-										<p>Coursework done at IIT Kanpur</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic13.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="publications.html" class="link">Publications</a></h3>
-										<p></p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic14.jpeg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="teachings.html" class="link">Teaching Duties</a></h3>
-										<p>Teaching Assignments as part of my PMRF responsibilities</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/banner4.png" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="gallery.html" class="link">Gallery</a></h3>
-										<p></p>
-									</header>
-								</article>
-							</section>
+        /* Typography */
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
 
-						<!-- Two -->
-							<section id="two">
-								<div class="inner">
-									<header class="major">
-										<h2>About Me</h2>
-									</header>
-									<p align="justify">I graduated in 2021 with a B.Tech degree from the National Institute of Technology Srinagar in Electrical Engineering. After that, I joined the Department of Electrical Engineering at the Indian Institute of Technology Kanpur in July 2021 to pursue a PhD. My research interests include Transactive Energy Modelling, EV Charging Infrastructure, Electricity Market Design, Deep Reinforcement Learning applications to Power Systems, and Integrated Transmission and Distribution Modelling. I recieved Prime Minister's Research Fellowship in January 2023.</p>
-									<ul class="actions">
-										<li><a href="researchwork.html" class="button next">My Research Area</a></li>
-									</ul>
-								</div>
-							</section>
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+            transform: translateY(10px);
+        }
 
-					</div>
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-				<!-- Contact -->
-					<section id="contact">
-						<div class="inner">
-							<section>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="6"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="reset" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Clear" /></li>
-									</ul>
-								</form>
-							</section>
-							<section class="split">
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-envelope"></span>
-										<h3>Email</h3>
-										<a href="#">swastiks21@iitk.ac.in</a>
-										<a href="#">swastiksharma@ieee.org</a>
-										<a href="#">swastiksharma33@gmail.com</a>
-									</div>
-								</section>
-								<!-- <section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-phone"></span>
-										<h3>Phone</h3>
-										<span>(000) 000-0000 x12387</span>
-									</div>
-								</section> -->
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-home"></span>
-										<h3>Address</h3>
-										<span>ACES 315, ACES Building<br />
-										IIT Kanpur, Kalyanpur, Kanpur Nagar<br />PIN: 208016<br/>
-										Uttar Pradesh, India</span>
-									</div>
-								</section>
-							</section>
-						</div>
-					</section>
+        /* Interactive Elements */
+        .nav-item {
+            transition: all 0.3s ease;
+            position: relative;
+            color: var(--text-muted);
+        }
+        
+        .nav-item:hover {
+            color: var(--text-main);
+        }
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<ul class="icons">
-								<li><a href="https://twitter.com/swastiksharmaaa" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-                                <li><a href="https://github.com/sharmaswastik" class="icon brands alt fa-github"><span class="label">GitHub</span> </a></li>
-                                <li><a href="https://linkedin.com/in/sharmaswastik" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span> </a></li>
-                                <li><a href="https://scholar.google.com/citations?user=2Ofr4VEAAAAJ&hl=en" class="icon brands alt fa-google-scholar"><span class="label">LinkedIn</span> </a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy;Swastik Sharma</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
 
-			</div>
+        .nav-item:hover::after, .nav-item.active::after {
+            width: 100%;
+        }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        .nav-item.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
 
-	</body>
+        /* Canvas Background */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        /* Toast Notification */
+        #toast {
+            visibility: hidden; 
+            min-width: 250px; 
+            background-color: var(--bg-body); 
+            color: var(--text-main); 
+            text-align: center; 
+            border-radius: 8px; 
+            padding: 16px; 
+            position: fixed; 
+            z-index: 50; 
+            left: 50%; 
+            bottom: 30px; 
+            transform: translateX(-50%);
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s, bottom 0.3s;
+            border: 1px solid var(--primary);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        #toast.show {
+            visibility: visible;
+            opacity: 1;
+            bottom: 50px;
+        }
+        
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            aspect-ratio: 1;
+            cursor: pointer;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* AI Loading State */
+        .animate-pulse-fast {
+            animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="h-screen flex flex-col md:flex-row overflow-hidden transition-colors duration-500">
+
+    <!-- Background Animation Layer -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- LEFT PANEL: Profile & Static Info -->
+    <aside class="w-full md:w-1/3 lg:w-1/4 h-auto md:h-full p-8 flex flex-col justify-between relative z-10 border-r border-gray-500/10 bg-[var(--bg-body)]/80 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none transition-colors duration-500">
+        <div>
+            <!-- Theme Toggle -->
+            <div class="absolute top-6 right-6 md:left-6 md:right-auto">
+                <button onclick="toggleTheme()" class="p-2 rounded-full glass-panel hover:scale-110 transition-transform text-[var(--primary)]" title="Toggle Dark/Light Mode">
+                    <i data-lucide="sun" id="theme-icon-sun" class="w-5 h-5"></i>
+                    <i data-lucide="moon" id="theme-icon-moon" class="hidden w-5 h-5"></i>
+                </button>
+            </div>
+            
+            <div class="mt-12 mb-6 relative group">
+                <!-- EDIT: Profile Image Placeholder -->
+                <div class="w-48 h-48 rounded-full bg-slate-700 overflow-hidden border-2 border-[var(--primary)] shadow-[0_0_15px_rgba(56,189,248,0.3)]">
+                   <!-- Use a real image URL below, e.g., src="photo.jpg" -->
+                   <img src="V1.0/images/pic15.png" alt="Profile" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+            </div>
+
+            <!-- EDIT: Name and Title -->
+            <h1 class="text-4xl font-bold text-[var(--text-main)] mb-2 tracking-tight">Swastik Sharma</h1>
+            <h2 class="text-[var(--primary)] font-mono text-sm mb-6">Ph.D. Candidate at IIT Kanpur</h2>
+
+            <p class="text-[var(--text-muted)] text-sm leading-relaxed mb-8 max-w-xs">
+                Exploring the intersection of transmission and distribution system operations, paving a way for improving flexibility.
+            </p>
+
+            <!-- Social Links -->
+            <div class="flex space-x-4">
+                <a href="https://github.com/sharmaswastik" class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors"><i data-lucide="github"></i></a>
+                <a href="https://www.linkedin.com/in/sharmaswastik/" class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors"><i data-lucide="linkedin"></i></a>
+                <a href="mailto:swastiksharma@ieee.org" class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors"><i data-lucide="mail"></i></a>
+                <a href="https://scholar.google.com/citations?user=2Ofr4VEAAAAJ&hl=en" class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors"><i data-lucide="graduation-cap"></i></a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Trigger (Only visible on small screens) -->
+        <div class="md:hidden mt-6 flex justify-between items-center border-t border-gray-500/10 pt-4">
+            <span class="text-xs text-[var(--text-muted)] uppercase tracking-widest">Menu</span>
+            <button id="mobile-menu-btn" class="text-[var(--text-main)] focus:outline-none">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <!-- Copyright -->
+        <div class="hidden md:block text-xs text-[var(--text-muted)]">
+            &copy; <span id="year"></span> ACES 115<br>IIT Kanpur, IN.
+        </div>
+    </aside>
+
+    <!-- RIGHT PANEL: Dynamic Content Area -->
+    <main class="flex-1 h-full relative z-10 flex flex-col">
+        
+        <!-- Navigation (Tabs) -->
+        <nav id="main-nav" class="w-full p-6 md:p-8 flex flex-wrap justify-center md:justify-start gap-8 border-b border-gray-500/10 bg-[var(--bg-body)]/50 backdrop-blur-sm transition-colors duration-500">
+            <button onclick="showSection('about')" class="nav-item active text-sm font-medium uppercase tracking-wider pb-1">About</button>
+            <button onclick="showSection('research')" class="nav-item text-sm font-medium uppercase tracking-wider pb-1">Research</button>
+            <button onclick="showSection('teaching')" class="nav-item text-sm font-medium uppercase tracking-wider pb-1">Teaching</button>
+            <button onclick="showSection('gallery')" class="nav-item text-sm font-medium uppercase tracking-wider pb-1">Gallery</button>
+            <button onclick="showSection('publications')" class="nav-item text-sm font-medium uppercase tracking-wider pb-1">Publications</button>
+            <button onclick="showSection('contact')" class="nav-item text-sm font-medium uppercase tracking-wider pb-1">Contact</button>
+        </nav>
+
+        <!-- Scrollable Content Container -->
+        <div class="flex-1 overflow-y-auto p-6 md:p-12 scroll-smooth relative">
+            
+            <!-- SECTION: ABOUT -->
+            <section id="about" class="max-w-3xl fade-in text-[var(--text-main)]">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <i data-lucide="user" class="mr-3 text-[var(--primary)]"></i> Biography
+                </h3>
+                <div class="glass-panel p-8 rounded-xl mb-8">
+                    <p class="text-[var(--text-muted)] leading-loose mb-4 transition-colors">
+                        <!-- EDIT: Your Bio -->
+                        Technological advancements are driving the rapid integration of renewables into the grid. However, they face challenges of intermittency and variability (quite sad, isn't it?), which pose difficulties for system operators in maintaining a consistent supply-demand balance. As a <strong class="text-[var(--text-main)]">Prime Minister's Research Fellow (PMRF)</strong> at the <strong class="text-[var(--text-main)]">Indian Institute of Technology Kanpur</strong>, my research focuses on <strong class="text-[var(--text-main)]">Transactive Energy System Design, Independent Distribution System Operator, Flexibility services, and Electricity Markets</strong>. My goal is to enhance grid reliability and leverage renewable power sources. With a Bachelor's degree from the <strong class="text-[var(--text-main)]">National Institute of Technology Srinagar</strong>, I possess a comprehensive understanding of theory and practice (or at least I believe so). I am enthusiastic about applying my skills and knowledge to bring about positive changes in the energy sector by enhancing grid reliability through distribution-side flexibility and innovating electricity market operations (that lengthy sentence reflects my excitement!). The potential for innovation in the energy sector is limitless, and I firmly believe (emphasis on "I believe") that this research has the power to strengthen the grid, increase renewable deployment, positively impact the climate (Go Greta!), and enhance grid resiliency – truly a win-win situation.
+                    </p>
+                </div>
+
+                <!-- NEW: Resume Section -->
+                <div class="glass-panel p-6 rounded-xl mb-8 border-l-4 border-l-purple-500">
+                    <div class="mb-4">
+                        <h4 class="text-lg font-bold flex items-center">
+                            <i data-lucide="file-text" class="mr-2 text-purple-400"></i> Curriculum Vitae
+                        </h4>
+                    </div>
+                    
+                    <!-- PDF Viewer Container -->
+                    <div class="w-full h-screen bg-[var(--bg-body)]/50 rounded-lg border border-[var(--glass-border)] flex items-center justify-center relative overflow-hidden group">
+                        <!-- Placeholder Background Text -->
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-[var(--text-muted)] p-4 text-center z-0 pointer-events-none">
+                            <i data-lucide="file" class="w-12 h-12 mb-3 opacity-20"></i>
+                        </div>
+                        <!-- Actual Iframe -->
+                        <!-- Note: If the file doesn't exist, this might show 404. Put your file in the root folder. -->
+                        <iframe src="V1.0/PDF/CV.SwastikSharma.pdf#toolbar=0&navpanes=0&scrollbar=0" class="w-full h-full relative z-10 opacity-80 hover:opacity-100 transition-opacity" title="Resume PDF"></iframe>
+                    </div>
+                </div>
+
+                <h4 class="text-lg font-bold mb-4 mt-8">Current Focus Areas</h4>
+                <div class="grid grid-cols-2 md:grid-cols-2 gap-4">
+                    <div class="glass-panel p-4 rounded-lg flex items-start">
+                        <i data-lucide="network" class="text-[var(--primary)] mt-1 mr-3"></i>
+                        <div>
+                            <h5 class="font-bold text-sm">DER Aggregation</h5>
+                            <p class="text-xs text-[var(--text-muted)] mt-1">Designing optimization tools to aggregate DERs for Wholesale Market participation. </p>
+                        </div>
+                    </div>
+                    <div class="glass-panel p-4 rounded-lg flex items-start">
+                        <i data-lucide="user" class="text-[var(--primary)] mt-1 mr-3"></i>
+                        <div>
+                            <h5 class="font-bold text-sm">Independent Distribution System Operator (IDSO)</h5>
+                            <p class="text-xs text-[var(--text-muted)] mt-1">Modelling the role of IDSO to perform grid-safe aggregation and participate in wholesale markets.</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel p-4 rounded-lg flex items-start">
+                        <i data-lucide="ev-charger" class="text-[var(--primary)] mt-1 mr-3"></i>
+                        <div>
+                            <h5 class="font-bold text-sm">DRL Agents for DERs</h5>
+                            <p class="text-xs text-[var(--text-muted)] mt-1">Deep reinforcement learning (DRL) based transactive agents for DERs</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel p-4 rounded-lg flex items-start">
+                        <i data-lucide="receipt-text" class="text-[var(--primary)] mt-1 mr-3"></i>
+                        <div>
+                            <h5 class="font-bold text-sm">Swing Contract Design</h5>
+                            <p class="text-xs text-[var(--text-muted)] mt-1">Developing Swing Contracts for IDSO</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: RESEARCH / PROJECTS -->
+            <section id="research" class="max-w-4xl hidden text-[var(--text-main)]">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <i data-lucide="microscope" class="mr-3 text-[var(--primary)]"></i> Active Projects
+                </h3>
+                
+                <div class="grid grid-cols-1 gap-6">
+                    <!-- Project Card 1 -->
+                    <div class="glass-panel p-6 rounded-xl border-l-4 border-l-[var(--primary)] group hover:translate-x-2 transition-transform duration-300 relative">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold group-hover:text-[var(--primary)] transition-colors">Project Alpha: Neural Decay</h4>
+                            <span class="px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] text-xs rounded font-mono">Python / TensorFlow</span>
+                        </div>
+                        <p id="desc-project-alpha" class="text-[var(--text-muted)] text-sm mb-4">
+                            Investigating the rate of signal decay in artificial recurrent neural networks when subjected to noise, simulating biological synaptic fatigue to create more resilient AI architectures.
+                        </p>
+                        
+                        <!-- AI Feature: Explain -->
+                        <div id="ai-result-project-alpha" class="hidden bg-[var(--primary)]/10 border border-[var(--primary)]/30 p-3 rounded mb-4 text-xs text-[var(--text-main)]"></div>
+
+                        <div class="flex gap-3 items-center">
+                            <a href="#" class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i data-lucide="github" class="w-3 h-3 mr-1"></i> Code</a>
+                            <a href="#" class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i data-lucide="external-link" class="w-3 h-3 mr-1"></i> Demo</a>
+                            <div class="flex-grow"></div>
+                            <button onclick="explainProject('desc-project-alpha', 'ai-result-project-alpha')" class="text-xs flex items-center bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white px-3 py-1 rounded shadow-lg transition-all">
+                                <i data-lucide="sparkles" class="w-3 h-3 mr-2"></i> Explain Simply
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="glass-panel p-6 rounded-xl border-l-4 border-l-emerald-500 group hover:translate-x-2 transition-transform duration-300">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold group-hover:text-emerald-500 transition-colors">BioVis 3.0</h4>
+                            <span class="px-2 py-1 bg-emerald-500/10 text-emerald-500 text-xs rounded font-mono">React / D3.js</span>
+                        </div>
+                        <p id="desc-biovis" class="text-[var(--text-muted)] text-sm mb-4">
+                            An open-source visualization tool for complex protein folding structures utilizing WebGL for real-time rendering of macromolecular data. Currently used by 30+ labs worldwide.
+                        </p>
+
+                        <!-- AI Feature: Explain -->
+                        <div id="ai-result-biovis" class="hidden bg-emerald-500/10 border border-emerald-500/30 p-3 rounded mb-4 text-xs text-[var(--text-main)]"></div>
+
+                        <div class="flex gap-3 items-center">
+                            <a href="#" class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i data-lucide="github" class="w-3 h-3 mr-1"></i> Repository</a>
+                            <a href="#" class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i data-lucide="file-text" class="w-3 h-3 mr-1"></i> Documentation</a>
+                            <div class="flex-grow"></div>
+                            <button onclick="explainProject('desc-biovis', 'ai-result-biovis')" class="text-xs flex items-center bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-3 py-1 rounded shadow-lg transition-all">
+                                <i data-lucide="sparkles" class="w-3 h-3 mr-2"></i> Explain Simply
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: PMRF TEACHING (NEW) -->
+            <section id="teaching" class="max-w-4xl hidden text-[var(--text-main)]">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <i data-lucide="presentation" class="mr-3 text-[var(--primary)]"></i> PMRF Teaching Duties
+                </h3>
+                
+                <div class="space-y-6">
+
+                    <!-- Teaching Role 6 -->
+                    <div class="glass-panel p-6 rounded-xl">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">Chhatrapati Shahu Ji Maharaj University (CSJMU), Kanpur: Workshop on "LaTeX for Document Editing"</h4>
+                                <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
+                            </div>
+                            <span class="text-xs font-mono text-[var(--text-muted)]">Jan 2025 - April 2025</span>
+                        </div>
+                        <p class="text-sm text-[var(--text-muted)] mt-2">
+                            A workshop focused on teaching LaTeX for professional document preparation, covering basics to advanced formatting techniques.
+                        </p>
+                    </div>
+
+                    <!-- Teaching Role 5 -->
+                    <div class="glass-panel p-6 rounded-xl">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">NPTEL Course: EE79 Smart Grids: Basics to Advanced Technologies </h4>
+                                <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
+                            </div>
+                            <span class="text-xs font-mono text-[var(--text-muted)]">Jan 2025 - April 2025</span>
+                        </div>
+                        <p class="text-sm text-[var(--text-muted)] mt-2">
+                            Doubt clearing and problem solving sessions for students enrolled in the course.
+                        </p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="px-2 py-1 bg-[var(--bg-body)] border border-[var(--glass-border)] rounded text-xs text-[var(--text-muted)]"><a href="https://www.youtube.com/playlist?list=PLqTDTw8KvSg5i9fhQVENGgpfDnFlX6Mzm">YouTube Lectures</a></span>
+                        </div>
+                    </div>
+
+                    <!-- Teaching Role 4 -->
+                    <div class="glass-panel p-6 rounded-xl">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">Chhatrapati Shahu Ji Maharaj University (CSJMU), Kanpur: Workshop on "Machine Learning with Python"</h4>
+                                <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
+                            </div>
+                            <span class="text-xs font-mono text-[var(--text-muted)]">April 2024</span>
+                        </div>
+                        <p class="text-sm text-[var(--text-muted)] mt-2">
+                            A 30-hours hands-on workshop covering fundamentals of Machine Learning using Python.
+                        </p>
+                    </div>
+
+                    <!-- Teaching Role 3 -->
+                    <div class="glass-panel p-6 rounded-xl">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">NPTEL Course: EE37 Smart Grids: Basics to Advanced Technologies </h4>
+                                <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
+                            </div>
+                            <span class="text-xs font-mono text-[var(--text-muted)]">Jan 2024 - April 2024</span>
+                        </div>
+                        <p class="text-sm text-[var(--text-muted)] mt-2">
+                            Doubt clearing and problem solving sessions for students enrolled in the course.
+                        </p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="px-2 py-1 bg-[var(--bg-body)] border border-[var(--glass-border)] rounded text-xs text-[var(--text-muted)]"><a href="https://www.youtube.com/playlist?list=PLqTDTw8KvSg6MIw_CUPUsWb9gUXGZ1C4a">YouTube Lectures</a></span>
+                        </div>
+                    </div>
+
+                    <!-- Teaching Role 2 -->
+                    <div class="glass-panel p-6 rounded-xl">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">Atal Bihari Vajpayee Indian Institute of Information Technology Gwalior: EE101 Fundamentals of Electrical and Electronics</h4>
+                                <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
+                            </div>
+                            <span class="text-xs font-mono text-[var(--text-muted)]">Oct 2023</span>
+                        </div>
+                        <p class="text-sm text-[var(--text-muted)] mt-2">
+                            Problem solving tutorials and laboratory practicals.
+                        </p>
+                    </div>
+
+                    <!-- Teaching Role 1 -->
+                    <div class="glass-panel p-6 rounded-xl">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">NPTEL Course: EE116 Fundamentals of Electrical Engineering </h4>
+                                <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
+                            </div>
+                            <span class="text-xs font-mono text-[var(--text-muted)]">July 2023 - Oct 2023</span>
+                        </div>
+                        <p class="text-sm text-[var(--text-muted)] mt-2">
+                            Doubt clearing and problem solving sessions for students enrolled in the course.
+                        </p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="px-2 py-1 bg-[var(--bg-body)] border border-[var(--glass-border)] rounded text-xs text-[var(--text-muted)]"><a href="https://www.youtube.com/playlist?list=PLqTDTw8KvSg6NKI3vbjbNdLEzqgcS19Jj">YouTube Lectures</a></span>
+                        </div>
+                    </div>
+                </div>
+            
+                <h3 class="text-2xl font-bold mt-6 mb-6 flex items-center">
+                    <i data-lucide="presentation" class="mr-3 text-[var(--primary)]"></i> Institute Teaching Duties
+                </h3>
+
+                <div class="space-y-6">
+
+                     <!-- Teaching Role 5 -->
+                    
+                    <div class="glass-panel p-6 rounded-xl">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">EE 630(P): Simulation of Modern Power Systems</h4>
+                                <p class="text-sm text-[var(--primary)]">Teaching Assistant (Lab Tutor)</p>
+                            </div>
+                            <span class="text-xs font-mono text-[var(--text-muted)]">2025-26 Sem I</span>
+                        </div>
+                        <p class="text-sm text-[var(--text-muted)] mt-2">
+                            Conducted lab sessions on power system simulation using Python.
+                        </p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="px-2 py-1 bg-[var(--bg-body)] border border-[var(--glass-border)] rounded text-xs text-[var(--text-muted)]">Python</span>
+                            <span class="px-2 py-1 bg-[var(--bg-body)] border border-[var(--glass-border)] rounded text-xs text-[var(--text-muted)]">Algorithms</span>
+                        </div>
+                    </div>
+
+                     <!-- Teaching Role 4 -->
+                    
+                    <div class="glass-panel p-6 rounded-xl">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">EE 675: Introduction to Reinforcement Learning</h4>
+                                <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
+                            </div>
+                            <span class="text-xs font-mono text-[var(--text-muted)]">2024-25 Sem II</span>
+                        </div>
+                        <p class="text-sm text-[var(--text-muted)] mt-2">
+                            Assisting instructor with correcting assignments, and clearing student doubts.
+                        </p>
+                    </div>
+
+                    <!-- Teaching Role 3 -->
+                    
+                    <div class="glass-panel p-6 rounded-xl">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">EE 633A: Electric Power System Operation and Management Under Restructured Environment</h4>
+                                <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
+                            </div>
+                            <span class="text-xs font-mono text-[var(--text-muted)]">2022-23 Sem II</span>
+                        </div>
+                        <p class="text-sm text-[var(--text-muted)] mt-2">
+                            Assisting instructor with correcting quizzes, assignments, and clearing student doubts.
+                        </p>
+                    </div>
+
+                    <!-- Teaching Role 2 -->
+                    <div class="glass-panel p-6 rounded-xl">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">EE 632A: Economic Operation and Control of Power Systems</h4>
+                                <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
+                            </div>
+                            <span class="text-xs font-mono text-[var(--text-muted)]">2022-23 Sem I</span>
+                        </div>
+                        <p class="text-sm text-[var(--text-muted)] mt-2">
+                            Assisting instructor with correcting quizzes, assignments, and clearing student doubts.
+                        </p>
+                    </div>
+
+                    <!-- Teaching Role 1 -->
+                    <div class="glass-panel p-6 rounded-xl">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h4 class="text-lg font-bold text-[var(--text-main)]">ESO 203A: Introduction to Electrical Engineering</h4>
+                                <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
+                            </div>
+                            <span class="text-xs font-mono text-[var(--text-muted)]">2021-22 Sem II</span>
+                        </div>
+                        <p class="text-sm text-[var(--text-muted)] mt-2">
+                            Preparing questions for weekly quizzes and assisting in grading assignments.
+                        </p>
+                    </div>
+
+                     <!-- Mentorship
+                     <div class="glass-panel p-6 rounded-xl border-l-4 border-l-orange-400">
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="users" class="text-orange-400 mr-2 w-5 h-5"></i>
+                            <h4 class="text-lg font-bold text-[var(--text-main)]">Mentorship</h4>
+                        </div>
+                        <ul class="list-disc list-inside text-sm text-[var(--text-muted)] space-y-2">
+                            <li><strong>Sarah Jenkins (PhD Candidate):</strong> Advising on reinforcement learning strategies in protein folding.</li>
+                            <li><strong>David Lee (Undergraduate):</strong> Supervised summer research project on genomic data visualization.</li>
+                        </ul>
+                    </div> -->
+                </div>
+            </section>
+
+            <!-- SECTION: GALLERY (NEW) -->
+            <section id="gallery" class="max-w-4xl hidden text-[var(--text-main)]">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <i data-lucide="image" class="mr-3 text-[var(--primary)]"></i> Gallery
+                </h3>
+                <p class="text-[var(--text-muted)] mb-6">Presented my research paper at IEEE PESGM 2024, Seattle, WA, USA (21st - 25th July 2024)</p>
+                <div class="gallery-grid">
+                    <!-- Gallery Item 1 -->
+                    <div class="gallery-item glass-panel group">
+                        <img src="V1.0/images/1.JPEG">
+                    </div>
+                    <!-- Gallery Item 2 -->
+                     <div class="gallery-item glass-panel group">
+                        <img src="V1.0/images/2.JPEG">
+                    </div>
+                    <!-- Gallery Item 3 -->
+                     <div class="gallery-item glass-panel group">
+                        <img src="V1.0/images/3.JPEG">
+                    </div>
+                     <!-- Gallery Item 4 -->
+                      <div class="gallery-item glass-panel group">
+                        <img src="V1.0/images/4.JPEG">
+                    </div>
+                    <!-- Gallery Item 5 -->
+                      <div class="gallery-item glass-panel group">
+                        <img src="V1.0/images/PESGMPoster.jpeg">
+                    </div>
+                    <!-- Gallery Item 6 -->
+                      <div class="gallery-item glass-panel group">
+                        <img src="V1.0/images/6 Small.jpeg">
+                    </div>
+                    <!-- Gallery Item 7 -->
+                      <div class="gallery-item glass-panel group">
+                        <img src="V1.0/images/7.JPEG">
+                    </div>
+                    <!-- Gallery Item 8 -->
+                      <div class="gallery-item glass-panel group">
+                        <img src="V1.0/images/8.JPEG">
+                    </div>
+                </div>
+                
+                <p class="text-[var(--text-muted)] mb-6 mt-6">My talk at Kendriya Vidyalaya No. 1 Jammu on 13th February 2024 on the topic "Innovation and Out-of-the-box Thinking"</p>
+
+                <div class="gallery-grid">
+                    <!-- Gallery Item 1 -->
+                    <div class="gallery-item glass-panel group">
+                        <img src="V1.0/images/img1.JPG">
+                    </div>
+                    <!-- Gallery Item 2 -->
+                     <div class="gallery-item glass-panel group">
+                        <img src="V1.0/images/img2.JPG">
+                    </div>
+                    <!-- Gallery Item 3 -->
+                     <div class="gallery-item glass-panel group">
+                        <img src="V1.0/images/img3.JPG">
+                    </div>
+                     <!-- Gallery Item 4 -->
+                      <div class="gallery-item glass-panel group">
+                        <img src="V1.0/images/img4.JPG">
+                    </div>
+                    <!-- Gallery Item 5 -->
+                      <div class="gallery-item glass-panel group">
+                        <img src="V1.0/images/img5.JPG">
+                    </div>
+                    <!-- Gallery Item 6 -->
+                      <div class="gallery-item glass-panel group">
+                        <img src="V1.0/images/img6.JPG">
+                    </div>
+                    <!-- Gallery Item 7 -->
+                      <div class="gallery-item glass-panel group">
+                        <img src="V1.0/images/img7.JPG">
+                    </div>
+                    <!-- Gallery Item 8 -->
+                      <div class="gallery-item glass-panel group">
+                        <img src="V1.0/images/img8.JPG">
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: PUBLICATIONS -->
+            <section id="publications" class="max-w-3xl hidden text-[var(--text-main)]">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <i data-lucide="book-open" class="mr-3 text-[var(--primary)]"></i> Selected Publications
+                </h3>
+                
+                <!-- Group: Preprints -->
+                <h4 class="text-lg font-bold mb-4 mt-2 text-[var(--text-main)] border-b border-[var(--glass-border)] pb-2">Preprints</h4>
+                <div class="space-y-4 mb-8">
+                     <div class="glass-panel p-6 rounded-xl relative">
+                        <span class="absolute top-6 right-6 text-xs font-mono text-[var(--text-muted)]">2025</span>
+                        <h4 class="text-lg font-bold pr-12">IDSO-Managed Bid-Based Transactive Distribution Systems Design for DER Participation in Wholesale Markets While Preserving T-D Interactions</h4>
+                        <p class="text-[var(--primary)] text-sm mb-2">S. Sharma, S. Battula, and S.N. Singh</p>
+                        <p class="text-[var(--text-muted)] text-sm italic mb-4">arXiv:2508.08187</p>
+                        <div class="flex gap-3">
+                            <a href="https://arxiv.org/abs/2508.08187" class="px-3 py-1 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 text-[var(--primary)] rounded text-xs flex items-center transition-colors">
+                                Link
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group: Journals
+                <h4 class="text-lg font-bold mb-4 text-[var(--text-main)] border-b border-[var(--glass-border)] pb-2">Journal Articles</h4>
+                <div class="space-y-4 mb-8"> -->
+                    <!-- Publication Item -->
+                    <!-- <div class="glass-panel p-6 rounded-xl relative">
+                        <span class="absolute top-6 right-6 text-xs font-mono text-[var(--text-muted)]">2024</span>
+                        <h4 class="text-lg font-bold pr-12">Algorithmic Bias in genomic datasets: A comprehensive review</h4>
+                        <p class="text-[var(--primary)] text-sm mb-2">A. Chen, J. Doe, S. Smith</p>
+                        <p class="text-[var(--text-muted)] text-sm italic mb-4">Journal of Computational Biology, Vol 12.</p>
+                        <div class="flex gap-3">
+                            <button onclick="copyToClipboard('Chen et al. 2024, Algorithmic Bias...')" class="px-3 py-1 bg-[var(--primary)]/10 hover:bg-[var(--primary)]/20 rounded text-xs text-[var(--text-main)] flex items-center transition-colors">
+                                <i data-lucide="quote" class="w-3 h-3 mr-2"></i> Cite
+                            </button>
+                            <a href="#" class="px-3 py-1 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 text-[var(--primary)] rounded text-xs flex items-center transition-colors">
+                                PDF
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Group: Conferences -->
+                <h4 class="text-lg font-bold mb-4 text-[var(--text-main)] border-b border-[var(--glass-border)] pb-2">Conference Proceedings</h4>
+                <div class="space-y-4">
+                    <!-- Publication Item -->
+                    <div class="glass-panel p-6 rounded-xl relative">
+                        <span class="absolute top-6 right-6 text-xs font-mono text-[var(--text-muted)]">2026</span>
+                        <h4 class="text-lg font-bold pr-12">Towards Improved System Flexibility: Enabling IDSO's Swing Contract Market Participation</h4>
+                        <p class="text-[var(--primary)] text-sm mb-2">S. Sharma, S. Battula, and S.N. Singh</p>
+                        <p class="text-[var(--text-muted)] text-sm italic mb-4">2026 IEEE Power & Energy Society Transmission & Distribution Conference & Exposition, Chicago, Illinois, 2026 <b>[Accepted]</b></p>
+                        <!-- <div class="flex gap-3">
+                            <button onclick="copyToClipboard('Chen & Rossi 2023, Optimizing Graph Theory...')" class="px-3 py-1 bg-[var(--primary)]/10 hover:bg-[var(--primary)]/20 rounded text-xs text-[var(--text-main)] flex items-center transition-colors">
+                                <i data-lucide="quote" class="w-3 h-3 mr-2"></i> Cite
+                            </button>
+                            <a href="#" class="px-3 py-1 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 text-[var(--primary)] rounded text-xs flex items-center transition-colors">
+                                PDF
+                            </a>
+                        </div> -->
+                    </div>
+                    <div class="glass-panel p-6 rounded-xl relative">
+                        <span class="absolute top-6 right-6 text-xs font-mono text-[var(--text-muted)]">2024</span>
+                        <h4 class="text-lg font-bold pr-12">Transactive Electric Vehicle Agent: A Deep Reinforcement Learning Approach</h4>
+                        <p class="text-[var(--primary)] text-sm mb-2">S. Sharma, S. Battula, and S.N. Singh</p>
+                        <p class="text-[var(--text-muted)] text-sm italic mb-4">2024 IEEE Power & Energy Society General Meeting, Seattle, Washington, 2024</p>
+                        <p class="text-[var(--text-muted)] text-sm italic mb-4">doi: 10.1109/PESGM51994.2024.10688919.</p>
+                        <div class="flex gap-3">
+                            <button onclick="copyToClipboard('S. Sharma, S. Battula and S. N. Singh, Transactive Electric Vehicle Agent: A Deep Reinforcement Learning Approach, 2024 IEEE Power & Energy Society General Meeting (PESGM), Seattle, WA, USA, 2024, pp. 1-5, doi: 10.1109/PESGM51994.2024.10688919.')" class="px-3 py-1 bg-[var(--primary)]/10 hover:bg-[var(--primary)]/20 rounded text-xs text-[var(--text-main)] flex items-center transition-colors">
+                                <i data-lucide="quote" class="w-3 h-3 mr-2"></i> Cite
+                            </button>
+                            <a href="https://ieeexplore.ieee.org/document/10688919" class="px-3 py-1 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 text-[var(--primary)] rounded text-xs flex items-center transition-colors">
+                                Link
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: CONTACT -->
+            <section id="contact" class="max-w-xl hidden text-[var(--text-main)]">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <i data-lucide="mail" class="mr-3 text-[var(--primary)]"></i> Get in Touch
+                </h3>
+                <div class="glass-panel p-8 rounded-xl relative overflow-hidden">
+                    
+                    <!-- AI Assistant Badge -->
+                    <div class="absolute top-0 right-0 p-2 bg-purple-500/10 rounded-bl-xl border-b border-l border-purple-500/30">
+                        <div class="flex items-center gap-2 text-purple-400 text-xs font-mono">
+                            <i data-lucide="sparkles" class="w-3 h-3"></i> Gemini Powered
+                        </div>
+                    </div>
+
+                    <p class="text-[var(--text-muted)] mb-6">
+                        I am always open to collaboration on open-source projects or speaking opportunities.
+                    </p>
+                    
+                    <div class="mb-6 p-4 bg-slate-800/50 rounded-lg border border-slate-700/50">
+                        <label class="block text-xs font-bold text-purple-400 uppercase tracking-wider mb-2">AI Drafting Assistant</label>
+                        <div class="flex gap-2">
+                            <input id="draft-topic" type="text" class="flex-1 bg-slate-900 border border-slate-700 rounded px-3 py-2 text-sm text-white focus:border-purple-400 focus:outline-none" placeholder="E.g., Invitation to speak at BioTech Summit...">
+                            <button onclick="draftEmail()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors flex items-center whitespace-nowrap">
+                                <i data-lucide="sparkles" class="w-3 h-3 mr-2"></i> Smart Draft
+                            </button>
+                        </div>
+                    </div>
+
+                    <form action="https://formsubmit.co/swastiksharma@ieee.org" method="POST" class="space-y-4">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" value="https://your-website-url.com/thanks.html"> 
+                        <div>
+                            <label class="block text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider mb-1">Your Email</label>
+                            <input type="email" class="w-full bg-[var(--bg-body)]/50 border border-[var(--glass-border)] rounded p-3 text-[var(--text-main)] focus:border-[var(--primary)] focus:outline-none transition-colors" placeholder="colleague@institute.edu">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider mb-1">Message</label>
+                            <textarea id="message-box" rows="6" class="w-full bg-[var(--bg-body)]/50 border border-[var(--glass-border)] rounded p-3 text-[var(--text-main)] focus:border-[var(--primary)] focus:outline-none transition-colors" placeholder="Let's collaborate on..."></textarea>
+                        </div>
+                        <button type="submit" class="bg-[var(--primary)] hover:opacity-90 text-white px-6 py-2 rounded font-medium transition-colors w-full">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Footer Space -->
+            <div class="h-20"></div>
+        </div>
+    </main>
+
+    <!-- Toast Notification Element -->
+    <div id="toast">Citation copied to clipboard!</div>
+
+    <script>
+        // --- GEMINI API CONFIGURATION ---
+        const apiKey = ""; // TODO: INSERT YOUR API KEY HERE
+
+        async function callGeminiAPI(prompt) {
+            if (!apiKey) {
+                showToast("Error: Missing API Key");
+                return "Please add your Gemini API Key in the code to use this feature.";
+            }
+
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${AIzaSyBgBpBSw4vZM8qGuZY9Y3W2zqrPf9RkuOM}`;
+            
+            const payload = {
+                contents: [{
+                    parts: [{ text: prompt }]
+                }]
+            };
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) throw new Error('API Error');
+
+                const data = await response.json();
+                return data.candidates[0].content.parts[0].text;
+            } catch (error) {
+                console.error("Gemini API Error:", error);
+                showToast("AI Service Unavailable");
+                return "Sorry, the AI service is currently unavailable. Please check your API key or try again later.";
+            }
+        }
+
+        // --- AI FEATURE 1: EXPLAIN PROJECT ---
+        async function explainProject(sourceId, targetId) {
+            const descText = document.getElementById(sourceId).innerText;
+            const targetEl = document.getElementById(targetId);
+            
+            // Loading State
+            targetEl.classList.remove('hidden');
+            targetEl.innerHTML = `<div class="flex items-center gap-2"><i data-lucide="loader-2" class="animate-spin w-4 h-4"></i> Simplifying complex concepts...</div>`;
+            lucide.createIcons();
+
+            const prompt = `You are a helpful science communicator. Rewrite the following research project description so it is easy for a high school student to understand. Keep it under 2 sentences. Description: "${descText}"`;
+
+            const result = await callGeminiAPI(prompt);
+            
+            targetEl.innerHTML = `<strong class="block mb-1 text-[var(--text-main)] opacity-80">Simpler Explanation:</strong> ${result}`;
+        }
+
+        // --- AI FEATURE 2: SMART DRAFT ---
+        async function draftEmail() {
+            const topic = document.getElementById('draft-topic').value;
+            if (!topic) {
+                showToast("Please enter a topic first");
+                return;
+            }
+
+            const msgBox = document.getElementById('message-box');
+            
+            // Loading indication in the textarea
+            const originalPlaceholder = msgBox.placeholder;
+            msgBox.placeholder = "✨ AI is drafting your email...";
+            msgBox.value = "✨ Drafting...";
+            msgBox.classList.add("animate-pulse");
+
+            const prompt = `Draft a professional, concise email to Swastik Sharma (a PhD Candidate at IIT Kanpur) regarding the following topic: "${topic}". The sender is a fellow researcher. Keep it under 100 words. Only output the body of the email.`;
+
+            const result = await callGeminiAPI(prompt);
+            
+            msgBox.classList.remove("animate-pulse");
+            msgBox.value = result;
+            msgBox.placeholder = originalPlaceholder;
+        }
+
+        // --- ICONS ---
+        lucide.createIcons();
+
+        // --- DYNAMIC YEAR ---
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // --- TAB NAVIGATION ---
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = ['about', 'research', 'teaching', 'gallery', 'publications', 'contact'];
+            sections.forEach(id => {
+                const el = document.getElementById(id);
+                if(el) {
+                    el.classList.add('hidden');
+                    el.classList.remove('fade-in');
+                }
+            });
+
+            // Show target section
+            const target = document.getElementById(sectionId);
+            if(target) {
+                target.classList.remove('hidden');
+                // Trigger Reflow to restart animation
+                void target.offsetWidth; 
+                target.classList.add('fade-in');
+            }
+
+            // Update Nav Styling
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.innerText.toLowerCase().includes(sectionId)) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // --- THEME TOGGLE ---
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            const sun = document.getElementById('theme-icon-sun');
+            const moon = document.getElementById('theme-icon-moon');
+
+            if (current === 'light') {
+                html.removeAttribute('data-theme');
+                sun.classList.add('hidden');
+                moon.classList.remove('hidden');
+                // Reset particles for dark theme
+                updateParticles('#38bdf8'); 
+            } else {
+                html.setAttribute('data-theme', 'light');
+                moon.classList.add('hidden');
+                sun.classList.remove('hidden');
+                // Reset particles for light theme
+                updateParticles('#0ea5e9');
+            }
+        }
+
+        // --- CLIPBOARD UTILITY ---
+        function copyToClipboard(text) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => showToast("Citation copied!"));
+            } else {
+                // Fallback
+                let textArea = document.createElement("textarea");
+                textArea.value = text;
+                textArea.style.position = "fixed";
+                textArea.style.left = "-9999px";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    showToast("Citation copied!");
+                } catch (err) {
+                    showToast("Failed to copy.");
+                }
+                document.body.removeChild(textArea);
+            }
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            toast.textContent = message;
+            toast.className = "show";
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+
+        // --- INTERACTIVE BACKGROUND (PARTICLE NETWORK) ---
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let particleColor = '#0ea5e9'; // Default dark mode blue
+
+        function updateParticles(newColor) {
+            particleColor = newColor;
+            particles.forEach(p => p.color = newColor);
+        }
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initParticles();
+        }
+        window.addEventListener('resize', resizeCanvas);
+
+        let mouse = { x: null, y: null, radius: 150 };
+        window.addEventListener('mousemove', function(event) {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+                this.color = color;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+            update() {
+                if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+                if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
+
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < mouse.radius + this.size) {
+                    if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 2;
+                    if (mouse.x > this.x && this.x > this.size * 10) this.x -= 2;
+                    if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 2;
+                    if (mouse.y > this.y && this.y > this.size * 10) this.y -= 2;
+                }
+
+                this.x += this.directionX * 0.4;
+                this.y += this.directionY * 0.4;
+                this.draw();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 15000; 
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 2) + 1;
+                let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * 2) - 1;
+                let directionY = (Math.random() * 2) - 1;
+                particles.push(new Particle(x, y, directionX, directionY, size, particleColor));
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+            }
+            connect();
+        }
+
+        function connect() {
+            // Convert hex color to rgb for opacity handling
+            let rgb = hexToRgb(particleColor);
+            
+            for (let a = 0; a < particles.length; a++) {
+                for (let b = a; b < particles.length; b++) {
+                    let distance = ((particles[a].x - particles[b].x) * (particles[a].x - particles[b].x))
+                        + ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y));
+                    if (distance < (canvas.width/7) * (canvas.height/7)) {
+                        let opacity = 1 - (distance/20000);
+                        ctx.strokeStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${opacity * 0.15})`;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[a].x, particles[a].y);
+                        ctx.lineTo(particles[b].x, particles[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        // Helper to convert hex for canvas stroke style
+        function hexToRgb(hex) {
+            var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? {
+                r: parseInt(result[1], 16),
+                g: parseInt(result[2], 16),
+                b: parseInt(result[3], 16)
+            } : {r: 56, g: 189, b: 248}; // Default Sky 400
+        }
+
+        resizeCanvas();
+        animate();
+
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mainNav = document.getElementById('main-nav');
+        menuBtn.addEventListener('click', () => mainNav.scrollIntoView({behavior: "smooth"}));
+
+    </script>
+</body>
 </html>
