@@ -816,17 +816,17 @@
                 class="nav-item text-3xl md:text-sm font-medium uppercase tracking-wider py-2 pb-1">CV</button>
             <button onclick="showSection('research')"
                 class="nav-item text-3xl md:text-sm font-medium uppercase tracking-wider py-2 pb-1">Research</button>
-            <button onclick="showSection('teaching')"
-                class="nav-item text-3xl md:text-sm font-medium uppercase tracking-wider py-2 pb-1">Teaching</button>
-            <button onclick="showSection('gallery')"
-                class="nav-item text-3xl md:text-sm font-medium uppercase tracking-wider py-2 pb-1">Gallery</button>
             <button onclick="showSection('publications')"
                 class="nav-item text-3xl md:text-sm font-medium uppercase tracking-wider py-2 pb-1">Publications</button>
+            <button onclick="showSection('teaching')"
+                class="nav-item text-3xl md:text-sm font-medium uppercase tracking-wider py-2 pb-1">Teaching</button>
             <button onclick="showSection('reads')"
                 class="nav-item text-3xl md:text-sm font-medium uppercase tracking-wider py-2 pb-1">Interesting
                 Reads</button>
             <button onclick="showSection('blog')"
                 class="nav-item text-3xl md:text-sm font-medium uppercase tracking-wider py-2 pb-1">Blog</button>
+            <button onclick="showSection('gallery')"
+                class="nav-item text-3xl md:text-sm font-medium uppercase tracking-wider py-2 pb-1">Gallery</button>
             <button onclick="showSection('contact')"
                 class="nav-item text-3xl md:text-sm font-medium uppercase tracking-wider py-2 pb-1">Contact</button>
             </div>
@@ -909,7 +909,7 @@
                 </h3>
                 <div class="glass-panel p-6 rounded-xl mb-8">
                     <div
-                        class="w-full h-screen bg-[var(--bg-body)]/50 rounded-lg border border-[var(--glass-border)] flex items-center justify-center relative overflow-hidden group">
+                        class="w-full h-[70vh] md:h-screen bg-[var(--bg-body)]/50 rounded-lg border border-[var(--glass-border)] flex items-center justify-center relative overflow-hidden group">
                         <iframe src="V1.0/PDF/CV.SwastikSharma.pdf#toolbar=0&navpanes=0&scrollbar=0"
                             class="w-full h-full relative z-10 opacity-80 hover:opacity-100 transition-opacity"
                             title="Resume PDF"></iframe>
@@ -1828,7 +1828,7 @@
 
         // --- TAB NAVIGATION & DEEP LINKING ---
         // --- TAB NAVIGATION & DEEP LINKING ---
-        const sectionOrder = ['about', 'cv', 'research', 'teaching', 'gallery', 'publications', 'reads', 'blog', 'contact'];
+        const sectionOrder = ['about', 'cv', 'research', 'publications', 'teaching', 'reads', 'blog', 'gallery', 'contact'];
 
         function showSection(sectionId, animationClass = 'fade-in') {
             // Update Hash without scrolling
