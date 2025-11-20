@@ -311,6 +311,38 @@
             }
         }
 
+        .slide-in-right {
+            animation: slideInRight 0.4s ease-out forwards;
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.4s ease-out forwards;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
         /* Interactive Elements */
         .nav-item {
             transition: all 0.3s ease;
@@ -670,7 +702,7 @@
 
     <!-- LEFT PANEL: Profile & Static Info -->
     <aside
-        class="w-full md:w-1/3 lg:w-1/4 h-auto md:h-full p-6 md:p-8 flex flex-col justify-between relative z-10 border-r border-gray-500/10 bg-[var(--bg-body)]/80 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none transition-colors duration-500">
+        class="w-full md:w-1/3 lg:w-1/4 h-auto md:h-full p-6 md:p-8 flex flex-col md:justify-between gap-6 relative z-10 border-r border-gray-500/10 bg-[var(--bg-body)]/80 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none transition-colors duration-500">
         <div>
             <!-- Theme Toggle -->
 
@@ -712,10 +744,12 @@
         </div>
 
         <!-- Mobile Menu Trigger (Only visible on small screens) -->
-        <div class="md:hidden mt-6 flex justify-between items-center border-t border-gray-500/10 pt-4">
-            <span class="text-xs text-[var(--text-muted)] uppercase tracking-widest">Menu</span>
-            <button id="mobile-menu-btn" class="text-[var(--text-main)] focus:outline-none">
-                <i data-lucide="menu"></i>
+        <div class="md:hidden mt-6 pt-4 border-t border-gray-500/10">
+            <button id="mobile-menu-btn"
+                class="w-full glass-panel py-3 px-4 rounded-lg flex items-center justify-center gap-3 text-[var(--text-main)] hover:bg-[var(--card-hover)] transition-all group">
+                <span
+                    class="text-sm font-bold uppercase tracking-widest group-hover:tracking-[0.2em] transition-all">Menu</span>
+                <i data-lucide="menu" class="w-5 h-5"></i>
             </button>
         </div>
 
@@ -768,21 +802,31 @@
 
         <!-- Navigation (Tabs) -->
         <nav id="main-nav"
-            class="sticky top-0 z-40 w-full p-6 md:p-8 flex flex-wrap justify-center md:justify-start gap-8 border-b border-gray-500/10 bg-[var(--bg-body)]/50 backdrop-blur-sm transition-colors duration-500">
-            <button onclick="showSection('about')"
-                class="nav-item active text-sm font-medium uppercase tracking-wider py-2 pb-1">About</button>
-            <button onclick="showSection('research')"
-                class="nav-item text-sm font-medium uppercase tracking-wider py-2 pb-1">Research</button>
-            <button onclick="showSection('teaching')"
-                class="nav-item text-sm font-medium uppercase tracking-wider py-2 pb-1">Teaching</button>
-            <button onclick="showSection('gallery')"
-                class="nav-item text-sm font-medium uppercase tracking-wider py-2 pb-1">Gallery</button>
-            <button onclick="showSection('publications')"
-                class="nav-item text-sm font-medium uppercase tracking-wider py-2 pb-1">Publications</button>
-            <button onclick="showSection('reads')"
-                class="nav-item text-sm font-medium uppercase tracking-wider py-2 pb-1">Interesting Reads</button>
-            <button onclick="showSection('contact')"
-                class="nav-item text-sm font-medium uppercase tracking-wider py-2 pb-1">Contact</button>
+            class="fixed inset-0 md:sticky md:top-0 z-[100] md:z-40 w-full h-full md:h-auto p-6 md:p-8 hidden md:flex flex-col md:flex-row justify-center md:justify-start items-center md:items-center gap-8 md:gap-8 border-b border-gray-500/10 bg-[var(--bg-body)] md:bg-[var(--bg-body)]/50 backdrop-blur-xl md:backdrop-blur-sm transition-colors duration-500">
+
+            <!-- Mobile Close Button -->
+            <button id="close-menu-btn"
+                class="absolute top-6 right-6 md:hidden text-[var(--text-muted)] hover:text-[var(--text-main)] p-2">
+                <i data-lucide="x" class="w-10 h-10"></i>
+            </button>
+
+            <div class="flex flex-col md:flex-row gap-8 md:gap-8 items-center justify-center w-full md:w-auto">
+                <button onclick="showSection('about')"
+                    class="nav-item active text-3xl md:text-sm font-medium uppercase tracking-wider py-2 pb-1">About</button>
+                <button onclick="showSection('research')"
+                    class="nav-item text-3xl md:text-sm font-medium uppercase tracking-wider py-2 pb-1">Research</button>
+                <button onclick="showSection('teaching')"
+                    class="nav-item text-3xl md:text-sm font-medium uppercase tracking-wider py-2 pb-1">Teaching</button>
+                <button onclick="showSection('gallery')"
+                    class="nav-item text-3xl md:text-sm font-medium uppercase tracking-wider py-2 pb-1">Gallery</button>
+                <button onclick="showSection('publications')"
+                    class="nav-item text-3xl md:text-sm font-medium uppercase tracking-wider py-2 pb-1">Publications</button>
+                <button onclick="showSection('reads')"
+                    class="nav-item text-3xl md:text-sm font-medium uppercase tracking-wider py-2 pb-1">Interesting
+                    Reads</button>
+                <button onclick="showSection('contact')"
+                    class="nav-item text-3xl md:text-sm font-medium uppercase tracking-wider py-2 pb-1">Contact</button>
+            </div>
         </nav>
 
         <!-- Scrollable Content Container -->
@@ -1743,17 +1787,19 @@
         document.getElementById('year').textContent = new Date().getFullYear();
 
         // --- TAB NAVIGATION & DEEP LINKING ---
-        function showSection(sectionId) {
+        // --- TAB NAVIGATION & DEEP LINKING ---
+        const sectionOrder = ['about', 'research', 'teaching', 'gallery', 'publications', 'reads', 'contact'];
+
+        function showSection(sectionId, animationClass = 'fade-in') {
             // Update Hash without scrolling
             history.replaceState(null, null, '#' + sectionId);
 
             // Hide all sections
-            const sections = ['about', 'research', 'teaching', 'gallery', 'publications', 'reads', 'contact'];
-            sections.forEach(id => {
+            sectionOrder.forEach(id => {
                 const el = document.getElementById(id);
                 if (el) {
                     el.classList.add('hidden');
-                    el.classList.remove('fade-in');
+                    el.classList.remove('fade-in', 'slide-in-right', 'slide-in-left');
                 }
             });
 
@@ -1763,7 +1809,7 @@
                 target.classList.remove('hidden');
                 // Trigger Reflow to restart animation
                 void target.offsetWidth;
-                target.classList.add('fade-in');
+                target.classList.add(animationClass);
 
                 // Scroll to top of content container
                 const container = document.querySelector('.overflow-y-auto');
@@ -1778,12 +1824,62 @@
                     btn.classList.add('active');
                 }
             });
+
+            // Close mobile menu if open (Mobile only)
+            if (window.innerWidth < 768) {
+                const nav = document.getElementById('main-nav');
+                if (nav && !nav.classList.contains('hidden')) {
+                    nav.classList.add('hidden');
+                    nav.classList.remove('flex');
+                }
+            }
+        }
+
+        // --- SWIPE NAVIGATION ---
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const minSwipeDistance = 50;
+
+        const contentContainer = document.querySelector('.overflow-y-auto');
+
+        if (contentContainer) {
+            contentContainer.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            contentContainer.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+        }
+
+        function handleSwipe() {
+            const distance = touchEndX - touchStartX;
+            if (Math.abs(distance) < minSwipeDistance) return;
+
+            // Get current section
+            const currentHash = window.location.hash.substring(1) || 'about';
+            const currentIndex = sectionOrder.indexOf(currentHash);
+
+            if (currentIndex === -1) return;
+
+            if (distance < 0) {
+                // Swipe Left -> Next Section
+                if (currentIndex < sectionOrder.length - 1) {
+                    showSection(sectionOrder[currentIndex + 1], 'slide-in-right');
+                }
+            } else {
+                // Swipe Right -> Previous Section
+                if (currentIndex > 0) {
+                    showSection(sectionOrder[currentIndex - 1], 'slide-in-left');
+                }
+            }
         }
 
         // Handle Initial Hash
         window.addEventListener('load', () => {
             const hash = window.location.hash.substring(1);
-            if (hash && ['about', 'research', 'teaching', 'gallery', 'publications', 'reads', 'contact'].includes(hash)) {
+            if (hash && sectionOrder.includes(hash)) {
                 showSection(hash);
             }
         });
@@ -2026,8 +2122,18 @@
         animate();
 
         const menuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
         const mainNav = document.getElementById('main-nav');
-        menuBtn.addEventListener('click', () => mainNav.scrollIntoView({ behavior: "smooth" }));
+
+        function toggleMobileMenu() {
+            mainNav.classList.toggle('hidden');
+            mainNav.classList.toggle('flex');
+        }
+
+        menuBtn.addEventListener('click', toggleMobileMenu);
+        if (closeMenuBtn) {
+            closeMenuBtn.addEventListener('click', toggleMobileMenu);
+        }
 
     </script>
 </body>
