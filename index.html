@@ -1086,10 +1086,15 @@
         </div>
     </div>
 
-    <!-- Local scripts -->
-    <script src="assets/portfolio.js"></script>
-    <!-- Extracted Gemini + helper logic -->
-    <script src="assets/js/main.js"></script>
+        <!-- Local scripts -->
+        <script src="assets/portfolio.js"></script>
+        <!-- Configure Gemini endpoint for GitHub Pages to call Netlify function -->
+        <script>
+            // Replace with your Netlify site URL
+            window.GEMINI_ENDPOINT = 'https://sharmaswastik.netlify.app/api/gemini';
+        </script>
+        <!-- Extracted Gemini + helper logic -->
+        <script src="assets/js/main.js"></script>
 </body>
 
 </html>
