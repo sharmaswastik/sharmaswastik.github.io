@@ -13,7 +13,7 @@ export async function handler(event, context) {
 
   // CORS headers - restrict to your domain in production
   const headers = {
-    'Access-Control-Allow-Origin': '*', // Change to your domain: 'https://sharmaswastik.github.io'
+    'Access-Control-Allow-Origin': 'https://sharmaswastik.github.io',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Content-Type': 'application/json'
   };
@@ -36,7 +36,7 @@ export async function handler(event, context) {
 
     // Get API key from environment variable (set in Netlify dashboard)
     const apiKey = process.env.GEMINI_API_KEY;
-    
+
     if (!apiKey) {
       console.error('GEMINI_API_KEY not configured');
       return {
