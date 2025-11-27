@@ -1,9 +1,7 @@
 // --- GEMINI API CONFIGURATION ---
-// API key now securely stored on backend server
-// Configure your proxy server URL below
-const PROXY_URL = window.location.hostname === 'localhost' 
-    ? 'http://localhost:3000/api/gemini'  // Local development
-    : 'https://your-backend-server.com/api/gemini';  // Production - UPDATE THIS!
+// API key securely stored in Netlify serverless function
+// No configuration needed - automatically uses /api/gemini endpoint
+const PROXY_URL = '/api/gemini';  // Netlify Functions handle this automatically
 
 async function callGeminiAPI(prompt) {
     try {
