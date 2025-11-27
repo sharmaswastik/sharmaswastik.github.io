@@ -1,97 +1,77 @@
 // Netlify Serverless Function for Gemini API
 // API key is stored securely in Netlify environment variables
 
-export async function handler(event, context) {
-  // Only allow POST requests
-  if (event.httpMethod !== 'POST') {
-    return {
-      statusCode: 405,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ error: 'Method not allowed' })
-    };
-  }
-
-  // CORS headers - restrict to your domain in production
+export async function handler(event) {
+  // Common CORS + JSON headers (ALLOW ORIGIN dynamically if env set)
+  const allowedOrigin = process.env.ALLOWED_ORIGIN || '*';
   const headers = {
-    'Access-Control-Allow-Origin': 'https://sharmaswastik.github.io',
+    'Access-Control-Allow-Origin': allowedOrigin,
     'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'POST,OPTIONS',
     'Content-Type': 'application/json'
   };
 
-  // Handle preflight requests
+  // Preflight
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 200, headers, body: '' };
   }
 
+  if (event.httpMethod !== 'POST') {
+    return { statusCode: 405, headers, body: JSON.stringify({ error: 'Method not allowed' }) };
+  }
+
+  let prompt;
   try {
-    const { prompt } = JSON.parse(event.body);
+    const parsed = JSON.parse(event.body || '{}');
+    prompt = parsed.prompt;
+  } catch (e) {
+    return { statusCode: 400, headers, body: JSON.stringify({ error: 'Malformed JSON body' }) };
+  }
 
-    if (!prompt || typeof prompt !== 'string') {
-      return {
-        statusCode: 400,
-        headers,
-        body: JSON.stringify({ error: 'Invalid prompt' })
-      };
-    }
+  if (!prompt || typeof prompt !== 'string') {
+    return { statusCode: 400, headers, body: JSON.stringify({ error: 'Invalid prompt' }) };
+  }
 
-    // Get API key from environment variable (set in Netlify dashboard)
-    const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) {
+    console.error('Missing GEMINI_API_KEY');
+    return { statusCode: 500, headers, body: JSON.stringify({ error: 'Server misconfiguration: API key missing' }) };
+  }
 
-    if (!apiKey) {
-      console.error('GEMINI_API_KEY not configured');
-      return {
-        statusCode: 500,
-        headers,
-        body: JSON.stringify({ error: 'Server configuration error' })
-      };
-    }
+  // Allow model override via env or query (?model=...) fallback to env GEMINI_MODEL or default stable
+  const defaultModel = process.env.GEMINI_MODEL || 'gemini-2.0-flash-exp';
+  const urlSearchParams = new URLSearchParams(event.queryStringParameters || {});
+  const model = urlSearchParams.get('model') || defaultModel;
+  const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
-    // Call Gemini API
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${apiKey}`;
-
-    const response = await fetch(url, {
+  try {
+    const apiResponse = await fetch(endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: [{
-          parts: [{ text: prompt }]
-        }]
-      })
+      body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
     });
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error('Gemini API error:', errorText);
+    const raw = await apiResponse.text();
+    let json;
+    try { json = JSON.parse(raw); } catch { json = null; }
+
+    if (!apiResponse.ok) {
+      console.error('Gemini API error:', raw);
       return {
-        statusCode: response.status,
+        statusCode: apiResponse.status,
         headers,
-        body: JSON.stringify({ error: 'Gemini API error' })
+        body: JSON.stringify({ error: 'Gemini API error', details: json?.error || raw })
       };
     }
 
-    const data = await response.json();
-    const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-
+    const text = json?.candidates?.[0]?.content?.parts?.[0]?.text;
     if (!text) {
-      return {
-        statusCode: 500,
-        headers,
-        body: JSON.stringify({ error: 'Invalid response from Gemini' })
-      };
+      return { statusCode: 502, headers, body: JSON.stringify({ error: 'Unexpected Gemini response shape', response: json }) };
     }
 
-    return {
-      statusCode: 200,
-      headers,
-      body: JSON.stringify({ text })
-    };
-
-  } catch (error) {
-    console.error('Function error:', error);
-    return {
-      statusCode: 500,
-      headers,
-      body: JSON.stringify({ error: 'Internal server error' })
-    };
+    return { statusCode: 200, headers, body: JSON.stringify({ text, model }) };
+  } catch (err) {
+    console.error('Unhandled function error:', err);
+    return { statusCode: 500, headers, body: JSON.stringify({ error: 'Internal server error', details: err.message }) };
   }
 }
