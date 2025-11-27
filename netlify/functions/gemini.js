@@ -1,7 +1,8 @@
 // Netlify Serverless Function for Gemini API
 // API key is stored securely in Netlify environment variables
 
-export async function handler(event) {
+// Use named export compatible with Netlify; alternatively export default
+export const handler = async (event) => {
   // Common CORS + JSON headers (ALLOW ORIGIN dynamically if env set)
   const allowedOrigin = process.env.ALLOWED_ORIGIN || '*';
   const headers = {
@@ -45,6 +46,7 @@ export async function handler(event) {
   const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
   try {
+    console.log('[gemini] request', { model, promptLength: prompt.length });
     const apiResponse = await fetch(endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -56,7 +58,7 @@ export async function handler(event) {
     try { json = JSON.parse(raw); } catch { json = null; }
 
     if (!apiResponse.ok) {
-      console.error('Gemini API error:', raw);
+      console.error('[gemini] upstream error', apiResponse.status, raw);
       return {
         statusCode: apiResponse.status,
         headers,
@@ -69,9 +71,10 @@ export async function handler(event) {
       return { statusCode: 502, headers, body: JSON.stringify({ error: 'Unexpected Gemini response shape', response: json }) };
     }
 
+    console.log('[gemini] success', { model, chars: text.length });
     return { statusCode: 200, headers, body: JSON.stringify({ text, model }) };
   } catch (err) {
-    console.error('Unhandled function error:', err);
+    console.error('[gemini] unhandled error', err);
     return { statusCode: 500, headers, body: JSON.stringify({ error: 'Internal server error', details: err.message }) };
   }
-}
+};

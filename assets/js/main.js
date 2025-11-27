@@ -1,20 +1,28 @@
 /* Frontend logic (Gemini calls proxied via Netlify function) */
 
 // --- AI FEATURE 1: EXPLAIN PROJECT ---
+const GEMINI_ENDPOINT = (typeof window !== 'undefined' && window.GEMINI_ENDPOINT) || '/api/gemini';
+
 async function callGeminiAPI(prompt) {
+  const start = performance.now();
   try {
-    const res = await fetch('/api/gemini', {
+    const res = await fetch(GEMINI_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ prompt })
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Gemini error');
+    const elapsed = (performance.now() - start).toFixed(0);
+    let data;
+    try { data = await res.json(); } catch { data = { error: 'Invalid JSON in response' }; }
+    if (!res.ok) {
+      console.error('[frontend] gemini failed', { status: res.status, data });
+      return `Error (${res.status}): ${data.error || 'Gemini error'}`;
+    }
+    console.log('[frontend] gemini success', { ms: elapsed, chars: data.text?.length, model: data.model });
     return data.text;
   } catch (e) {
-    console.error('Frontend Gemini error:', e);
-    showToast('AI Service Unavailable');
-    return 'Sorry, the AI service is currently unavailable.';
+    console.error('[frontend] gemini network error', e);
+    return 'Network error contacting AI service.';
   }
 }
 
@@ -27,6 +35,7 @@ async function explainProject(sourceId, targetId) {
   const prompt = `You are a helpful science communicator. Rewrite the following research project description so it is easy for a high school student to understand. Keep it under 2 sentences. Description: "${descText}"`;
   const result = await callGeminiAPI(prompt);
   targetEl.innerHTML = `<strong class="block mb-1 text-[var(--text-main)] opacity-80">Simpler Explanation:</strong> ${result}`;
+  if (window.lucide) lucide.createIcons();
 }
 
 // --- AI FEATURE 2: SMART DRAFT ---
