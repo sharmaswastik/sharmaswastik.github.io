@@ -672,3 +672,51 @@ input:checked+.slider .cloud-2 {
     transform: translateX(0);
     transition-delay: 0.2s;
 }
+
+/* =========================================
+   FORM INPUT STYLES - CONTRAST FIX
+   ========================================= */
+
+/* Ensure input text is always visible with proper contrast */
+input[type="text"],
+input[type="email"],
+textarea {
+    color: var(--text-main) !important;
+}
+
+/* Dark mode - ensure light text on dark background */
+[data-theme="dark"] input[type="text"],
+[data-theme="dark"] input[type="email"],
+[data-theme="dark"] textarea,
+:root:not([data-theme="light"]) input[type="text"],
+:root:not([data-theme="light"]) input[type="email"],
+:root:not([data-theme="light"]) textarea {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Light mode - ensure dark text on light background */
+[data-theme="light"] input[type="text"],
+[data-theme="light"] input[type="email"],
+[data-theme="light"] textarea {
+    color: #000000 !important;
+    background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Placeholder text styling */
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-muted) !important;
+    opacity: 0.6;
+}
+
+/* Focus state enhancements */
+input:focus,
+textarea:focus {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="light"] input:focus,
+[data-theme="light"] textarea:focus {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
