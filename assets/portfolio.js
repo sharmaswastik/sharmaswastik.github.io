@@ -1,35 +1,29 @@
 // --- GEMINI API CONFIGURATION ---
-const apiKey = "REMOVED_API_KEY"; // TODO: INSERT YOUR API KEY HERE
+// API key now securely stored on backend server
+// Configure your proxy server URL below
+const PROXY_URL = window.location.hostname === 'localhost' 
+    ? 'http://localhost:3000/api/gemini'  // Local development
+    : 'https://your-backend-server.com/api/gemini';  // Production - UPDATE THIS!
 
 async function callGeminiAPI(prompt) {
-    if (!apiKey) {
-        showToast("Error: Missing API Key");
-        return "Please add your Gemini API Key in the code to use this feature.";
-    }
-
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-
-    const payload = {
-        contents: [{
-            parts: [{ text: prompt }]
-        }]
-    };
-
     try {
-        const response = await fetch(url, {
+        const response = await fetch(PROXY_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
+            body: JSON.stringify({ prompt })
         });
 
-        if (!response.ok) throw new Error('API Error');
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error || 'API Error');
+        }
 
         const data = await response.json();
-        return data.candidates[0].content.parts[0].text;
+        return data.text;
     } catch (error) {
         console.error("Gemini API Error:", error);
         showToast("AI Service Unavailable");
-        return "Sorry, the AI service is currently unavailable. Please check your API key or try again later.";
+        return "Sorry, the AI service is currently unavailable. Please try again later.";
     }
 }
 
