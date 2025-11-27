@@ -40,7 +40,9 @@ export const handler = async (event) => {
   }
 
   // Allow model override via env or query (?model=...) fallback to env GEMINI_MODEL or default stable
-  const defaultModel = process.env.GEMINI_MODEL || 'gemini-2.0-flash-exp';
+  // Many 400s are caused by using preview/experimental models without access
+  // Switch to a broadly available model unless overridden via env/query
+  const defaultModel = process.env.GEMINI_MODEL || 'gemini-2.0-flash';
   const urlSearchParams = new URLSearchParams(event.queryStringParameters || {});
   const model = urlSearchParams.get('model') || defaultModel;
   const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
