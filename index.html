@@ -172,65 +172,14 @@
                     <i data-lucide="user" class="mr-3 text-[var(--primary)]"></i> Biography
                 </h3>
                 <div class="glass-panel p-8 rounded-xl mb-8">
-                    <p class="text-[var(--text-muted)] leading-loose mb-4 transition-colors">
-                        <!-- EDIT: Your Bio -->
-                        Technological advancements are driving the rapid integration of renewables into the grid.
-                        However, they face challenges of intermittency and variability (quite sad, isn't it?), which
-                        pose difficulties for system operators in maintaining a consistent supply-demand balance. As a
-                        <strong class="text-[var(--text-main)]">Prime Minister's Research Fellow (PMRF)</strong> at the
-                        <strong class="text-[var(--text-main)]">Indian Institute of Technology Kanpur</strong>, my
-                        research focuses on <strong class="text-[var(--text-main)]">Transactive Energy System Design,
-                            Independent Distribution System Operator, Flexibility services, and Electricity
-                            Markets</strong>. My goal is to enhance grid reliability and leverage renewable power
-                        sources. With a Bachelor's degree from the <strong class="text-[var(--text-main)]">National
-                            Institute of Technology Srinagar</strong>, I possess a comprehensive understanding of theory
-                        and practice (or at least I believe so). I am enthusiastic about applying my skills and
-                        knowledge to bring about positive changes in the energy sector by enhancing grid reliability
-                        through distribution-side flexibility and innovating electricity market operations (that lengthy
-                        sentence reflects my excitement!). The potential for innovation in the energy sector is
-                        limitless, and I firmly believe (emphasis on "I believe") that this research has the power to
-                        strengthen the grid, increase renewable deployment, positively impact the climate (Go Greta!),
-                        and enhance grid resiliency – truly a win-win situation.
-                    </p>
+                    <div id="bio-container" class="text-[var(--text-muted)] leading-loose mb-4 transition-colors"></div>
                 </div>
 
                 <!-- NEW: Resume Section moved to its own section -->
 
 
                 <h4 class="text-lg font-bold mb-4 mt-8">Current Focus Areas</h4>
-                <div class="grid grid-cols-2 md:grid-cols-2 gap-4">
-                    <div class="glass-panel p-4 rounded-lg flex items-start">
-                        <i data-lucide="network" class="text-[var(--primary)] mt-1 mr-3"></i>
-                        <div>
-                            <h5 class="font-bold text-sm">DER Aggregation</h5>
-                            <p class="text-xs text-[var(--text-muted)] mt-1">Designing optimization tools to aggregate
-                                DERs for Wholesale Market participation. </p>
-                        </div>
-                    </div>
-                    <div class="glass-panel p-4 rounded-lg flex items-start">
-                        <i data-lucide="user" class="text-[var(--primary)] mt-1 mr-3"></i>
-                        <div>
-                            <h5 class="font-bold text-sm">Independent Distribution System Operator (IDSO)</h5>
-                            <p class="text-xs text-[var(--text-muted)] mt-1">Modelling the role of IDSO to perform
-                                grid-safe aggregation and participate in wholesale markets.</p>
-                        </div>
-                    </div>
-                    <div class="glass-panel p-4 rounded-lg flex items-start">
-                        <i data-lucide="ev-charger" class="text-[var(--primary)] mt-1 mr-3"></i>
-                        <div>
-                            <h5 class="font-bold text-sm">DRL Agents for DERs</h5>
-                            <p class="text-xs text-[var(--text-muted)] mt-1">Deep reinforcement learning (DRL) based
-                                transactive agents for DERs</p>
-                        </div>
-                    </div>
-                    <div class="glass-panel p-4 rounded-lg flex items-start">
-                        <i data-lucide="receipt-text" class="text-[var(--primary)] mt-1 mr-3"></i>
-                        <div>
-                            <h5 class="font-bold text-sm">Swing Contract Design</h5>
-                            <p class="text-xs text-[var(--text-muted)] mt-1">Developing Swing Contracts for IDSO</p>
-                        </div>
-                    </div>
-                </div>
+                <div id="focus-areas-container" class="grid grid-cols-2 md:grid-cols-2 gap-4"></div>
             </section>
 
             <!-- SECTION: CV -->
@@ -254,122 +203,7 @@
                     <i data-lucide="microscope" class="mr-3 text-[var(--primary)]"></i> Projects
                 </h3>
 
-                <div class="grid grid-cols-1 gap-6">
-                    <!-- Project Card 1 -->
-
-                    <div
-                        class="glass-panel p-6 rounded-xl border-l-4 border-l-[var(--primary)] group hover:translate-x-2 transition-transform duration-300">
-                        <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-xl font-bold group-hover:text-[var(--primary)] transition-colors">IDSO's DER
-                                Aggregation Tool</h4>
-                            <span
-                                class="px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] text-xs rounded font-mono">Python
-                                | Answer Set Programming</span>
-                        </div>
-                        <p id="desc-IDSO" class="text-[var(--text-muted)] text-sm mb-4">
-                            An open source tool to model Independent Distribution System Operator (IDSO) for aggregating
-                            distributed energy resources (DERs) and participating in wholesale electricity markets while
-                            ensuring grid safety and reliability. The tool uses optimization techniques to maximize DER
-                            revenue while adhering to grid constraints. The complete mathematical formulation can be
-                            found <a href="https://arxiv.org/abs/2508.08187" target="_blank" rel="noopener noreferrer"
-                                class="text-[var(--primary)] underline">here</a>.
-                        </p>
-
-                        <!-- AI Feature: Explain -->
-                        <div id="ai-result-IDSO"
-                            class="hidden bg-[var(--primary)]/10 border border-[var(--primary)]/30 p-3 rounded mb-4 text-xs text-[var(--text-main)]">
-                        </div>
-
-                        <div class="flex gap-3 items-center">
-                            <a href="https://github.com/sharmaswastik/IDSOAggregationProblem" target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i
-                                    data-lucide="github" class="w-3 h-3 mr-1"></i> Repository</a>
-                            <a href="https://arxiv.org/abs/2508.08187" target="_blank" rel="noopener noreferrer"
-                                class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i
-                                    data-lucide="file-text" class="w-3 h-3 mr-1"></i> Documentation</a>
-                            <div class="flex-grow"></div>
-                            <button onclick="explainProject('desc-IDSO', 'ai-result-IDSO')"
-                                class="text-xs flex items-center bg-gradient-to-r from-[var(--primary)] to-[var(--primary)] hover:from-[var(--primary)] hover:to-[var(--primary)] text-white px-3 py-1 rounded shadow-lg transition-all">
-                                <i data-lucide="sparkles" class="w-3 h-3 mr-2"></i> Explain Simply
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 2 -->
-                    <div
-                        class="glass-panel p-6 rounded-xl border-l-4 border-l-[var(--primary)] group hover:translate-x-2 transition-transform duration-300 relative">
-                        <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-xl font-bold group-hover:text-[var(--primary)] transition-colors">
-                                Three-Phase Unbalanced LinDistFlow</h4>
-                            <span
-                                class="px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] text-xs rounded font-mono">Python
-                                | Pyomo</span>
-                        </div>
-                        <p id="desc-project-alpha" class="text-[var(--text-muted)] text-sm mb-4">
-                            This project focuses on developing a three-phase unbalanced LinDistFlow model using Python.
-                            The model aims to accurately represent power flow in distribution networks, accounting for
-                            unbalanced loads and phases.
-                        </p>
-
-                        <!-- AI Feature: Explain -->
-                        <div id="ai-result-project-alpha"
-                            class="hidden bg-[var(--primary)]/10 border border-[var(--primary)]/30 p-3 rounded mb-4 text-xs text-[var(--text-main)]">
-                        </div>
-
-                        <div class="flex gap-3 items-center">
-                            <a href="https://github.com/sharmaswastik/Three-Phase-Distribution-Network-OPF"
-                                target="_blank" rel="noopener noreferrer"
-                                class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i
-                                    data-lucide="github" class="w-3 h-3 mr-1"></i> Repository</a>
-                            <div class="flex-grow"></div>
-                            <button onclick="explainProject('desc-project-alpha', 'ai-result-project-alpha')"
-                                class="text-xs flex items-center bg-gradient-to-r from-[var(--primary)] to-[var(--primary)] hover:from-[var(--primary)] hover:to-[var(--primary)] text-white px-3 py-1 rounded shadow-lg transition-all">
-                                <i data-lucide="sparkles" class="w-3 h-3 mr-2"></i> Explain Simply
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 3 -->
-                    <div
-                        class="glass-panel p-6 rounded-xl border-l-4 border-l-[var(--primary)] group hover:translate-x-2 transition-transform duration-300 relative">
-                        <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-xl font-bold group-hover:text-[var(--primary)] transition-colors">
-                                Meta-Reinforcement Learning</h4>
-                            <span
-                                class="px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] text-xs rounded font-mono">Python
-                                |
-                                Pytorch</span>
-                        </div>
-                        <p id="desc-project-RL2" class="text-[var(--text-muted)] text-sm mb-4">
-                            An implementation of the paper RL2: Fast Reinforcement Learning via Slow Reinforcement
-                            Learning (available <a href="https://arxiv.org/pdf/1611.02779.pdf" target="_blank"
-                                rel="noopener noreferrer" class="text-[var(--primary)] underline">here</a>). We used
-                            GRUs to train our model, and
-                            the
-                            policy is optimized using a simple actor-critic algorithm, with the actor being the RNN
-                            agent and the baseline/critic network being a simple MLP.
-                        </p>
-
-                        <!-- AI Feature: Explain -->
-                        <div id="ai-result-project-RL2"
-                            class="hidden bg-[var(--primary)]/10 border border-[var(--primary)]/30 p-3 rounded mb-4 text-xs text-[var(--text-main)]">
-                        </div>
-
-                        <div class="flex gap-3 items-center">
-                            <a href="https://github.com/sharmaswastik/EE-675A-Course-Project" target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-xs flex items-center text-[var(--text-muted)] hover:text-[var(--text-main)]"><i
-                                    data-lucide="github" class="w-3 h-3 mr-1"></i> Repository</a>
-                            <div class="flex-grow"></div>
-                            <button onclick="explainProject('desc-project-RL2', 'ai-result-project-RL2')"
-                                class="text-xs flex items-center bg-gradient-to-r from-[var(--primary)] to-[var(--primary)] hover:from-[var(--primary)] hover:to-[var(--primary)] text-white px-3 py-1 rounded shadow-lg transition-all">
-                                <i data-lucide="sparkles" class="w-3 h-3 mr-2"></i> Explain Simply
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
+                <div id="projects-container" class="grid grid-cols-1 gap-6"></div>
             </section>
 
             <!-- SECTION: PMRF TEACHING (NEW) -->
@@ -378,224 +212,13 @@
                     <i data-lucide="presentation" class="mr-3 text-[var(--primary)]"></i> PMRF Teaching Duties
                 </h3>
 
-                <div class="space-y-6">
-
-                    <!-- Teaching Role 6 -->
-                    <div class="glass-panel p-6 rounded-xl">
-                        <div class="flex justify-between items-start mb-2">
-                            <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">Chhatrapati Shahu Ji Maharaj
-                                    University (CSJMU), Kanpur: Workshop on "LaTeX for Document Editing"</h4>
-                                <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
-                            </div>
-                            <span class="text-xs font-mono text-[var(--text-muted)]">Jan 2025 - April 2025</span>
-                        </div>
-                        <p class="text-sm text-[var(--text-muted)] mt-2">
-                            A workshop focused on teaching LaTeX for professional document preparation, covering basics
-                            to advanced formatting techniques.
-                        </p>
-                    </div>
-
-                    <!-- Teaching Role 5 -->
-                    <div class="glass-panel p-6 rounded-xl">
-                        <div class="flex justify-between items-start mb-2">
-                            <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">NPTEL Course: EE79 Smart Grids:
-                                    Basics to Advanced Technologies </h4>
-                                <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
-                            </div>
-                            <span class="text-xs font-mono text-[var(--text-muted)]">Jan 2025 - April 2025</span>
-                        </div>
-                        <p class="text-sm text-[var(--text-muted)] mt-2">
-                            Doubt clearing and problem solving sessions for students enrolled in the course.
-                        </p>
-                        <div class="mt-4 flex gap-2">
-                            <span
-                                class="px-2 py-1 bg-[var(--bg-body)] border border-[var(--glass-border)] rounded text-xs text-[var(--text-muted)]"><a
-                                    href="https://www.youtube.com/playlist?list=PLqTDTw8KvSg5i9fhQVENGgpfDnFlX6Mzm"
-                                    target="_blank" rel="noopener noreferrer">YouTube
-                                    Lectures</a></span>
-                        </div>
-                    </div>
-
-                    <!-- Teaching Role 4 -->
-                    <div class="glass-panel p-6 rounded-xl">
-                        <div class="flex justify-between items-start mb-2">
-                            <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">Chhatrapati Shahu Ji Maharaj
-                                    University (CSJMU), Kanpur: Workshop on "Machine Learning with Python"</h4>
-                                <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
-                            </div>
-                            <span class="text-xs font-mono text-[var(--text-muted)]">April 2024</span>
-                        </div>
-                        <p class="text-sm text-[var(--text-muted)] mt-2">
-                            A 30-hours hands-on workshop covering fundamentals of Machine Learning using Python.
-                        </p>
-                    </div>
-
-                    <!-- Teaching Role 3 -->
-                    <div class="glass-panel p-6 rounded-xl">
-                        <div class="flex justify-between items-start mb-2">
-                            <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">NPTEL Course: EE37 Smart Grids:
-                                    Basics to Advanced Technologies </h4>
-                                <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
-                            </div>
-                            <span class="text-xs font-mono text-[var(--text-muted)]">Jan 2024 - April 2024</span>
-                        </div>
-                        <p class="text-sm text-[var(--text-muted)] mt-2">
-                            Doubt clearing and problem solving sessions for students enrolled in the course.
-                        </p>
-                        <div class="mt-4 flex gap-2">
-                            <span
-                                class="px-2 py-1 bg-[var(--bg-body)] border border-[var(--glass-border)] rounded text-xs text-[var(--text-muted)]"><a
-                                    href="https://www.youtube.com/playlist?list=PLqTDTw8KvSg6MIw_CUPUsWb9gUXGZ1C4a"
-                                    target="_blank" rel="noopener noreferrer">YouTube
-                                    Lectures</a></span>
-                        </div>
-                    </div>
-
-                    <!-- Teaching Role 2 -->
-                    <div class="glass-panel p-6 rounded-xl">
-                        <div class="flex justify-between items-start mb-2">
-                            <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">Atal Bihari Vajpayee Indian
-                                    Institute of Information Technology Gwalior: EE101 Fundamentals of Electrical and
-                                    Electronics</h4>
-                                <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
-                            </div>
-                            <span class="text-xs font-mono text-[var(--text-muted)]">Oct 2023</span>
-                        </div>
-                        <p class="text-sm text-[var(--text-muted)] mt-2">
-                            Problem solving tutorials and laboratory practicals.
-                        </p>
-                    </div>
-
-                    <!-- Teaching Role 1 -->
-                    <div class="glass-panel p-6 rounded-xl">
-                        <div class="flex justify-between items-start mb-2">
-                            <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">NPTEL Course: EE116 Fundamentals
-                                    of Electrical Engineering </h4>
-                                <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
-                            </div>
-                            <span class="text-xs font-mono text-[var(--text-muted)]">July 2023 - Oct 2023</span>
-                        </div>
-                        <p class="text-sm text-[var(--text-muted)] mt-2">
-                            Doubt clearing and problem solving sessions for students enrolled in the course.
-                        </p>
-                        <div class="mt-4 flex gap-2">
-                            <span
-                                class="px-2 py-1 bg-[var(--bg-body)] border border-[var(--glass-border)] rounded text-xs text-[var(--text-muted)]"><a
-                                    href="https://www.youtube.com/playlist?list=PLqTDTw8KvSg6NKI3vbjbNdLEzqgcS19Jj"
-                                    target="_blank" rel="noopener noreferrer">YouTube
-                                    Lectures</a></span>
-                        </div>
-                    </div>
-                </div>
+                <div id="pmrf-teaching-container" class="space-y-6"></div>
 
                 <h3 class="text-2xl font-bold mt-6 mb-6 flex items-center">
                     <i data-lucide="presentation" class="mr-3 text-[var(--primary)]"></i> Institute Teaching Duties
                 </h3>
 
-                <div class="space-y-6">
-
-                    <!-- Teaching Role 5 -->
-
-                    <div class="glass-panel p-6 rounded-xl">
-                        <div class="flex justify-between items-start mb-2">
-                            <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">EE 630(P): Simulation of Modern
-                                    Power Systems</h4>
-                                <p class="text-sm text-[var(--primary)]">Teaching Assistant (Lab Tutor)</p>
-                            </div>
-                            <span class="text-xs font-mono text-[var(--text-muted)]">2025-26 Sem I</span>
-                        </div>
-                        <p class="text-sm text-[var(--text-muted)] mt-2">
-                            Conducted lab sessions on power system simulation using Python.
-                        </p>
-                        <div class="mt-4 flex gap-2">
-                            <span
-                                class="px-2 py-1 bg-[var(--bg-body)] border border-[var(--glass-border)] rounded text-xs text-[var(--text-muted)]">Python</span>
-                            <span
-                                class="px-2 py-1 bg-[var(--bg-body)] border border-[var(--glass-border)] rounded text-xs text-[var(--text-muted)]">Algorithms</span>
-                        </div>
-                    </div>
-
-                    <!-- Teaching Role 4 -->
-
-                    <div class="glass-panel p-6 rounded-xl">
-                        <div class="flex justify-between items-start mb-2">
-                            <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">EE 675: Introduction to
-                                    Reinforcement Learning</h4>
-                                <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
-                            </div>
-                            <span class="text-xs font-mono text-[var(--text-muted)]">2024-25 Sem II</span>
-                        </div>
-                        <p class="text-sm text-[var(--text-muted)] mt-2">
-                            Assisting instructor with correcting assignments, and clearing student doubts.
-                        </p>
-                    </div>
-
-                    <!-- Teaching Role 3 -->
-
-                    <div class="glass-panel p-6 rounded-xl">
-                        <div class="flex justify-between items-start mb-2">
-                            <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">EE 633A: Electric Power System
-                                    Operation and Management Under Restructured Environment</h4>
-                                <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
-                            </div>
-                            <span class="text-xs font-mono text-[var(--text-muted)]">2022-23 Sem II</span>
-                        </div>
-                        <p class="text-sm text-[var(--text-muted)] mt-2">
-                            Assisting instructor with correcting quizzes, assignments, and clearing student doubts.
-                        </p>
-                    </div>
-
-                    <!-- Teaching Role 2 -->
-                    <div class="glass-panel p-6 rounded-xl">
-                        <div class="flex justify-between items-start mb-2">
-                            <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">EE 632A: Economic Operation and
-                                    Control of Power Systems</h4>
-                                <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
-                            </div>
-                            <span class="text-xs font-mono text-[var(--text-muted)]">2022-23 Sem I</span>
-                        </div>
-                        <p class="text-sm text-[var(--text-muted)] mt-2">
-                            Assisting instructor with correcting quizzes, assignments, and clearing student doubts.
-                        </p>
-                    </div>
-
-                    <!-- Teaching Role 1 -->
-                    <div class="glass-panel p-6 rounded-xl">
-                        <div class="flex justify-between items-start mb-2">
-                            <div>
-                                <h4 class="text-lg font-bold text-[var(--text-main)]">ESO 203A: Introduction to
-                                    Electrical Engineering</h4>
-                                <p class="text-sm text-[var(--primary)]">Teaching Assistant</p>
-                            </div>
-                            <span class="text-xs font-mono text-[var(--text-muted)]">2021-22 Sem II</span>
-                        </div>
-                        <p class="text-sm text-[var(--text-muted)] mt-2">
-                            Preparing questions for weekly quizzes and assisting in grading assignments.
-                        </p>
-                    </div>
-
-                    <!-- Mentorship
-                     <div class="glass-panel p-6 rounded-xl border-l-4 border-l-orange-400">
-                        <div class="flex items-center mb-4">
-                            <i data-lucide="users" class="text-orange-400 mr-2 w-5 h-5"></i>
-                            <h4 class="text-lg font-bold text-[var(--text-main)]">Mentorship</h4>
-                        </div>
-                        <ul class="list-disc list-inside text-sm text-[var(--text-muted)] space-y-2">
-                            <li><strong>Sarah Jenkins (PhD Candidate):</strong> Advising on reinforcement learning strategies in protein folding.</li>
-                            <li><strong>David Lee (Undergraduate):</strong> Supervised summer research project on genomic data visualization.</li>
-                        </ul>
-                    </div> -->
-                </div>
+                <div id="institute-teaching-container" class="space-y-6"></div>
             </section>
 
             <!-- SECTION: GALLERY (NEW) -->
@@ -604,95 +227,13 @@
                     <i data-lucide="image" class="mr-3 text-[var(--primary)]"></i> Presented my research paper at IEEE
                     PESGM 2024, Seattle, WA, USA
                 </h3>
-                <div class="gallery-grid">
-                    <!-- Gallery Item 1 -->
-                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/1.JPEG')">
-                        <img src="V1.0/images/1.JPEG">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
-                    </div>
-                    <!-- Gallery Item 2 -->
-                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/2.JPEG')">
-                        <img src="V1.0/images/2.JPEG">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
-                    </div>
-                    <!-- Gallery Item 3 -->
-                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/3.JPEG')">
-                        <img src="V1.0/images/3.JPEG">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
-                    </div>
-                    <!-- Gallery Item 4 -->
-                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/4.JPEG')">
-                        <img src="V1.0/images/4.JPEG">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
-                    </div>
-                    <!-- Gallery Item 5 -->
-                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/PESGMPoster.jpeg')">
-                        <img src="V1.0/images/PESGMPoster.jpeg">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
-                    </div>
-                    <!-- Gallery Item 6 -->
-                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/6 Small.jpeg')">
-                        <img src="V1.0/images/6 Small.jpeg">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
-                    </div>
-                    <!-- Gallery Item 7 -->
-                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/7.JPEG')">
-                        <img src="V1.0/images/7.JPEG">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
-                    </div>
-                    <!-- Gallery Item 8 -->
-                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/8.JPEG')">
-                        <img src="V1.0/images/8.JPEG">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
-                    </div>
-                </div>
+                <div id="gallery-container" class="gallery-grid"></div>
                 <h3 class="text-2xl font-bold mb-6 mt-6 flex items-center">
                     <i data-lucide="image" class="mr-3 text-[var(--primary)]"></i> My talk at Kendriya Vidyalaya No. 1
                     Jammu
                 </h3>
 
-                <div class="gallery-grid">
-                    <!-- Gallery Item 1 -->
-                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/img1.JPG')">
-                        <img src="V1.0/images/img1.JPG">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
-                    </div>
-                    <!-- Gallery Item 2 -->
-                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/img2.JPG')">
-                        <img src="V1.0/images/img2.JPG">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
-                    </div>
-                    <!-- Gallery Item 3 -->
-                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/img3.JPG')">
-                        <img src="V1.0/images/img3.JPG">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
-                    </div>
-                    <!-- Gallery Item 4 -->
-                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/img4.JPG')">
-                        <img src="V1.0/images/img4.JPG">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
-                    </div>
-                    <!-- Gallery Item 5 -->
-                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/img5.JPG')">
-                        <img src="V1.0/images/img5.JPG">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
-                    </div>
-                    <!-- Gallery Item 6 -->
-                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/img6.JPG')">
-                        <img src="V1.0/images/img6.JPG">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
-                    </div>
-                    <!-- Gallery Item 7 -->
-                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/img7.JPG')">
-                        <img src="V1.0/images/img7.JPG">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
-                    </div>
-                    <!-- Gallery Item 8 -->
-                    <div class="gallery-item glass-panel group" onclick="openLightbox('V1.0/images/img2.JPG')">
-                        <img src="V1.0/images/img2.JPG">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
-                    </div>
-                </div>
+                <div id="talks-container" class="gallery-grid"></div>
             </section>
 
             <!-- SECTION: PUBLICATIONS -->
@@ -705,27 +246,7 @@
                 <h4
                     class="text-lg font-bold mb-4 mt-2 text-[var(--text-main)] border-b border-[var(--glass-border)] pb-2">
                     Preprints</h4>
-                <div class="space-y-4 mb-8">
-                    <div class="glass-panel p-6 rounded-xl relative">
-                        <span class="absolute top-6 right-6 text-xs font-mono text-[var(--text-muted)]">2025</span>
-                        <h4 class="text-lg font-bold pr-12">IDSO-Managed Bid-Based Transactive Distribution Systems
-                            Design for DER Participation in Wholesale Markets While Preserving T-D Interactions</h4>
-                        <p class="text-[var(--primary)] text-sm mb-2">S. Sharma, S. Battula, and S.N. Singh</p>
-                        <p class="text-[var(--text-muted)] text-sm italic mb-4">arXiv:2508.08187</p>
-                        <div class="flex gap-3">
-                            <button
-                                onclick="copyToClipboard('S. Sharma, S. Battula and S. N. Singh, “IDSO-Managed Bid-Based Transactive Distribution Systems Design for DER Participation in Wholesale Markets While Preserving T-D Interactions,” arXiv:2508.08187, 2025.')"
-                                class="px-3 py-1 bg-[var(--primary)]/10 hover:bg-[var(--primary)]/20 rounded text-xs text-[var(--text-main)] flex items-center transition-colors">
-                                <i data-lucide="quote" class="w-3 h-3 mr-2"></i> Cite
-                            </button>
-                            <a href="https://arxiv.org/abs/2508.08187" target="_blank" rel="noopener noreferrer"
-                                class="px-3 py-1 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 text-[var(--primary)] rounded text-xs flex items-center transition-colors"><i
-                                    data-lucide="link" class="w-3 h-3 mr-2"></i>
-                                Link
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <div id="preprints-container" class="space-y-4 mb-8"></div>
 
                 <!-- Group: Journals
                 <h4 class="text-lg font-bold mb-4 text-[var(--text-main)] border-b border-[var(--glass-border)] pb-2">Journal Articles</h4>
@@ -750,50 +271,7 @@
                 <!-- Group: Conferences -->
                 <h4 class="text-lg font-bold mb-4 text-[var(--text-main)] border-b border-[var(--glass-border)] pb-2">
                     Conference Proceedings</h4>
-                <div class="space-y-4">
-                    <!-- Publication Item -->
-                    <div class="glass-panel p-6 rounded-xl relative">
-                        <span class="absolute top-6 right-6 text-xs font-mono text-[var(--text-muted)]">2026</span>
-                        <h4 class="text-lg font-bold pr-12">Towards Improved System Flexibility: Enabling IDSO's Swing
-                            Contract Market Participation</h4>
-                        <p class="text-[var(--primary)] text-sm mb-2">S. Sharma, S. Battula, and S.N. Singh</p>
-                        <p class="text-[var(--text-muted)] text-sm italic mb-4">2026 IEEE Power & Energy Society
-                            Transmission & Distribution Conference & Exposition, Chicago, Illinois, 2026
-                            <b>[Accepted]</b>
-                        </p>
-                        <!-- <div class="flex gap-3">
-                            <button onclick="copyToClipboard('Chen & Rossi 2023, Optimizing Graph Theory...')" class="px-3 py-1 bg-[var(--primary)]/10 hover:bg-[var(--primary)]/20 rounded text-xs text-[var(--text-main)] flex items-center transition-colors">
-                                <i data-lucide="quote" class="w-3 h-3 mr-2"></i> Cite
-                            </button>
-                            <a href="#" class="px-3 py-1 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 text-[var(--primary)] rounded text-xs flex items-center transition-colors">
-                                PDF
-                            </a>
-                        </div> -->
-                    </div>
-                    <div class="glass-panel p-6 rounded-xl relative">
-                        <span class="absolute top-6 right-6 text-xs font-mono text-[var(--text-muted)]">2024</span>
-                        <h4 class="text-lg font-bold pr-12">Transactive Electric Vehicle Agent: A Deep Reinforcement
-                            Learning Approach</h4>
-                        <p class="text-[var(--primary)] text-sm mb-2">S. Sharma, S. Battula, and S.N. Singh</p>
-                        <p class="text-[var(--text-muted)] text-sm italic mb-4">2024 IEEE Power & Energy Society General
-                            Meeting, Seattle, Washington, 2024</p>
-                        <p class="text-[var(--text-muted)] text-sm italic mb-4">doi: 10.1109/PESGM51994.2024.10688919.
-                        </p>
-                        <div class="flex gap-3">
-                            <button
-                                onclick="copyToClipboard('S. Sharma, S. Battula and S. N. Singh, Transactive Electric Vehicle Agent: A Deep Reinforcement Learning Approach, 2024 IEEE Power & Energy Society General Meeting (PESGM), Seattle, WA, USA, 2024, pp. 1-5, doi: 10.1109/PESGM51994.2024.10688919.')"
-                                class="px-3 py-1 bg-[var(--primary)]/10 hover:bg-[var(--primary)]/20 rounded text-xs text-[var(--text-main)] flex items-center transition-colors">
-                                <i data-lucide="quote" class="w-3 h-3 mr-2"></i> Cite
-                            </button>
-                            <a href="https://ieeexplore.ieee.org/document/10688919" target="_blank"
-                                rel="noopener noreferrer"
-                                class="px-3 py-1 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 text-[var(--primary)] rounded text-xs flex items-center transition-colors"><i
-                                    data-lucide="link" class="w-3 h-3 mr-2"></i>
-                                Link
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <div id="conferences-container" class="space-y-4"></div>
             </section>
 
             <!-- SECTION: INTERESTING READS -->
@@ -808,35 +286,7 @@
                         <h4
                             class="text-lg font-bold mb-4 text-[var(--text-main)] border-b border-[var(--glass-border)] pb-2">
                             Fictional & General Reads</h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="glass-panel p-4 rounded-lg flex items-start">
-                                <i data-lucide="book" class="text-[var(--primary)] mt-1 mr-3 flex-shrink-0"></i>
-                                <div>
-                                    <h5 class="font-bold text-sm">Yellowface</h5>
-                                    <p class="text-xs text-[var(--text-muted)] mt-1">by R.F. Kuang</p>
-                                    <p class="text-xs text-[var(--text-muted)] mt-2">A satirical thriller about
-                                        diversity, cultural appropriation, and the publishing industry.</p>
-                                    <a href="https://www.google.com/search?q=Yellowface+R.F.+Kuang" target="_blank"
-                                        class="inline-flex items-center mt-2 text-xs text-[var(--primary)] hover:underline">
-                                        <i data-lucide="search" class="w-3 h-3 mr-1"></i> Search
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="glass-panel p-4 rounded-lg flex items-start">
-                                <i data-lucide="book-open" class="text-[var(--primary)] mt-1 mr-3 flex-shrink-0"></i>
-                                <div>
-                                    <h5 class="font-bold text-sm">Psycho-Cybernetics</h5>
-                                    <p class="text-xs text-[var(--text-muted)] mt-1">by Maxwell Maltz</p>
-                                    <p class="text-xs text-[var(--text-muted)] mt-2">A self-help classic exploring the
-                                        mind-body connection and self-image psychology.</p>
-                                    <a href="https://www.google.com/search?q=Psycho-Cybernetics+Maxwell+Maltz"
-                                        target="_blank"
-                                        class="inline-flex items-center mt-2 text-xs text-[var(--primary)] hover:underline">
-                                        <i data-lucide="search" class="w-3 h-3 mr-1"></i> Search
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        <div id="fictional-reads-container" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
                     </div>
 
                     <!-- Technical Books -->
@@ -844,66 +294,7 @@
                         <h4
                             class="text-lg font-bold mb-4 text-[var(--text-main)] border-b border-[var(--glass-border)] pb-2">
                             Technical Books</h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="glass-panel p-4 rounded-lg flex items-start">
-                                <i data-lucide="zap" class="text-[var(--primary)] mt-1 mr-3 flex-shrink-0"></i>
-                                <div>
-                                    <h5 class="font-bold text-sm">Power System Analysis</h5>
-                                    <p class="text-xs text-[var(--text-muted)] mt-1">by Grainger and Stevenson</p>
-                                    <p class="text-xs text-[var(--text-muted)] mt-2">The classic comprehensive guide to
-                                        power systems engineering.</p>
-                                    <a href="https://www.google.com/search?q=Power+System+Analysis+Grainger+Stevenson"
-                                        target="_blank"
-                                        class="inline-flex items-center mt-2 text-xs text-[var(--primary)] hover:underline">
-                                        <i data-lucide="search" class="w-3 h-3 mr-1"></i> Search
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="glass-panel p-4 rounded-lg flex items-start">
-                                <i data-lucide="trending-up" class="text-[var(--primary)] mt-1 mr-3 flex-shrink-0"></i>
-                                <div>
-                                    <h5 class="font-bold text-sm">A New Swing-Contract Design for Wholesale Power
-                                        Markets</h5>
-                                    <p class="text-xs text-[var(--text-muted)] mt-1">by Leigh Tesfatsion</p>
-                                    <p class="text-xs text-[var(--text-muted)] mt-2">Proposes a linked swing-contract
-                                        market design for centrally-managed wholesale power markets.</p>
-                                    <a href="https://www.google.com/search?q=A+New+Swing-Contract+Design+for+Wholesale+Power+Markets+Leigh+Tesfatsion"
-                                        target="_blank"
-                                        class="inline-flex items-center mt-2 text-xs text-[var(--primary)] hover:underline">
-                                        <i data-lucide="search" class="w-3 h-3 mr-1"></i> Search
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="glass-panel p-4 rounded-lg flex items-start">
-                                <i data-lucide="activity" class="text-[var(--primary)] mt-1 mr-3 flex-shrink-0"></i>
-                                <div>
-                                    <h5 class="font-bold text-sm">Optimization Models in Electricity Markets</h5>
-                                    <p class="text-xs text-[var(--text-muted)] mt-1">by Anthony Papavasiliou</p>
-                                    <p class="text-xs text-[var(--text-muted)] mt-2">A comprehensive introduction to the
-                                        structure and operation of electricity markets.</p>
-                                    <a href="https://www.google.com/search?q=Optimization+Models+in+Electricity+Markets+Anthony+Papavasiliou"
-                                        target="_blank"
-                                        class="inline-flex items-center mt-2 text-xs text-[var(--primary)] hover:underline">
-                                        <i data-lucide="search" class="w-3 h-3 mr-1"></i> Search
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="glass-panel p-4 rounded-lg flex items-start">
-                                <i data-lucide="brain-circuit"
-                                    class="text-[var(--primary)] mt-1 mr-3 flex-shrink-0"></i>
-                                <div>
-                                    <h5 class="font-bold text-sm">Grokking Deep Reinforcement Learning</h5>
-                                    <p class="text-xs text-[var(--text-muted)] mt-1">by Miguel Morales</p>
-                                    <p class="text-xs text-[var(--text-muted)] mt-2">An intuitive guide to deep
-                                        reinforcement learning concepts and algorithms.</p>
-                                    <a href="https://www.google.com/search?q=Grokking+Deep+Reinforcement+Learning+Miguel+Morales"
-                                        target="_blank"
-                                        class="inline-flex items-center mt-2 text-xs text-[var(--primary)] hover:underline">
-                                        <i data-lucide="search" class="w-3 h-3 mr-1"></i> Search
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        <div id="technical-reads-container" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
                     </div>
 
                     <!-- Research Papers -->
@@ -911,53 +302,7 @@
                         <h4
                             class="text-lg font-bold mb-4 text-[var(--text-main)] border-b border-[var(--glass-border)] pb-2">
                             Research Papers</h4>
-                        <div class="space-y-4">
-                            <div class="glass-panel p-4 rounded-lg">
-                                <h5 class="font-bold text-sm">Locational Marginal Pricing: A Fundamental Reconsideration
-                                </h5>
-                                <p class="text-xs text-[var(--primary)] mt-1">Leigh Tesfatsion, 2024</p>
-                                <p class="text-xs text-[var(--text-muted)] mt-2">The paper introduces why there is a
-                                    fundamental need to reconsider locational marginal pricing in electricity markets.
-                                </p>
-                                <a href="https://ieeexplore.ieee.org/document/10419119" target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="inline-flex items-center mt-2 text-xs text-[var(--primary)] hover:underline">
-                                    <i data-lucide="external-link" class="w-3 h-3 mr-1"></i> Read Paper
-                                </a>
-                            </div>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="glass-panel p-4 rounded-lg">
-                                <h5 class="font-bold text-sm">Braided Cobwebs: Cautionary Tales for Dynamic Pricing in
-                                    Retail Electric Power Markets</h5>
-                                <p class="text-xs text-[var(--primary)] mt-1">A.G. Thomas and L. Tesfatsion, 2018</p>
-                                <p class="text-xs text-[var(--text-muted)] mt-2">The paper shows that one-way dynamic
-                                    retail pricing can create unstable braided cobweb cycles between wholesale and
-                                    retail markets and usually reduces household welfare compared with flat-rate
-                                    tariffs.</p>
-                                <a href="https://ieeexplore.ieee.org/document/8353474/" target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="inline-flex items-center mt-2 text-xs text-[var(--primary)] hover:underline">
-                                    <i data-lucide="external-link" class="w-3 h-3 mr-1"></i> Read Paper
-                                </a>
-                            </div>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="glass-panel p-4 rounded-lg">
-                                <h5 class="font-bold text-sm">Distribution Systems in a High Distributed Energy
-                                    Resources Future</h5>
-                                <p class="text-xs text-[var(--primary)] mt-1">P.D. Martin and L. Kristov, 2015</p>
-                                <p class="text-xs text-[var(--text-muted)] mt-2">The article introduces for the first
-                                    time, the need for an Independent Distribution System Operator (IDSO) to manage the
-                                    highly "active"
-                                    distribution systems. </p>
-                                <a href="https://eta-publications.lbl.gov/sites/default/files/lbnl-1003797.pdf"
-                                    target="_blank" rel="noopener noreferrer"
-                                    class="inline-flex items-center mt-2 text-xs text-[var(--primary)] hover:underline">
-                                    <i data-lucide="external-link" class="w-3 h-3 mr-1"></i> Read Paper
-                                </a>
-                            </div>
-                        </div>
+                        <div id="paper-reads-container" class="space-y-4"></div>
                     </div>
                 </div>
             </section>
@@ -1084,15 +429,17 @@
         </div>
     </div>
 
-        <!-- Local scripts -->
-        <script src="assets/portfolio.js"></script>
-        <!-- Configure Gemini endpoint for GitHub Pages to call Netlify function -->
-        <script>
-            // Replace with your Netlify site URL
-            window.GEMINI_ENDPOINT = 'https://sharmaswastik.netlify.app/api/gemini';
-        </script>
-        <!-- Extracted Gemini + helper logic -->
-        <script src="assets/js/main.js"></script>
+    <!-- Local scripts -->
+    <script src="assets/portfolio.js"></script>
+    <!-- Configure Gemini endpoint for GitHub Pages to call Netlify function -->
+    <script>
+        // Replace with your Netlify site URL
+        window.GEMINI_ENDPOINT = 'https://sharmaswastik.netlify.app/api/gemini';
+    </script>
+    <!-- Extracted Gemini + helper logic -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/data/data.js"></script>
+    <script src="assets/js/data-loader.js"></script>
 </body>
 
 </html>
