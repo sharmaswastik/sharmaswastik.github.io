@@ -150,7 +150,7 @@ const siteData = {
             "title": "IDSO-Managed Bid-Based Transactive Design for DER Participation in Wholesale Markets While Preserving T-D Interactions",
             "authors": "S. Sharma, S. Battula, and S.N. Singh",
             "year": "2026",
-            "venue": "IEEE Transactions on Energy Markets, Policy and Regulation",
+            "venue": "IEEE Transactions on Energy Markets, Policy, and Regulation",
             "link": "",
             "preprint": "https://arxiv.org/abs/2508.08187",
             "doi": "doi: 10.1109/TEMPR.2026.3661757",
