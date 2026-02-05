@@ -87,16 +87,29 @@ function loadProjects(projects) {
     if (window.lucide) window.lucide.createIcons();
 }
 
+function handleSectionVisibility(sectionId, dataArray) {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+
+    if (dataArray && dataArray.length > 0) {
+        section.classList.remove('hidden');
+    } else {
+        section.classList.add('hidden');
+    }
+}
+
 function loadTeaching(teaching) {
     // PMRF
     const pmrfContainer = document.getElementById('pmrf-teaching-container');
-    if (pmrfContainer) {
+    handleSectionVisibility('pmrf-teaching-section', teaching.pmrf);
+    if (pmrfContainer && teaching.pmrf) {
         pmrfContainer.innerHTML = teaching.pmrf.map(item => createTeachingCard(item)).join('');
     }
 
     // Institute
     const instituteContainer = document.getElementById('institute-teaching-container');
-    if (instituteContainer) {
+    handleSectionVisibility('institute-teaching-section', teaching.institute);
+    if (instituteContainer && teaching.institute) {
         instituteContainer.innerHTML = teaching.institute.map(item => createTeachingCard(item)).join('');
     }
 
@@ -146,7 +159,9 @@ function loadGallery(images) {
 function loadPublications(publications) {
     // Preprints
     const preprintsContainer = document.getElementById('preprints-container');
-    if (preprintsContainer) {
+    handleSectionVisibility('preprints-section', publications.preprints);
+
+    if (preprintsContainer && publications.preprints) {
         preprintsContainer.innerHTML = publications.preprints.map(pub => `
             <div class="glass-panel p-6 rounded-xl relative">
                 <span class="absolute top-6 right-6 text-xs font-mono text-[var(--text-muted)]">${pub.year}</span>
@@ -158,10 +173,43 @@ function loadPublications(publications) {
                         class="px-3 py-1 bg-[var(--primary)]/10 hover:bg-[var(--primary)]/20 rounded text-xs text-[var(--text-main)] flex items-center transition-colors">
                         <i data-lucide="quote" class="w-3 h-3 mr-2"></i> Cite
                     </button>
+                    ${pub.link ? `
                     <a href="${pub.link}" target="_blank" rel="noopener noreferrer"
                         class="px-3 py-1 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 text-[var(--primary)] rounded text-xs flex items-center transition-colors">
                         <i data-lucide="link" class="w-3 h-3 mr-2"></i> Link
-                    </a>
+                    </a>` : ''}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // Journals
+    const journalsContainer = document.getElementById('journals-container');
+    handleSectionVisibility('journals-section', publications.journals);
+
+    if (journalsContainer && publications.journals) {
+        journalsContainer.innerHTML = publications.journals.map(pub => `
+            <div class="glass-panel p-6 rounded-xl relative">
+                <span class="absolute top-6 right-6 text-xs font-mono text-[var(--text-muted)]">${pub.year}</span>
+                <h4 class="text-lg font-bold pr-12">${pub.title}</h4>
+                <p class="text-[var(--primary)] text-sm mb-2">${pub.authors}</p>
+                <p class="text-[var(--text-muted)] text-sm italic mb-4">${pub.venue} ${pub.status ? `<b>${pub.status}</b>` : ''}</p>
+                 ${pub.doi ? `<p class="text-[var(--text-muted)] text-sm italic mb-4">${pub.doi}</p>` : ''}
+                <div class="flex gap-3">
+                    <button onclick="copyToClipboard('${pub.citation}')"
+                        class="px-3 py-1 bg-[var(--primary)]/10 hover:bg-[var(--primary)]/20 rounded text-xs text-[var(--text-main)] flex items-center transition-colors">
+                        <i data-lucide="quote" class="w-3 h-3 mr-2"></i> Cite
+                    </button>
+                    ${pub.link ? `
+                    <a href="${pub.link}" target="_blank" rel="noopener noreferrer"
+                        class="px-3 py-1 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 text-[var(--primary)] rounded text-xs flex items-center transition-colors">
+                        <i data-lucide="link" class="w-3 h-3 mr-2"></i> Link
+                    </a>` : ''}
+                     ${pub.preprint ? `
+                    <a href="${pub.preprint}" target="_blank" rel="noopener noreferrer"
+                        class="px-3 py-1 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 text-[var(--primary)] rounded text-xs flex items-center transition-colors">
+                        <i data-lucide="file-text" class="w-3 h-3 mr-2"></i> Preprint
+                    </a>` : ''}
                 </div>
             </div>
         `).join('');
@@ -169,7 +217,9 @@ function loadPublications(publications) {
 
     // Conferences
     const conferencesContainer = document.getElementById('conferences-container');
-    if (conferencesContainer) {
+    handleSectionVisibility('conferences-section', publications.conferences);
+
+    if (conferencesContainer && publications.conferences) {
         conferencesContainer.innerHTML = publications.conferences.map(pub => `
             <div class="glass-panel p-6 rounded-xl relative">
                 <span class="absolute top-6 right-6 text-xs font-mono text-[var(--text-muted)]">${pub.year}</span>
@@ -198,13 +248,17 @@ function loadPublications(publications) {
 function loadReads(reads) {
     // Fictional
     const fictionalContainer = document.getElementById('fictional-reads-container');
-    if (fictionalContainer) {
+    handleSectionVisibility('fictional-reads-section', reads.fictional);
+
+    if (fictionalContainer && reads.fictional) {
         fictionalContainer.innerHTML = reads.fictional.map(book => createBookCard(book, 'book')).join('');
     }
 
     // Technical
     const technicalContainer = document.getElementById('technical-reads-container');
-    if (technicalContainer) {
+    handleSectionVisibility('technical-reads-section', reads.technical);
+
+    if (technicalContainer && reads.technical) {
         const icons = {
             "Power System Analysis": "zap",
             "A New Swing-Contract Design for Wholesale Power Markets": "trending-up",
@@ -216,7 +270,9 @@ function loadReads(reads) {
 
     // Papers
     const papersContainer = document.getElementById('paper-reads-container');
-    if (papersContainer) {
+    handleSectionVisibility('paper-reads-section', reads.papers);
+
+    if (papersContainer && reads.papers) {
         papersContainer.innerHTML = reads.papers.map(paper => `
             <div class="glass-panel p-4 rounded-lg">
                 <h5 class="font-bold text-sm">${paper.title}</h5>

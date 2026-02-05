@@ -94,7 +94,10 @@
                 "role": "Teaching Assistant (Lab Tutor)",
                 "period": "2025-26 Sem I",
                 "description": "Conducted lab sessions on power system simulation using Python.",
-                "tags": ["Python", "Algorithms"]
+                "tags": [
+                    "Python",
+                    "Algorithms"
+                ]
             },
             {
                 "title": "EE 675: Introduction to Reinforcement Learning",
@@ -153,6 +156,7 @@
                 "citation": "S. Sharma, S. Battula and S. N. Singh, “IDSO-Managed Bid-Based Transactive Distribution Systems Design for DER Participation in Wholesale Markets While Preserving T-D Interactions,” arXiv:2508.08187, 2025."
             }
         ],
+        "journals": [],
         "conferences": [
             {
                 "title": "Towards Improved System Flexibility: Enabling IDSO's Swing Contract Market Participation",
