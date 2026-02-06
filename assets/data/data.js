@@ -153,6 +153,7 @@ const siteData = {
             "venue": "IEEE Transactions on Energy Markets, Policy, and Regulation",
             "link": "",
             "preprint": "https://arxiv.org/abs/2508.08187",
+            "code": "https://doi.org/10.5281/zenodo.17582538",
             "doi": "doi: 10.1109/TEMPR.2026.3661757",
             "citation": "S. Sharma, S. Battula and S. N. Singh, “IDSO-Managed Bid-Based Transactive Distribution Systems Design for DER Participation in Wholesale Markets While Preserving T-D Interactions,” in IEEE Transactions on Energy Markets, Policy and Regulation, doi: 10.1109/TEMPR.2026.3661757."
         }],

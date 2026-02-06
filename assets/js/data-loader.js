@@ -210,6 +210,11 @@ function loadPublications(publications) {
                         class="px-3 py-1 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 text-[var(--primary)] rounded text-xs flex items-center transition-colors">
                         <i data-lucide="file-text" class="w-3 h-3 mr-2"></i> Preprint
                     </a>` : ''}
+                    ${pub.code ? `
+                    <a href="${pub.code}" target="_blank" rel="noopener noreferrer"
+                        class="px-3 py-1 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 text-[var(--primary)] rounded text-xs flex items-center transition-colors">
+                        <i data-lucide="code" class="w-3 h-3 mr-2"></i>Code
+                    </a>` : ''}
                 </div>
             </div>
         `).join('');
