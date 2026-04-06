@@ -49,6 +49,12 @@ const siteData = {
     "teaching": {
         "pmrf": [
             {
+                "title": "Chhatrapati Shahu Ji Maharaj University (CSJMU), Kanpur: CSE-S524: \"Introduction to Python Programming\"",
+                "role": "Course Instructor",
+                "period": "Jan 2026 - May 2026",
+                "description": "Taught a semester-long course on Python programming for undergraduate students."
+            },
+            {
                 "title": "Chhatrapati Shahu Ji Maharaj University (CSJMU), Kanpur: Workshop on \"LaTeX for Document Editing\"",
                 "role": "Teaching Assistant",
                 "period": "Jan 2025 - April 2025",
