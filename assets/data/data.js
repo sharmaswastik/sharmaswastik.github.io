@@ -129,24 +129,41 @@ const siteData = {
         ]
     },
     "gallery": [
-        "V1.0/images/1.JPEG",
-        "V1.0/images/2.JPEG",
-        "V1.0/images/3.JPEG",
-        "V1.0/images/4.JPEG",
-        "V1.0/images/PESGMPoster.jpeg",
-        "V1.0/images/6 Small.jpeg",
-        "V1.0/images/7.JPEG",
-        "V1.0/images/8.JPEG"
-    ],
-    "talks": [
-        "V1.0/images/img1.JPG",
-        "V1.0/images/img2.JPG",
-        "V1.0/images/img3.JPG",
-        "V1.0/images/img4.JPG",
-        "V1.0/images/img5.JPG",
-        "V1.0/images/img6.JPG",
-        "V1.0/images/img7.JPG",
-        "V1.0/images/img2.JPG"
+        {
+            "title": "Presented my research paper at IEEE PES T&D Conference 2026, Chicago, IL, USA",
+            "images": [
+                "V1.0/images/Chi_1.JPG",
+                "V1.0/images/Chi_2.jpg",
+                "V1.0/images/Chi_3.JPG",
+                "V1.0/images/Chi_4.JPG"
+            ]
+        },
+        {
+            "title": "Presented my research paper at IEEE PESGM 2024, Seattle, WA, USA",
+            "images": [
+                "V1.0/images/1.JPEG",
+                "V1.0/images/2.JPEG",
+                "V1.0/images/3.JPEG",
+                "V1.0/images/4.JPEG",
+                "V1.0/images/PESGMPoster.jpeg",
+                "V1.0/images/6 Small.jpeg",
+                "V1.0/images/7.JPEG",
+                "V1.0/images/8.JPEG"
+            ]
+        },
+        {
+            "title": "My talk at Kendriya Vidyalaya No. 1 Jammu",
+            "images": [
+                "V1.0/images/img1.JPG",
+                "V1.0/images/img2.JPG",
+                "V1.0/images/img3.JPG",
+                "V1.0/images/img4.JPG",
+                "V1.0/images/img5.JPG",
+                "V1.0/images/img6.JPG",
+                "V1.0/images/img7.JPG",
+                "V1.0/images/img8.jpg"
+            ]
+        }
     ],
     "publications": {
         "preprints": [

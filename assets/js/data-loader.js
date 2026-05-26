@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
         loadProjects(data.projects);
         loadTeaching(data.teaching);
         loadGallery(data.gallery);
-        loadTalks(data.talks);
         loadPublications(data.publications);
         loadReads(data.reads);
     } else {
@@ -145,15 +144,71 @@ function loadGallery(images) {
     const container = document.getElementById('gallery-container');
     if (!container) return;
 
-    const html = images.map(imgSrc => `
-        <div class="gallery-item glass-panel group" onclick="openLightbox('${imgSrc}')">
-            <img src="${imgSrc}">
-            <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
+    const sections = normalizeGallerySections(images);
+    handleSectionVisibility('gallery', sections);
+
+    const html = sections.map(section => `
+        <div class="gallery-section">
+            <h3 class="text-2xl font-bold mb-6 flex items-center">
+                <i data-lucide="${section.icon || 'image'}" class="mr-3 text-[var(--primary)]"></i> ${escapeForHtml(section.title)}
+            </h3>
+            <div class="gallery-grid">
+                ${section.images.map(image => createGalleryItem(image)).join('')}
+            </div>
         </div>
     `).join('');
 
     container.innerHTML = html;
     if (window.lucide) window.lucide.createIcons();
+}
+
+function normalizeGallerySections(gallery) {
+    if (!Array.isArray(gallery)) return [];
+
+    if (gallery.every(item => typeof item === 'string')) {
+        return [{
+            title: 'Gallery',
+            images: gallery
+        }];
+    }
+
+    return gallery
+        .map((section, index) => ({
+            title: section.title || `Gallery ${index + 1}`,
+            icon: section.icon,
+            images: Array.isArray(section.images) ? section.images : []
+        }))
+        .filter(section => section.images.length > 0);
+}
+
+function createGalleryItem(image) {
+    const imageData = typeof image === 'string' ? { src: image } : image;
+    const src = imageData.src;
+    const alt = imageData.alt || 'Gallery photo';
+    if (!src) return '';
+
+    return `
+        <div class="gallery-item glass-panel group" data-src="${escapeForAttribute(src)}" onclick="openLightbox(this.dataset.src)">
+            <img src="${escapeForAttribute(src)}" alt="${escapeForAttribute(alt)}" loading="lazy">
+            <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
+        </div>
+    `;
+}
+
+function escapeForHtml(value) {
+    return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+}
+
+function escapeForAttribute(value) {
+    return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
 }
 
 function loadPublications(publications) {
@@ -290,21 +345,6 @@ function loadReads(reads) {
             </div>
         `).join('');
     }
-    if (window.lucide) window.lucide.createIcons();
-}
-
-function loadTalks(images) {
-    const container = document.getElementById('talks-container');
-    if (!container) return;
-
-    const html = images.map(imgSrc => `
-        <div class="gallery-item glass-panel group" onclick="openLightbox('${imgSrc}')">
-            <img src="${imgSrc}">
-            <div class="gallery-overlay"><i data-lucide="maximize-2" class="text-white w-8 h-8"></i></div>
-        </div>
-    `).join('');
-
-    container.innerHTML = html;
     if (window.lucide) window.lucide.createIcons();
 }
 
