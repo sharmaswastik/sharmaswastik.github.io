@@ -145,7 +145,6 @@ function loadGallery(images) {
     if (!container) return;
 
     const sections = normalizeGallerySections(images);
-    handleSectionVisibility('gallery', sections);
 
     const html = sections.map(section => `
         <div class="gallery-section">
