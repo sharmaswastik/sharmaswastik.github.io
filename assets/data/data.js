@@ -185,8 +185,10 @@ const siteData = {
                 "title": "Towards Improved System Flexibility: Enabling IDSO's Swing Contract Market Participation",
                 "authors": "S. Sharma, S. Battula, and S.N. Singh",
                 "year": "2026",
-                "venue": "2026 IEEE Power & Energy Society Transmission & Distribution Conference & Exposition, Chicago, Illinois, 2026",
-                "status": "[Accepted]"
+                "venue": "2026 IEEE/PES Transmission and Distribution Conference and Exposition (T&D), Chicago, IL, USA, 2026",
+                "doi": "doi: 10.1109/TD48022.2026.11562959",
+                "link": "https://ieeexplore.ieee.org/abstract/document/11562959",
+                "citation": "S. Sharma, S. Battula and S. N. Singh, \"Towards Improved System Flexibility: Enabling IDSO’s Swing Contract Market Participation,\" 2026 IEEE/PES Transmission and Distribution Conference and Exposition (T&D), Chicago, IL, USA, 2026, pp. 1-5, doi: 10.1109/TD48022.2026.11562959."
             },
             {
                 "title": "Transactive Electric Vehicle Agent: A Deep Reinforcement Learning Approach",
@@ -195,7 +197,7 @@ const siteData = {
                 "venue": "2024 IEEE Power & Energy Society General Meeting, Seattle, Washington, 2024",
                 "doi": "doi: 10.1109/PESGM51994.2024.10688919",
                 "link": "https://ieeexplore.ieee.org/document/10688919",
-                "citation": "S. Sharma, S. Battula and S. N. Singh, Transactive Electric Vehicle Agent: A Deep Reinforcement Learning Approach, 2024 IEEE Power & Energy Society General Meeting (PESGM), Seattle, WA, USA, 2024, pp. 1-5, doi: 10.1109/PESGM51994.2024.10688919."
+                "citation": "S. Sharma, S. Battula and S. N. Singh, \"Transactive Electric Vehicle Agent: A Deep Reinforcement Learning Approach,\" 2024 IEEE Power & Energy Society General Meeting (PESGM), Seattle, WA, USA, 2024, pp. 1-5, doi: 10.1109/PESGM51994.2024.10688919."
             }
         ]
     },
