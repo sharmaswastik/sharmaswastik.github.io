@@ -223,8 +223,9 @@ function loadPublications(publications) {
                 <p class="text-[var(--primary)] text-sm mb-2">${pub.authors}</p>
                 <p class="text-[var(--text-muted)] text-sm italic mb-4">${pub.venue}</p>
                 <div class="flex gap-3">
-                    <button onclick="copyToClipboard('${pub.citation}')"
-                        class="px-3 py-1 bg-[var(--primary)]/10 hover:bg-[var(--primary)]/20 rounded text-xs text-[var(--text-main)] flex items-center transition-colors">
+                    <button type="button" class="copy-citation-button px-3 py-1 bg-[var(--primary)]/10 hover:bg-[var(--primary)]/20 rounded text-xs text-[var(--text-main)] flex items-center transition-colors"
+                        data-citation="${escapeForAttribute(pub.citation)}"
+                        aria-label="Copy citation">
                         <i data-lucide="quote" class="w-3 h-3 mr-2"></i> Cite
                     </button>
                     ${pub.link ? `
@@ -250,8 +251,9 @@ function loadPublications(publications) {
                 <p class="text-[var(--text-muted)] text-sm italic mb-4">${pub.venue} ${pub.status ? `<b>${pub.status}</b>` : ''}</p>
                  ${pub.doi ? `<p class="text-[var(--text-muted)] text-sm italic mb-4">${pub.doi}</p>` : ''}
                 <div class="flex gap-3">
-                    <button onclick="copyToClipboard('${pub.citation}')"
-                        class="px-3 py-1 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 text-[var(--primary)] rounded text-xs flex items-center transition-colors">
+                    <button type="button" class="copy-citation-button px-3 py-1 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 text-[var(--primary)] rounded text-xs flex items-center transition-colors"
+                        data-citation="${escapeForAttribute(pub.citation)}"
+                        aria-label="Copy citation">
                         <i data-lucide="quote" class="w-3 h-3 mr-2"></i> Cite
                     </button>
                     ${pub.link ? `
@@ -288,8 +290,9 @@ function loadPublications(publications) {
                 ${pub.doi ? `<p class="text-[var(--text-muted)] text-sm italic mb-4">${pub.doi}</p>` : ''}
                 ${pub.citation ? `
                 <div class="flex gap-3">
-                    <button onclick="copyToClipboard('${pub.citation}')"
-                        class="px-3 py-1 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 text-[var(--primary)] rounded text-xs flex items-center transition-colors">
+                    <button type="button" class="copy-citation-button px-3 py-1 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 text-[var(--primary)] rounded text-xs flex items-center transition-colors"
+                        data-citation="${escapeForAttribute(pub.citation)}"
+                        aria-label="Copy citation">
                         <i data-lucide="quote" class="w-3 h-3 mr-2"></i> Cite
                     </button>
                     ${pub.link ? `
@@ -301,6 +304,11 @@ function loadPublications(publications) {
             </div>
         `).join('');
     }
+    document.querySelectorAll('.copy-citation-button').forEach(button => {
+        button.addEventListener('click', () => {
+            copyToClipboard(button.dataset.citation || '');
+        });
+    });
     if (window.lucide) window.lucide.createIcons();
 }
 

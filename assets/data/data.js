@@ -152,7 +152,7 @@ const siteData = {
             ]
         },
         {
-            "title": "My talk at Kendriya Vidyalaya No. 1 Jammu",
+            "title": "Gave a talk at Kendriya Vidyalaya No. 1 Jammu, J&K, India on 13th Feb 2024",
             "images": [
                 "V1.0/images/img1.JPG",
                 "V1.0/images/img2.JPG",
