@@ -171,7 +171,7 @@ const siteData = {
         ],
         "journals": [{
             "title": "IDSO-Managed Bid-Based Transactive Design for DER Participation in Wholesale Markets While Preserving T-D Interactions",
-            "authors": "S. Sharma, S. Battula, and S.N. Singh",
+            "authors": "Swastik Sharma, S. Battula, and S.N. Singh",
             "year": "2026",
             "venue": "IEEE Transactions on Energy Markets, Policy and Regulation",
             "link": "https://ieeexplore.ieee.org/document/11373199",
@@ -182,8 +182,17 @@ const siteData = {
         }],
         "conferences": [
             {
+                "title": "Energy Transition Planning via Green Energy Open Access: A Case Study of IIT Kanpur",
+                "authors": "Swastik Sharma, V. Tiwari, S. Battula, R. Jindal and S.N. Singh",
+                "year": "2026",
+                "venue": "24th National Power Systems Conference (NPSC), IIT Patna, India, 2026",
+                "doi": "(Accepted for Presentation)",
+                "link": "",
+                "citation": ""
+            },
+            {
                 "title": "Towards Improved System Flexibility: Enabling IDSO's Swing Contract Market Participation",
-                "authors": "S. Sharma, S. Battula, and S.N. Singh",
+                "authors": "Swastik Sharma, S. Battula, and S.N. Singh",
                 "year": "2026",
                 "venue": "2026 IEEE/PES Transmission and Distribution Conference and Exposition (T&D), Chicago, IL, USA, 2026",
                 "doi": "doi: 10.1109/TD48022.2026.11562959",
@@ -192,7 +201,7 @@ const siteData = {
             },
             {
                 "title": "Transactive Electric Vehicle Agent: A Deep Reinforcement Learning Approach",
-                "authors": "S. Sharma, S. Battula, and S.N. Singh",
+                "authors": "Swastik Sharma, S. Battula, and S.N. Singh",
                 "year": "2024",
                 "venue": "2024 IEEE Power & Energy Society General Meeting, Seattle, Washington, 2024",
                 "doi": "doi: 10.1109/PESGM51994.2024.10688919",
